@@ -6,11 +6,11 @@ import { useNavigate } from 'react-router-dom';
 import CompleteProfile from './completeProfile';
 import ChooseAction from './ChooseAction';
 import CurrentRates from './CurrentRates';
-
+import CurrencyBalance from './CurrencyBalance';
 
 
 // import Cookies from "cookie-universal"
-import CurrencyBalance from './CurrencyBalance';
+
 
 // const cookies = new Cookies();
 
