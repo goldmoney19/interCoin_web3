@@ -484,7 +484,7 @@ export const getTransactionsByUserId = async(req, res) => {
                 }
 
 
-                  res.status(200).json(userWallets);
+                  res.status(200).json(Transactions);
 
            }
          catch(error){ 
