@@ -27,8 +27,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(cookieParser());
-app.use(cors());
 
+const corsOptions = {
+  origin: 'https://inter-coin-web3-2kqe.vercel.app', // <-- Replace with your actual Vercel frontend URL
+  optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204 };
+app.use(cors(corsOptions));
 const PORT = process.env.PORT || 7000;
 const MONGOURL = process.env.MONGO_URL;
 
