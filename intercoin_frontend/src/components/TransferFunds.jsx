@@ -30,7 +30,7 @@ useEffect(() => {
     const fetchCurrency = async () => {
 
                 try{
-           const response = await axios.get("http://localhost:8000/api/getCurrency")
+           const response = await axios.get(" https://intercoin-web3.onrender.com/api/getCurrency")
                        
               // console.log(response.data)
 
