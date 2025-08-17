@@ -28,7 +28,7 @@ function CurrencyBalance(){
 
      const fetchUsers = async() => {
                     try{
-            const response = await axios.post("http://localhost:8000/api/userBalance", userDataa);
+            const response = await axios.post(" https://intercoin-web3.onrender.com/api/userBalance", userDataa);
 
                const result = await response.data;
                              console.log(result); 
