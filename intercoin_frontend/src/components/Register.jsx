@@ -30,7 +30,7 @@ console.log(formData);
 
                     const portf = {email , password}
                    
-                   await axios.post("http://localhost:8000/api/user", formData)
+                   await axios.post(" https://intercoin-web3.onrender.com/api/user", formData)
                   .then((response)=>{
 
                     console.log(response);
