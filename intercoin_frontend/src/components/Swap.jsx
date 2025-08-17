@@ -94,7 +94,7 @@ function Swap({ onSwapSuccess }){
                 amount: swapAmount
             };
 
-             const response = await axios.post("http://localhost:8000/api/swap", swapData)
+             const response = await axios.post(" https://intercoin-web3.onrender.com/api/swap", swapData)
 
              console.log(response.data)
 
