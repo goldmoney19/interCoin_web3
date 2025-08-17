@@ -11,7 +11,7 @@ import Swap from './components/Swap'
 import TransferFunds from './components/TransferFunds'
 import Profile from './components/Profile'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import CurrencyBalance from './components/currencyBalance'
+import CurrencyBalance from './components/CurrencyBalance'
 import TransactionHistory from './components/TransactionHistory'
 
 
