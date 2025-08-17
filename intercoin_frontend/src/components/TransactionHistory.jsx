@@ -22,7 +22,7 @@ function TransactionHistory(){
 
              const userDataa = {user_id:userId}
                 try{
-                 response = await axios.post("https://intercoin-web3.onrender.com/api/transferHistory", userDataa)
+                 response = await axios.post("https://intercoin-web3.onrender.com/api/transactionHistory", userDataa)
 
                  const result = await response.data;
                              console.log(result); 
