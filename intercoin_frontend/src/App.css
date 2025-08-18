@@ -462,7 +462,7 @@ border: none;
 
 .chooseActionCol{
 
-   border-radius: 9px;
+   border-radius: 0px;
    background-color:rgb(106, 8, 192);
     min-height:90px;
     font-family:"EB Garamond,serif";
