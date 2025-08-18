@@ -1,6 +1,6 @@
 import express from "express"
 
-import {createUser, login, getBalanceByUserId, makeDeposit, getAllCurrencies, swapFunds, transferFunds} from "../controller/userController.js"
+import {createUser, login,getTransactionsByUserId, getBalanceByUserId, makeDeposit, getAllCurrencies, swapFunds, transferFunds} from "../controller/userController.js"
 
 
 
@@ -13,7 +13,7 @@ route.post("/deposit", makeDeposit);
 route.get("/getCurrency", getAllCurrencies);
 route.post("/swap", swapFunds);
 route.post("/transfer", transferFunds);
-
+route.post("/transferHistory", getTransactionsByUserId);
 
 
 

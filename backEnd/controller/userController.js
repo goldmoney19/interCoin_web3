@@ -464,3 +464,30 @@ console.log({message:`bad waka .${error}`})
     }
 
 }
+
+
+
+export const getTransactionsByUserId = async(req, res) => {
+
+           try{
+
+          
+
+                   const { user_id } = req.body;
+                     console.log("Incoming user_id:", user_id)
+
+        const Transactions = await Transaction.findOne({ senderId: user_id });
+                 
+                if(!Transactions){
+
+                  return  res.status(404).json({message:"user no existent"});
+                }
+
+
+                  res.status(200).json(userWallets);
+
+           }
+         catch(error){ 
+           res.status(500).json({errorMessage:error.message});
+  }
+}
