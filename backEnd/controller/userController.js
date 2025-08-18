@@ -98,6 +98,38 @@ export const login = async(req, res) => {
 
 
 
+export const getBalanceByUserIdPage = async(req, res) => {
+
+           try{
+
+          
+
+                   const { user_id } = req.body;
+                     console.log("Incoming user_id:", user_id)
+
+        const userWallets = await Wallet.find({ userId: user_id });
+                 
+                if(!userWallets){
+
+                  return  res.status(404).json({message:"user no existent"});
+                }
+
+
+                  res.status(200).json(userWallets);
+
+           }
+         catch(error){ 
+           res.status(500).json({errorMessage:error.message});
+  }
+}
+
+
+
+
+
+
+
+
 export const getBalanceByUserId = async(req, res) => {
 
            try{

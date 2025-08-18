@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from "cookie-universal"
 // import toast from 'react-hot-toast';
-import {Button, Nav} from 'react-bootstrap'
+import {Button, Nav , Col, Row, Container} from 'react-bootstrap'
 import toast from 'react-hot-toast';
 
 
@@ -78,16 +78,22 @@ function Login(){
   
       }
    
-             return <div style = {{ fontFamily:' "EB Garamond",serif'}}> 
+             return <div style = {{ fontFamily:"EB Garamond,serif",height:"700px"}}> 
+
+               <Container style={{height:"600px"}}>
+             
+                   <Row style={{marginTop:"90px", height:"450px"}}>
+             
+                     <Col >
         <br></br>
-         <h2>Login</h2>
+         <h2 style={{color:"white"}}>Login</h2>
         <form onSubmit={handleSubmit}>
 
          <label></label><br></br>
          <input 
          id='email'
          placeholder = 'Email'
-          style = {{ backgroundColor:'white', color:'black'}}
+          style = {{ backgroundColor:'white', color:'black' , borderRadius:"12px",paddingLeft:"10px"}}
            type='email'  
           name ="email"
            value = {email} 
@@ -100,7 +106,7 @@ function Login(){
 
          <label></label><br></br>
          <input type='password' 
-          style = {{ backgroundColor:'white', color:'black'}}
+          style = {{ backgroundColor:'white', color:'black',  borderRadius:"12px",paddingLeft:"10px"}}
           placeholder = 'Password'
          id="password"
           value ={password}
@@ -111,17 +117,21 @@ function Login(){
            />
            
         
-        
+        <br></br>
         <br></br>
         <br></br>
 
-        <button  type='submit' className='btn btn-primary'>login</button>
+        <button  type='submit' className='btn btn-primary'
+        style = {{ backgroundColor:'white', color:"black", width:"100px"}}
+        >login
+        </button>
          <br></br>
           <br></br>
             <br></br>
               <br></br>
 
-      <button className = 'btn btn-sm btn-warning'> <Nav.Link href ="/register"  style = {{color:'white'}}>Signup</Nav.Link></button>
+          <span style={{textAlign:"left", color:"white"}}>if you don't have an account :</span> <button className = 'btn btn-sm btn-warning'
+           style={{backgroundColor:"rgba(26, 18, 92, 0.4)", border:"1px solid rgba(26, 18, 92, 0.4)"}}> <Nav.Link href ="/register"  style = {{color:'white'}}>SignUp</Nav.Link></button> 
         <br></br>
        
        
@@ -130,19 +140,9 @@ function Login(){
 
      <p>{password}</p> 
 
-     
-     
-     
-
-
-      
-
-
-
-          </div>
-     
-   
-     
-}  
+       </Col>
+      </Row>
+    </Container>
+       </div> }  
 
 export default  Login

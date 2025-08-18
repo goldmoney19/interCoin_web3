@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import CurrencyBalance from './components/CurrencyBalance'
 import TransactionHistory from './components/TransactionHistory'
 import TransactionDetailsById from './components/TransactionDetailsById'
-
+import CurrencyBalancePage from './components/CurrencyBalancePage'
 
 
 
@@ -52,6 +52,8 @@ function App() {
          <Route path = "/TransactionHistory" element = {<TransactionHistory />} />
 
           <Route path = "/transactionDetailsById/:id" element = {<TransactionDetailsById />} />
+          
+           <Route path = "/currencyBalancePage" element = {<CurrencyBalancePage />} />
           
         
 

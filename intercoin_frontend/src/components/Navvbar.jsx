@@ -43,15 +43,22 @@ function Navvbar() {
             <Nav.Link href ="/TransactionHistory">Transactions</Nav.Link>
             
          
-            <Nav.Link href ="/currencyBalance">Balance</Nav.Link>
+            <Nav.Link href ="/currencyBalancePage">Balance</Nav.Link>
             
             {/*<Nav.Link href ="" onClick={LogoutUser}>logout</Nav.Link>*/}
             
        <Nav.Link href ="/contact" >Rate Calculator</Nav.Link>
    
+   <Nav.Link href ="/deposit" >Deposit</Nav.Link>
 
+    <Nav.Link href ="/transfer_funds" >Transfer</Nav.Link>
 
-       
+     <Nav.Link href ="/swap" >Swap</Nav.Link>
+
+      <Nav.Link href ="/login" >Login</Nav.Link>
+
+             <Nav.Link href ="/register" >Sign Up</Nav.Link>
+
          
 
           </Nav>
