@@ -15,7 +15,8 @@ const cookies = new Cookies();
 
 
 function TransferFunds(){
-
+  const navigate = useNavigate();
+const [isLogged, setIsLogged] = useState(false)
     
     const [wallet, setWallet] = useState(null)
 
@@ -25,6 +26,25 @@ function TransferFunds(){
             const [amount, setAmount] = useState("")
 
 
+
+
+  
+
+
+useEffect(() =>{
+    
+
+              const user =  localStorage.getItem("user-id")
+
+               if(user === null){
+
+                navigate("/login")
+               }else{
+
+                setIsLogged(true)
+               }
+
+         },[navigate] )
 
 
 useEffect(() => {
@@ -50,7 +70,7 @@ useEffect(() => {
 }, [])
 
 
- const navigate = useNavigate();
+ 
 const handleTransfer = async (e) => {
     e.preventDefault();
          const senderId = cookies.get("user-id");

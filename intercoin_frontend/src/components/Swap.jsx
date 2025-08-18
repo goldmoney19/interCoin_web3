@@ -14,7 +14,8 @@ const cookies = new Cookies();
 
 
 function Swap({ onSwapSuccess }){
-
+    const navigate = useNavigate();
+   const [isLogged, setIsLogged] = useState(false)
         const [wallet, setWallet] = useState(null);
 
     const [fromCurrency, setFromCurrency] = useState('cNGN');
@@ -23,6 +24,27 @@ function Swap({ onSwapSuccess }){
     // const [message, setMessage] = useState('');
     // const [messageType, setMessageType] = useState(''); // 'success' or 'danger'
     // const [loading, setLoading] = useState(false);
+
+
+useEffect(() =>{
+    
+
+              const user =  localStorage.getItem("user-id")
+
+               if(user === null){
+
+                navigate("/login")
+               }else{
+
+                setIsLogged(true)
+               }
+
+         },[navigate] )
+
+
+
+
+
 
 
   useEffect(() => {
@@ -56,7 +78,7 @@ function Swap({ onSwapSuccess }){
   }, [])
     
 
- const navigate = useNavigate();
+
   const handleSwap = async (e) => {
         e.preventDefault()
 

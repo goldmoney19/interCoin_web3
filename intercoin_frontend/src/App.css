@@ -59,7 +59,7 @@ margin-top: 80px;
 .displayBalanceKeys{
 
   color: white;
-   background-color:rgb(30, 33, 87);
+   background-color:rgba(71, 1, 133, 0.1);
     margin-top:130px;
     font-size: 17px;
      font-family:"EB Garamond,serif";
@@ -69,7 +69,7 @@ margin-top: 80px;
 .displayBalanceValue{
   font-family:"EB Garamond,serif";
   color: white;
-   background-color:rgb(30, 33, 87);
+   background-color:rgba(71, 1, 133, 0.1);
     height: 30px;
 }
 
@@ -116,7 +116,7 @@ margin-top:30px;
 .profileSetCol{
 
   color:white; 
-  background-color:rgba(194, 97, 52, 0.521); 
+  background-color:rgba(122, 42, 4, 0.15); 
   min-height:100px;
 border-radius: 12px;
 border:none;
@@ -169,7 +169,7 @@ border: none;
 .chooseActionCol{
 
   
-   background-color:rgb(32, 20, 99);
+   background-color:rgba(71, 1, 133, 0.1);
     min-height:90px;
     font-family:"EB Garamond,serif";
     border:none;
@@ -194,7 +194,7 @@ border: none;
     border:none;
  width:45%;
  height: 200px;
- background-color: indigo;
+ background-color: rgba(55, 10, 87,0.3);
  color:white;
  border-radius:13px ;
      box-shadow: 2px 2px rgb(102, 95, 145);
@@ -300,6 +300,18 @@ height: 700px;
 color: white;
 margin-top: 90px;
 }
+
+
+
+.currencyBalancePageRow{
+  border:none
+
+
+}
+
+
+
+
 
 
 
@@ -598,6 +610,14 @@ font-family:"EB Garamond,serif";
   height: 700px;
 }
 
+
+.currencyBalancePageRow{
+  border:none;
+  height:350px;
+  margin-top: 170px;
+
+
+}
 
 
 

@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams , useNavigate} from "react-router-dom"
 import { Container, Col, Row } from "react-bootstrap"
 import React from "react"
 
@@ -15,9 +15,39 @@ import React from "react"
 
 
 function TransactionDetailsById(){
-
+ const navigate = useNavigate();
+   const [isLogged, setIsLogged] = useState(false)
 
 const [transaction, setTrasaction] = useState()
+
+
+
+
+useEffect(() =>{
+    
+
+              const user =  localStorage.getItem("user-id")
+
+               if(user === null){
+
+                navigate("/login")
+               }else{
+
+                setIsLogged(true)
+               }
+
+         },[navigate] )
+
+
+
+
+
+
+
+
+
+
+
 
 const {id} = useParams()
 

@@ -37,27 +37,27 @@ function Navvbar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
         <Navbar.Collapse id="responsive-navbar-nav" >
           <Nav className="me-auto text-primary">
-          <Nav.Link href ="/">Home</Nav.Link>
+          <Nav.Link href ="/"><span style={{color:"white"}}>Home</span></Nav.Link>
           
-          <Nav.Link href ="/profile_page">Profile</Nav.Link>
-            <Nav.Link href ="/TransactionHistory">Transactions</Nav.Link>
+          <Nav.Link href ="/profile_page"><span style={{color:"white"}}>Profile</span></Nav.Link>
+            <Nav.Link href ="/TransactionHistory"><span style={{color:"white"}}>Transactions</span></Nav.Link>
             
          
-            <Nav.Link href ="/currencyBalancePage">Balance</Nav.Link>
+            <Nav.Link href ="/currencyBalancePage"><span style={{color:"white"}}>Balance</span></Nav.Link>
             
             {/*<Nav.Link href ="" onClick={LogoutUser}>logout</Nav.Link>*/}
             
-       <Nav.Link href ="/contact" >Rate Calculator</Nav.Link>
+       <Nav.Link href ="/contact" ><span style={{color:"white"}}>Rate Calculator</span></Nav.Link>
    
-   <Nav.Link href ="/deposit" >Deposit</Nav.Link>
+   <Nav.Link href ="/deposit" ><span style={{color:"white"}}>Deposit</span></Nav.Link>
 
-    <Nav.Link href ="/transfer_funds" >Transfer</Nav.Link>
+    <Nav.Link href ="/transfer_funds" ><span style={{color:"white"}}>Transfer</span></Nav.Link>
 
-     <Nav.Link href ="/swap" >Swap</Nav.Link>
+     <Nav.Link href ="/swap" ><span style={{color:"white"}}>Swap</span></Nav.Link>
 
-      <Nav.Link href ="/login" >Login</Nav.Link>
+      <Nav.Link href ="/login" ><span style={{color:"white"}}>Login</span></Nav.Link>
 
-             <Nav.Link href ="/register" >Sign Up</Nav.Link>
+             <Nav.Link href ="/register" ><span style={{color:"white"}}>Sign Up</span></Nav.Link>
 
          
 

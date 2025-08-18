@@ -15,13 +15,33 @@ const cookies = new Cookies();
 
 function Deposit({ onDepositSuccess }) {
 
+ const navigate = useNavigate();
+  const [isLogged, setIsLogged] = useState(false)
+
     const [currency, setCurrency] = useState('cNGN');
     const [amount, setAmount] = useState('');
 
 const currencies = ['cNGN', 'cXAF', 'USDx', 'EURx'];
 
 
- const navigate = useNavigate();
+
+useEffect(() =>{
+    
+
+              const user =  localStorage.getItem("user-id")
+
+               if(user === null){
+
+                navigate("/login")
+               }else{
+
+                setIsLogged(true)
+               }
+
+         },[navigate] )
+
+
+
     const handleDeposit = async (e) => {
         e.preventDefault();
 

@@ -4,13 +4,14 @@ import axios from 'axios';
 import {Container, Row, Col, Nav,Card} from 'react-bootstrap'
 import "../App.css"
 import Cookies from "cookie-universal";
-
+import { useNavigate } from 'react-router-dom';
 
 const cookies = new Cookies();
 
 
 function CurrencyBalancePage(){
-
+ const navigate = useNavigate();
+  const [isLogged, setIsLogged] = useState(false)
     //  const userId = cookies.get("user-id");
     const userId = localStorage.getItem("user-id");
 
@@ -18,6 +19,26 @@ function CurrencyBalancePage(){
   
     
    
+
+
+useEffect(() =>{
+    
+
+              const user =  localStorage.getItem("user-id")
+
+               if(user === null){
+
+                navigate("/login")
+               }else{
+
+                setIsLogged(true)
+               }
+
+         },[navigate] )
+
+
+
+
   
 
    useEffect(()=>{
@@ -45,17 +66,17 @@ function CurrencyBalancePage(){
                }, [userId]);
 
     return (
-                <div className='homeContainer'> 
+                <div className='homeContainer' > 
 
                              
-
+<Container style={{ height:"700px", marginTop:"170px"}}>
                                   
-  <Row className='currencyBalanceRow' >
+  <Row className='currencyBalancePageRow' >
 
            <p style={{color:"white", fontSize:"18px", fontFamily:"EB Garamond,serif"
 }}>Wallet Balance</p>
 
-           <Col className='currencyBalanceCol'> 
+           <Col className='.currencyBalancePageCol'> 
 
 <table className='tableStyle'>
                 <br></br>         
@@ -100,7 +121,7 @@ function CurrencyBalancePage(){
                  </Col>
                          </Row>
                         
-          
+          </Container>
            
           </div> )
 

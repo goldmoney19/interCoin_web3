@@ -9,10 +9,12 @@ import CurrentRates from './CurrentRates';
 import CurrencyBalance from './CurrencyBalance';
 
 
-// import Cookies from "cookie-universal"
 
 
-// const cookies = new Cookies();
+ import Cookies from "cookie-universal"
+
+
+ const cookies = new Cookies();
 
 
 

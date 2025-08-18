@@ -6,6 +6,7 @@ import axios from 'axios';
 import Cookies from "cookie-universal";
 import { Container, Row, Col ,Nav} from 'react-bootstrap';
 
+import { useNavigate } from 'react-router-dom';
 
 
 const cookies = new Cookies();
@@ -13,9 +14,40 @@ const cookies = new Cookies();
 
 
 function TransactionHistory(){
+   const navigate = useNavigate();
+   const [isLogged, setIsLogged] = useState(false)
 
   const userId = cookies.get("user-id");
    const [penthause, setPenthause] = useState([]);
+
+
+
+
+
+useEffect(() =>{
+    
+
+              const user =  localStorage.getItem("user-id")
+
+               if(user === null){
+
+                navigate("/login")
+               }else{
+
+                setIsLogged(true)
+               }
+
+         },[navigate] )
+
+
+
+
+
+
+
+
+
+
       useEffect(() => {
 
 
