@@ -3,6 +3,8 @@ import {useState , useEffect} from 'react'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
+import toast from 'react-hot-toast';
+
 
 
 
@@ -34,7 +36,9 @@ console.log(formData);
                   .then((response)=>{
 
                     console.log(response);
+                     toast.success(response.data.message, {position:"top-right"});
                      console.log("user inserted");
+                      navigate("/login");
                  
 
                     // toast.success(response.data.message, {position:"top-right"});

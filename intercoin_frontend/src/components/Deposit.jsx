@@ -5,6 +5,8 @@ import "../App.css"
 import axios from 'axios';
 import { Form, Button, Row, Col, Alert ,Nav, Container} from 'react-bootstrap';
 import Cookies from "cookie-universal";
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 
 const cookies = new Cookies();
@@ -18,6 +20,8 @@ function Deposit({ onDepositSuccess }) {
 
 const currencies = ['cNGN', 'cXAF', 'USDx', 'EURx'];
 
+
+ const navigate = useNavigate();
     const handleDeposit = async (e) => {
         e.preventDefault();
 
@@ -51,8 +55,11 @@ const currencies = ['cNGN', 'cXAF', 'USDx', 'EURx'];
                  const response = await axios.post(" https://intercoin-web3.onrender.com/api/deposit ",  _data)
 
                               console.log( response.data)
+                                toast.success('Deposit Successful', {position:"top-left"});
+                                      navigate("/TransactionHistory");
+
                               console.log(`Successfully deposited ${depositAmount} ${currency}`)
-                              setAmount('');
+                              // setAmount('');
 
                                  if (onDepositSuccess) {
                                onDepositSuccess();

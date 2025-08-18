@@ -4,6 +4,9 @@ import axios from 'axios';
 import {Container, Row, Col, Nav,Card} from 'react-bootstrap'
 import "../App.css"
 import Cookies from "cookie-universal";
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const cookies = new Cookies();
@@ -53,7 +56,7 @@ function Swap({ onSwapSuccess }){
   }, [])
     
 
-
+ const navigate = useNavigate();
   const handleSwap = async (e) => {
         e.preventDefault()
 
@@ -97,6 +100,8 @@ function Swap({ onSwapSuccess }){
              const response = await axios.post(" https://intercoin-web3.onrender.com/api/swap", swapData)
 
              console.log(response.data)
+              toast.success('Swap Successful', {position:"top-left"});
+                                      navigate("/TransactionHistory");
 
              if (onSwapSuccess) {
                 onSwapSuccess();

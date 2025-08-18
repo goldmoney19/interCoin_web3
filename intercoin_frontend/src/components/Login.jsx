@@ -5,6 +5,7 @@ import axios from 'axios';
 import Cookies from "cookie-universal"
 // import toast from 'react-hot-toast';
 import {Button, Nav} from 'react-bootstrap'
+import toast from 'react-hot-toast';
 
 
 const cookies = new Cookies();
@@ -58,8 +59,8 @@ function Login(){
                          // toast.success('Login Successful', {position:"top-right"});
                         navigate("/admin_dashboard");
                       }else{
-               //  toast.success('Login Successful', {position:"top-left"});
-                         // navigate("/");
+               toast.success('Login Successful', {position:"top-left"});
+                         navigate("/");
                       }
                     
                      }
