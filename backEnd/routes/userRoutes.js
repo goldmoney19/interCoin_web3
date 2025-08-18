@@ -13,7 +13,7 @@ route.post("/deposit", makeDeposit);
 route.get("/getCurrency", getAllCurrencies);
 route.post("/swap", swapFunds);
 route.post("/transfer", transferFunds);
-route.post("/transferHistory", getTransactionsByUserId);
+route.post("/transactionHistory", getTransactionsByUserId);
 
 
 
