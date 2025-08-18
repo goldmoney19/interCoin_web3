@@ -30,7 +30,7 @@ app.use(cookieParser());
 
 const allowedOrigins = [
 
- 'https://inter-coin-web3-2kqe.vercel.app',
+ 'https://inter-coin-web3.vercel.app',
  'http://localhost:5173'
 ];
 app.use(cors({
