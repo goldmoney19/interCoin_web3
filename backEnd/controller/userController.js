@@ -476,7 +476,7 @@ export const getTransactionsByUserId = async(req, res) => {
                    const { user_id } = req.body;
                      console.log("Incoming user_id:", user_id)
 
-        const Transactions = await Transaction.findOne({ senderId: user_id });
+        const Transactions = await Transaction.find({ senderId: user_id });
                  
                 if(!Transactions){
 
