@@ -491,3 +491,28 @@ export const getTransactionsByUserId = async(req, res) => {
            res.status(500).json({errorMessage:error.message});
   }
 }
+
+
+
+export const getTransactionsDetailsById = async(req, res) => {
+
+           try{
+
+          
+
+                   const id = req.params.id;
+                 const  TransactionsDetails = await Transaction.findOne({_id:id});
+        
+                if(!TransactionsDetails){
+
+                  return  res.status(404).json({message:"Transaction not existent"});
+                }
+
+
+                  res.status(200).json(TransactionsDetails);
+
+           }
+         catch(error){ 
+           res.status(500).json({errorMessage:error.message});
+  }
+}

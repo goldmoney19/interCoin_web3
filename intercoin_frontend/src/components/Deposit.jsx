@@ -51,8 +51,8 @@ const currencies = ['cNGN', 'cXAF', 'USDx', 'EURx'];
                 amount: depositAmount
 
                  }
-                   console.log(userId,currency,amount)
-                 const response = await axios.post(" https://intercoin-web3.onrender.com/api/deposit ",  _data)
+        console.log(userId,currency,amount)
+     const response = await axios.post("https://intercoin-web3.onrender.com/api/deposit ",  _data)
 
                               console.log( response.data)
                                 toast.success('Deposit Successful', {position:"top-left"});

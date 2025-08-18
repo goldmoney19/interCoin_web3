@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import Register from './components/Register'
 import Login from './components/Login'
@@ -13,6 +11,8 @@ import Profile from './components/Profile'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CurrencyBalance from './components/CurrencyBalance'
 import TransactionHistory from './components/TransactionHistory'
+import TransactionDetailsById from './components/TransactionDetailsById'
+
 
 
 
@@ -50,6 +50,10 @@ function App() {
          <Route path = "/currencyBalance" element = {<CurrencyBalance />} />
 
          <Route path = "/TransactionHistory" element = {<TransactionHistory />} />
+
+          <Route path = "/transactionDetailsById/:id" element = {<TransactionDetailsById />} />
+          
+        
 
 
  </Routes>

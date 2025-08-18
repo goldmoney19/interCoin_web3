@@ -1,6 +1,6 @@
 import express from "express"
 
-import {createUser, login,getTransactionsByUserId, getBalanceByUserId, makeDeposit, getAllCurrencies, swapFunds, transferFunds} from "../controller/userController.js"
+import {createUser,getTransactionsDetailsById, login,getTransactionsByUserId, getBalanceByUserId, makeDeposit, getAllCurrencies, swapFunds, transferFunds} from "../controller/userController.js"
 
 
 
@@ -14,6 +14,8 @@ route.get("/getCurrency", getAllCurrencies);
 route.post("/swap", swapFunds);
 route.post("/transfer", transferFunds);
 route.post("/transactionHistory", getTransactionsByUserId);
+route.get("/transactionDetails/:id", getTransactionsDetailsById);
+
 
 
 

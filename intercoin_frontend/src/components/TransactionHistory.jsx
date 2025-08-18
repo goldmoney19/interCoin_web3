@@ -57,26 +57,44 @@ function TransactionHistory(){
                         
                              {penthause.map((item) => (
 
-                                 <Nav.Link href ={`/transaction_details/` +item._id} type='button'> <div style={{border:"1px solid white", height:"70px",borderRadius:"15px", marginTop:"30px"}}>
 
-                            {item.type}
-                             {item.amountSent}
+ <Nav.Link href ={`/transactionDetailsById/` +item._id} type='button'>
+   
+    <div style={{border:"1px solid white", height:"70px",borderRadius:"25px", 
+   marginTop:"30px", backgroundColor:"rgba(55, 2, 102, 0.2)"}}>
+      
+      <Row>
+          <Col xs = {6}>
+         <p style={{fontSize:"14px", fontFamily:"EB Garamond,serif"}}>{item.type}</p> 
+         <p style={{fontSize:"12px", fontFamily:"EB Garamond,serif"}}>{item.timestamp}</p> 
+          </Col>
 
-                         </div></Nav.Link>
+        <Col xs = {6} >
+        <p style={{fontSize:"14px", fontFamily:"EB Garamond,serif", paddingTop:"22px"}}>{item.amountSent}</p> 
+        
+        </Col>
+      </Row>
+      
+      
+       </div>
+                       
+   </Nav.Link>
+
+
+
+
+
                   
                 ))}
                                  
-                       
-                 
-                
-                        
-
-               </Col>
+              </Col>
 
                   ) : (
         // Display a loading message while the data is being fetched.
         <p>Loading currencies...</p>
       )} 
+
+      
 
             </Row>
 
