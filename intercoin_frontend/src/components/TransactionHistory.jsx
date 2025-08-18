@@ -4,6 +4,8 @@ import Balance from './Balance'
 import "../App.css"
 import axios from 'axios';
 import Cookies from "cookie-universal";
+import { Container, Row, Col ,Nav} from 'react-bootstrap';
+
 
 
 const cookies = new Cookies();
@@ -22,7 +24,7 @@ function TransactionHistory(){
 
              const userDataa = {user_id:userId}
                 try{
-                 response = await axios.post("https://intercoin-web3.onrender.com/api/transferHistory", userDataa)
+         const  response = await axios.post("https://intercoin-web3.onrender.com/api/transactionHistory", userDataa)
 
                  const result = await response.data;
                              console.log(result); 
@@ -42,7 +44,47 @@ function TransactionHistory(){
 
     return (
                 <div className='homeContainer'> 
-          <h3>Transaction History</h3>
+      
+
+           <Container className='transactionHistoryCon'>
+
+            <Row>
+
+               { penthause? (
+                <Col>
+                    <p style={{fontFamily:"EB Garamond,serif"}}>Transaction History</p>
+                    
+                        
+                             {penthause.map((item) => (
+
+                                 <Nav.Link href ={`/transaction_details/` +item._id} type='button'> <div style={{border:"1px solid white", height:"70px",borderRadius:"15px", marginTop:"30px"}}>
+
+                            {item.type}
+                             {item.amountSent}
+
+                         </div></Nav.Link>
+                  
+                ))}
+                                 
+                       
+                 
+                
+                        
+
+               </Col>
+
+                  ) : (
+        // Display a loading message while the data is being fetched.
+        <p>Loading currencies...</p>
+      )} 
+
+            </Row>
+
+
+           </Container>
+
+
+
            
           </div> )
 

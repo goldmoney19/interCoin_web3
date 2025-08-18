@@ -293,6 +293,14 @@ font-family:"EB Garamond,serif";
   height: 700px;
 }
 
+.transactionHistoryCon{
+
+border:none;
+height: 700px;
+color: white;
+margin-top: 90px;
+}
+
 
 
 
@@ -314,13 +322,13 @@ height: 100%;
   width: 100%;
    border: none;
    margin-top: 0px;
-   background-color: rgb(0, 2, 14);
+   background-color: black;
 } 
 
 
 .balance_con{
 
-   background-color:rgb(0, 2, 14);
+   background-color:black;
   border:none;
 min-height: 700px;
   width: 100%;
@@ -351,7 +359,7 @@ margin-top: 80px;
 .displayBalanceKeys{
 
   color: white;
-   background-color:rgb(106, 8, 192);
+   background-color:rgba(106, 8, 192,0.2);
     margin-top:130px;
     font-size: 17px;
      font-family:"EB Garamond,serif";
@@ -363,7 +371,7 @@ margin-top: 80px;
 .displayBalanceValue{
   font-family:"EB Garamond,serif";
   color: white;
-   background-color:rgb(106, 8, 192);
+   background-color:rgba(106, 8, 192,0.2);
     height: 30px;
 }
 
@@ -409,7 +417,7 @@ box-shadow: 2px 2px white;
 .profileSetCol{
 
   color:white; 
-  background-color:rgba(194, 97, 52, 0.8); 
+  background-color:rgba(194, 97, 52, 0.15); 
   min-height:100px;
 border-radius: 12px;
 border:none;
@@ -463,12 +471,12 @@ border: none;
 .chooseActionCol{
 
    border-radius: 0px;
-   background-color:rgb(106, 8, 192);
+   background-color:rgba(106, 8, 192,0.1);
     min-height:90px;
     font-family:"EB Garamond,serif";
     padding-top:27px;
-    border: 1px solid rgb(62, 20, 100);
-     box-shadow: 1.5px 1.5px white;
+    border: 1px solid rgba(106, 8, 192,0.2);
+     box-shadow: 1.5px 1.5px rgba(106, 8, 192,0.2);
      width: 40px;
 }
 
@@ -490,7 +498,7 @@ border: none;
     border:none;
  width:90%;
  height: 150px;
- background-color: indigo;
+ background-color: rgba(55, 10, 87,0.3);
  color:white;
  border-radius:13px ;
    box-shadow: 2px 2px white;;
