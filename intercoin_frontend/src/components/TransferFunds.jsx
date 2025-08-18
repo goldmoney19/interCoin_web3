@@ -19,6 +19,7 @@ function TransferFunds(){
 const [isLogged, setIsLogged] = useState(false)
     
     const [wallet, setWallet] = useState(null)
+      const [loading, setLoading] = useState(false)
 
      const [fromCurrency, setFromCurrency] = useState("cNGN")
   const [toCurrency, setToCurrency] = useState("USDx")
@@ -73,9 +74,14 @@ useEffect(() => {
  
 const handleTransfer = async (e) => {
     e.preventDefault();
+
+    setLoading(true)
+
          const senderId = cookies.get("user-id");
 
          if (!senderId ) {
+                      toast.error('User not authenticated. Please log in.');
+
             console.log('User not authenticated. Please log in.');
          
      
@@ -84,6 +90,8 @@ const handleTransfer = async (e) => {
 
          const transferAmount = parseFloat(amount);
         if (isNaN(transferAmount) || transferAmount <= 0) {
+                toast.error('Please enter a valid amount greater than zero.');
+
             console.log('Please enter a valid amount greater than zero.');
             // setMessageType('danger');
             // setLoading(false);
@@ -111,9 +119,12 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
                                       navigate("/TransactionHistory");
 
     }catch(error){
+      toast.error('transfer error.');
 
     console.log(error);
 
+    }finally{
+      setLoading(false)
     }
 }
 
@@ -196,7 +207,9 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
          <br></br>
      <button type="submit" className='btn btn-outline-success btn-sm' 
               style={{border:"1px solid white", width:"99px",backgroundColor:"rgba(37, 55, 95, 0.6)", color:"white", marginTop:"30px",borderRadius:"12px"}}
-                onClick={handleTransfer}><Nav.Link>send</Nav.Link>
+                onClick={handleTransfer}
+                disabled = {loading}
+                ><Nav.Link>{loading ? 'sending...' :'send'}</Nav.Link>
     </button>
          
 

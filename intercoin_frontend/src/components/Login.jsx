@@ -18,13 +18,15 @@ function Login(){
    
     const [email, setEmail] = useState("");
       const [password, setPassword] = useState("");
-
+   const [loading, setLoading] = useState(false)
    
     
 
    const navigate = useNavigate();
       const handleSubmit  = async(e) => {
                      e.preventDefault();
+
+                     setLoading(true)
 
                      try{
 
@@ -36,7 +38,7 @@ function Login(){
 
                                       console.log(dataa);
   
-                    //   const portf = {title , description, design, image}
+                  
                      
                   const response =  await axios.post("https://intercoin-web3.onrender.com/api/login", dataa ,{
                           headers:{
@@ -69,8 +71,12 @@ function Login(){
 
                     
                     catch(error){
-                    toast.success('wrong credentials', {position:"top-right"});
-                       console.log(error)
+                      console.log(error)
+                    toast.error('wrong credentials', {position:"top-right"});
+                       
+                    }finally{
+
+                      setLoading(false)
                     }
   
             
@@ -123,7 +129,9 @@ function Login(){
 
         <button  type='submit' className='btn btn-primary'
         style = {{ backgroundColor:'white', color:"black", width:"100px"}}
-        >login
+        disabled = {loading}
+        >
+         {loading ? 'sending...' : 'login'}
         </button>
          <br></br>
           <br></br>

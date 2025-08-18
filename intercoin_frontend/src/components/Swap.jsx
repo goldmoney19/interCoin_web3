@@ -2,14 +2,14 @@ import React from 'react'
 import {useState , useEffect} from 'react'
 import axios from 'axios';
 import {Container, Row, Col, Nav,Card} from 'react-bootstrap'
-import "../App.css"
-import Cookies from "cookie-universal";
+
+
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 
 
-const cookies = new Cookies();
+
 
 
 
@@ -23,9 +23,9 @@ function Swap({ onSwapSuccess }){
     const [amount, setAmount] = useState('');
     // const [message, setMessage] = useState('');
     // const [messageType, setMessageType] = useState(''); // 'success' or 'danger'
-    // const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-
+     
 useEffect(() =>{
     
 
@@ -82,11 +82,14 @@ useEffect(() =>{
   const handleSwap = async (e) => {
         e.preventDefault()
 
-         const userId = cookies.get("user-id");
+        setLoading(true)
+
+           const userId =  localStorage.getItem("user-id")
          console.log(userId)
         if (!userId) {
-            setMessage('User not authenticated. Please log in.');
-            setMessageType('danger');
+            toast.error('User not authenticated. Please log in.');
+            // setMessage('User not authenticated. Please log in.');
+            // setMessageType('danger');
             setLoading(false);
             return;
         }
@@ -94,9 +97,12 @@ useEffect(() =>{
 
          const swapAmount = parseFloat(amount);
         if (isNaN(swapAmount) || swapAmount <= 0) {
+
             console.log('Please enter a valid amount greater than zero.');
+                        toast.error('Please enter a valid amount greater than zero.');
+
             // setMessageType('danger');
-            // setLoading(false);
+            setLoading(false);
             return;
         }
         
@@ -104,8 +110,9 @@ useEffect(() =>{
         if(fromCurrency === toCurrency){
 
             console.log("you cant swap to the same currency")
+             toast.error('you cant swap to the same currency');
             // setMessageType('danger');
-            // setLoading(false);
+           setLoading(false);
             return;
         }
 
@@ -130,9 +137,14 @@ useEffect(() =>{
             }
 
         }catch(error){
+            console.log(error)
+toast.error('Swap failed. Please try again.');
+    
 
-      console.log(error)
+        }finally{
 
+
+          setLoading(false)
         }
   }
 
@@ -191,13 +203,15 @@ useEffect(() =>{
          <br></br>
    <button type="submit" className='btn btn-outline-success btn-sm'
     style = {{border:"1px solid white", width:"99px",color:'white', backgroundColor:"rgba(37, 55, 95, 0.6)",marginTop:"30px",borderRadius:"12px",paddingLeft:"7px"}} 
-    onClick={handleSwap}><Nav.Link>send</Nav.Link></button>
+    onClick={handleSwap}
+    disabled = {loading}
+    >{loading ?'wait, sending...' : 'send'}</button>
          
                 </form>
         
             ) : (
         // Display a loading message while the data is being fetched.
-        <p>Loading currencies...</p>
+        <p>Loading...</p>
       )} 
 
       </Col>

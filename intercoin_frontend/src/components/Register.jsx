@@ -15,6 +15,7 @@ function Register(props){
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+     const [loading, setLoading] = useState(false)
   
 
    
@@ -23,7 +24,10 @@ function Register(props){
     const handleSubmit  = async(e) => {
                    e.preventDefault();
 
- 
+                  
+                 setLoading(true)
+
+
   const formData = {
     "email":email,
     "password":password
@@ -42,11 +46,9 @@ console.log(formData);
                       navigate("/login");
                  
 
-                    // toast.success(response.data.message, {position:"top-right"});
-                    // navigate("/login");
                   })
                   .catch((error)=>{
-        //    toast.error('Inputs cannot be empty', {position:"top-right"});
+        toast.error('Inputs cannot be empty', {position:"top-right"});
 
                      console.error(error)
                   })
@@ -105,8 +107,9 @@ console.log(formData);
 
         <button className = 'btn btn-sm btn-secondary'  type='submit' 
          style = {{ backgroundColor:'white', color:"black", width:"100px"}}
+         disabled = {loading}
         >
-        Signup
+        {loading ? 'sending...' : 'Register'}
         
         </button>
         <br></br>

@@ -17,6 +17,8 @@ function Deposit({ onDepositSuccess }) {
 
  const navigate = useNavigate();
   const [isLogged, setIsLogged] = useState(false)
+     const [loading, setLoading] = useState(false)
+  
 
     const [currency, setCurrency] = useState('cNGN');
     const [amount, setAmount] = useState('');
@@ -45,21 +47,27 @@ useEffect(() =>{
     const handleDeposit = async (e) => {
         e.preventDefault();
 
+        setLoading(true)
+
         const userId = cookies.get("user-id");
         if (!userId) {
+          toast.error('SUser not authenticated. Please log in');
+
             console.log({'User not authenticated. Please log in.':userId});
+            
             // setMessageType('danger');
-            // setLoading(false);
+            setLoading(false);
             return;
         }
 
 
         const depositAmount = amount;
         if(isNaN(depositAmount) || depositAmount <= 0) {
+          toast.error('Please enter a valid amount greater than zero.');
 
             console.log('Please enter a valid amount greater than zero.');
             // setMessageType('danger');
-            // setLoading(false);
+            setLoading(false);
         }
 
         try{
@@ -87,13 +95,17 @@ useEffect(() =>{
 
         }
         catch(error){
+              toast.error('deposit error');
 
             console.log(error);
             //   const errorMessage = err.response?.data?.message || err.message;
             // setMessage(`Deposit failed: ${errorMessage}`);
-            // setMessageType('danger');
+            setLoading(false);
              console.error("Deposit error:", error);
     
+        }{
+
+          setLoading(false)
         }
 
 
@@ -139,7 +151,9 @@ onChange={(e) =>setAmount(e.target.value)}
      <button type="submit" className='btn btn-outline-success btn-sm'
      style = {{border:"1px solid white", width:"99px",color:'white', backgroundColor:"rgba(37, 55, 95, 0.6)", borderRadius:"12px",paddingLeft:"7px"}} 
 
-     onClick={handleDeposit}><Nav.Link>send</Nav.Link></button>
+     onClick={handleDeposit}
+     disabled = {loading}
+     ><Nav.Link>{loading ? 'sending...' : 'send'}</Nav.Link></button>
 
        </Form>
 

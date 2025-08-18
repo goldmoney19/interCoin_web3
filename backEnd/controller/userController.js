@@ -562,23 +562,3 @@ export const getTransactionsDetailsById = async(req, res) => {
 
 
 
-// export const RateCalculator = async (req, res) => {
-
-   
-// try{
-//    const {userId, fromCurrency, toCurrency, amount} = req.body
-
-//    if(!userId || !toCurrency || !fromCurrency || amount === undefined || amount <= 0){
-     
-//     console.log("input details")
-//    }
-
-//    console.log(fromCurrency + toCurrency, amount)
-//     }catch(error){
-
-
-// console.error(error)
-
-// }
-
-// }
