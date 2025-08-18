@@ -47,7 +47,7 @@ function Navvbar() {
             
             {/*<Nav.Link href ="" onClick={LogoutUser}>logout</Nav.Link>*/}
             
-       <Nav.Link href ="/contact" ><span style={{color:"white"}}>Rate Calculator</span></Nav.Link>
+       <Nav.Link href ="/exchangeRateCalculate" ><span style={{color:"white"}}>Rate Calculator</span></Nav.Link>
    
    <Nav.Link href ="/deposit" ><span style={{color:"white"}}>Deposit</span></Nav.Link>
 

@@ -13,6 +13,7 @@ import CurrencyBalance from './components/CurrencyBalance'
 import TransactionHistory from './components/TransactionHistory'
 import TransactionDetailsById from './components/TransactionDetailsById'
 import CurrencyBalancePage from './components/CurrencyBalancePage'
+import ExchangeRateCalculate from './components/ExchangeRateCalculate'
 
 
 
@@ -54,6 +55,9 @@ function App() {
           <Route path = "/transactionDetailsById/:id" element = {<TransactionDetailsById />} />
           
            <Route path = "/currencyBalancePage" element = {<CurrencyBalancePage />} />
+
+           <Route path = "/exchangeRateCalculate" element = {<ExchangeRateCalculate />} />
+
           
         
 

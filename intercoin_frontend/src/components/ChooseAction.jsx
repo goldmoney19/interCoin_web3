@@ -31,9 +31,9 @@ function ChooseAction(){
             },
 
               {
-                id:"#",
+                id:"/exchangeRateCalculate",
                
-                text:"invoice",
+                text:"calculator",
             },
 
 

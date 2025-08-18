@@ -136,9 +136,7 @@ function Login(){
        
        
         </form>
-        <p>{email}</p>
-
-     <p>{password}</p> 
+       
 
        </Col>
       </Row>

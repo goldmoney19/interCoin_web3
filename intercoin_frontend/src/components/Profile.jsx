@@ -79,6 +79,13 @@ useEffect(() =>{
 
           </div>
           <br></br>
+
+           <br></br>
+
+            <div style={{border:'1px solid grey',color:"white",backgroundColor:"red", fontFamily:"EB Garamond,serif"}}>
+                    <Nav.Link href ="/exchangeRateCalculate" >Rate calculator</Nav.Link>
+
+          </div>
        
          
                     </div>
