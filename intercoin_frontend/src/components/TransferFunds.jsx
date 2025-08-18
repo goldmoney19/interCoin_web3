@@ -4,6 +4,8 @@ import axios from 'axios';
 import {Container, Row, Col, Nav,Card} from 'react-bootstrap'
 import "../App.css"
 import Cookies from "cookie-universal";
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 
 const cookies = new Cookies();
@@ -48,7 +50,7 @@ useEffect(() => {
 }, [])
 
 
-
+ const navigate = useNavigate();
 const handleTransfer = async (e) => {
     e.preventDefault();
          const senderId = cookies.get("user-id");
@@ -85,7 +87,8 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
       const response = await axios.post(" https://intercoin-web3.onrender.com/api/transfer", _dataa)
              
       console.log(response.data);
-
+     toast.success('Transfer Successful', {position:"top-left"});
+                                      navigate("/TransactionHistory");
 
     }catch(error){
 
