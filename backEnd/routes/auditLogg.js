@@ -6,7 +6,7 @@ import { auditingLog } from "../controller/auditLogg.js";
 
 const auditt = express.Router();
 
-route.post(auditingLog);
+auditt.post('/audit', auditingLog)
 
 
 

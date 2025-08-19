@@ -1,7 +1,7 @@
 import express from "express"
 import mongoose from "mongoose"
 import AuditLog from "../model/AuditLog.js";
-const UAParser = require('ua-parser-js');
+import * as UAParser from 'ua-parser-js'
 
 
 
@@ -15,6 +15,7 @@ try {
  const ipAddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
     // Use UAParser to get browser and device info from the User-Agent header.
+
     const parser = new UAParser(req.headers['user-agent']);
     const browser = parser.getBrowser().name || 'Unknown Browser';
     const deviceInfo = parser.getDevice().type || 'Desktop';
@@ -23,7 +24,7 @@ try {
     const country = 'Unknown'; 
     
  
-    const userId = localStorage.getItem("user-id") || null; 
+    const userId = null; 
 
     // Create a new document with the collected data.
     const newLog = new AuditLog({
