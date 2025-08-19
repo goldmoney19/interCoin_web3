@@ -84,9 +84,9 @@ try{
         </form>
 
         {response && (
-          <div className="mt-8 bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-500">
-            <h3 className="text-xl font-bold text-indigo-800 mb-2">Response</h3>
-            <p className="text-black leading-relaxed whitespace-pre-wrap font-sans">{response}</p>
+          <div >
+            <h3 >Response</h3>
+            <pstyle={{color:"black"}} >{response}</p>
           </div>
         )}
       </div>
