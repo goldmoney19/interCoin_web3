@@ -66,8 +66,9 @@ mongoose
      .catch((error) => console.log(error));
         // app.use(auditt);
 
-
-          app.use("/api",auditt, route);
+     
+app.use('/api', route);
+        
          
 
    

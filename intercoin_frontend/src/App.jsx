@@ -14,6 +14,7 @@ import TransactionHistory from './components/TransactionHistory'
 import TransactionDetailsById from './components/TransactionDetailsById'
 import CurrencyBalancePage from './components/CurrencyBalancePage'
 import ExchangeRateCalculate from './components/ExchangeRateCalculate'
+import InterCoinAi from './components/InterCoinAi'
 
 
 
@@ -58,7 +59,8 @@ function App() {
 
            <Route path = "/exchangeRateCalculate" element = {<ExchangeRateCalculate />} />
 
-          
+                     <Route path = "/interCoinAi" element = {<InterCoinAi />} />
+
         
 
 

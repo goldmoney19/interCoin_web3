@@ -5,6 +5,11 @@ import Transaction from "../model/Transaction.js";
 import express from "express"
 import mongoose from "mongoose"
 
+import dotenv from "dotenv";
+dotenv.config();
+
+const { LLM_API_KEY, LLM_API_URL } = process.env;
+
 
 
 
@@ -571,6 +576,50 @@ export const getTransactionsDetailsById = async(req, res) => {
   }
 }
 
+
+
+
+
+export const interAi =  async (req, res) => {
+    try {
+        const { question } = req.body;
+        if (!question) {
+            return res.status(400).json({ error: 'Question is required.' });
+        }
+
+        // --- Step 3: Call the LLM API securely from the backend ---
+        const llmPayload = {
+            contents: [{
+                parts: [{ text: question }]
+            }]
+        };
+
+        const llmResponse = await fetch(`${process.env.LLM_API_URL}?key=${process.env.LLM_API_KEY}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(llmPayload)
+        });
+
+        const llmResult = await llmResponse.json();
+
+        // Check for an error from the LLM API
+        if (llmResult.error) {
+            console.error('LLM API Error:', llmResult.error);
+            return res.status(llmResult.error.code || 500).json({
+                error: llmResult.error.message || 'An error occurred with the LLM API.'
+            });
+        }
+
+        const answer = llmResult?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+        // --- Step 4: Send the LLM's answer back to the React frontend ---
+        res.json({ answer });
+
+    } catch (error) {
+        console.error('Server error:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
 
 
 

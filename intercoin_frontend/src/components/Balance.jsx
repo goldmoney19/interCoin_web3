@@ -7,6 +7,7 @@ import CompleteProfile from './CompleteProfile';
 import ChooseAction from './ChooseAction';
 import CurrentRates from './CurrentRates';
 import CurrencyBalance from './CurrencyBalance';
+import InterCoinAi from './InterCoinAi';
 
 
 
@@ -49,7 +50,7 @@ function Balance(){
     <br></br>
     <br></br>
                <Row>
-               <CurrentRates />
+               <InterCoinAi />
               </Row>
 
                     </Container>
