@@ -64,10 +64,10 @@ mongoose
         });
      })
      .catch((error) => console.log(error));
-        app.use(auditt);
+        // app.use(auditt);
 
 
-          app.use("/api", route);
+          app.use("/api",auditt, route);
          
 
    
