@@ -19,6 +19,7 @@
     "express": "^5.1.0",
     "geoip-lite": "^1.4.10",
     "mongoose": "^8.17.1",
+    "ua-parser-js": "^2.0.4",
     "useragent": "^2.3.0"
   },
   "devDependencies": {
