@@ -582,6 +582,8 @@ export const getTransactionsDetailsById = async(req, res) => {
 
 export const interAi =  async (req, res) => {
     try {
+      console.log('LLM_API_URL:', process.env.LLM_API_URL);
+        console.log('LLM_API_KEY:', process.env.LLM_API_KEY);
         const { question } = req.body;
         if (!question) {
             return res.status(400).json({ error: 'Question is required.' });
