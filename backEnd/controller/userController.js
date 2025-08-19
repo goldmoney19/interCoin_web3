@@ -615,7 +615,7 @@ export const interAi =  async (req, res) => {
         const answer = llmResult?.candidates?.[0]?.content?.parts?.[0]?.text;
 
         // --- Step 4: Send the LLM's answer back to the React frontend ---
-        res.json({ answer });
+        res.json({ response: answer });
 
     } catch (error) {
         console.error('Server error:', error);
