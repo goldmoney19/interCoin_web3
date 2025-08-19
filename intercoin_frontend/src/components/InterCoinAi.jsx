@@ -35,7 +35,7 @@ try{
     const result = await backendResponse.json();
     console.log("Backend result:", result);
 
-   setResponse(result?.response || result?.message || JSON.stringify(result) || "No response returned.");
+   setResponse(result.answer || "No response returned.");
 
   } catch (error) {
     console.error('Error fetching LLM response:', error);
