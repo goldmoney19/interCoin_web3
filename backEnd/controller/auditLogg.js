@@ -1,7 +1,9 @@
 import express from "express"
 import mongoose from "mongoose"
 import AuditLog from "../model/AuditLog.js";
-import UAParser from 'ua-parser-js';
+import pkg from 'ua-parser-js';
+const UAParser = pkg;
+
 
 
 
