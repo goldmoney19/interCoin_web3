@@ -73,7 +73,7 @@ useEffect(() =>{
                                   
   <Row className='currencyBalancePageRow' >
 
-           <p style={{color:"white", fontSize:"18px", fontFamily:"EB Garamond,serif"
+           <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"
 }}>Wallet Balance</p>
 
            <Col className='.currencyBalancePageCol'> 

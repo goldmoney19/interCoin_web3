@@ -83,8 +83,15 @@ useEffect(() =>{
             <Container style={{border:"none", height:"680px", marginTop:"100px"}}>
 
                 <Row style={{border:"none", height:"660px"}}>
-                     <p style={{color:"white",fontSize:"20px",fontFamily:"EB Garamond,serif"}}> Transaction Details </p>
-                    <Col style={{color:"white",fontSize:"20px",border:"none",height:"620px"}} >
+                     <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"}}> Transaction Details </p>
+                    <Col style={{  fontFmily:"EB Garamond,serif",
+backgroundColor:" rgb(232, 232, 241)",
+  border:" 2px solid rgb(117, 65, 65)",
+  height:" 620px",
+  color: "rgb(3, 17, 17)",
+   margin:"40px",
+   boxShadow:" 4px 4px rgb(117, 65, 65)",
+   borderRadius: "12px"}} >
                     <table style={{border:"none", width:"100%", height:"600px"}}>
                 {transaction?(
                         <thead>

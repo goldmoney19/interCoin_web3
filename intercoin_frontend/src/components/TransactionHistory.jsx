@@ -81,10 +81,10 @@ useEffect(() =>{
            <Container className='transactionHistoryCon'>
 
             <Row>
-
+ <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"}}>Transaction History</p>
                { penthause? (
                 <Col>
-                    <p style={{fontFamily:"EB Garamond,serif"}}>Transaction History</p>
+                   
                     
                         
                              {penthause.map((item) => (
@@ -93,11 +93,11 @@ useEffect(() =>{
  <Nav.Link href ={`/transactionDetailsById/` +item._id} type='button'>
    
     <div style={{border:"1px solid white", height:"70px",borderRadius:"25px", 
-   marginTop:"30px", backgroundColor:"rgba(55, 2, 102, 0.2)"}}>
+   marginTop:"30px", backgroundColor:"rgba(55, 2, 102, 0.8)"}}>
       
       <Row>
           <Col xs = {6}>
-         <p style={{fontSize:"14px", fontFamily:"EB Garamond,serif"}}>{item.type}</p> 
+         <p style={{fontSize:"16px", fontFamily:"EB Garamond,serif"}}>{item.type}</p> 
          <p style={{fontSize:"12px", fontFamily:"EB Garamond,serif"}}>{item.timestamp}</p> 
           </Col>
 
