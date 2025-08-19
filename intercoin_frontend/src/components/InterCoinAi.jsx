@@ -86,7 +86,7 @@ try{
         {response && (
           <div >
             <h3 >Response</h3>
-            <pstyle={{color:"black"}} >{response}</p>
+            <p style = {{color:"black"}} >{response}</p>
           </div>
         )}
       </div>
