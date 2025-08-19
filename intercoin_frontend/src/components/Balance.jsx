@@ -46,9 +46,6 @@ function Balance(){
                <ChooseAction />
               </Row>
 
-   <br></br>
-    <br></br>
-    <br></br>
                <Row>
                <InterCoinAi />
               </Row>
