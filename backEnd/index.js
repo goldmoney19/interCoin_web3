@@ -3,6 +3,7 @@ import mongoose from "mongoose"
 import bodyParser from "body-parser"
 import dotenv from "dotenv"
 import route from "./routes/userRoutes.js"
+import auditt from "./routes/auditLogg.js"
 
 
 import cors from "cors"
@@ -63,7 +64,7 @@ mongoose
         });
      })
      .catch((error) => console.log(error));
-
+        app.use(auditt);
 
 
           app.use("/api", route);
