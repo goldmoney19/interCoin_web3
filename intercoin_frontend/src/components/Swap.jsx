@@ -2,6 +2,7 @@ import React from 'react'
 import {useState , useEffect} from 'react'
 import axios from 'axios';
 import {Container, Row, Col, Nav,Card} from 'react-bootstrap'
+import "../App.css"
 
 
 import toast from 'react-hot-toast';
@@ -96,15 +97,15 @@ useEffect(() =>{
 
 
          const swapAmount = parseFloat(amount);
-        if (isNaN(swapAmount) || swapAmount <= 0) {
+        // if (isNaN(swapAmount) || swapAmount <= 0) {
 
-            console.log('Please enter a valid amount greater than zero.');
-                        toast.error('Please enter a valid amount greater than zero.');
+        //     console.log('Please enter a valid amount greater than zero.');
+        //                 toast.error('Please enter a valid amount greater than zero.');
 
-            // setMessageType('danger');
-            setLoading(false);
-            return;
-        }
+        //     // setMessageType('danger');
+        //     setLoading(false);
+        //     return;
+        // }
         
 
         if(fromCurrency === toCurrency){
@@ -126,7 +127,7 @@ useEffect(() =>{
                 amount: swapAmount
             };
 
-             const response = await axios.post(" https://intercoin-web3.onrender.com/api/swap", swapData)
+             const response = await axios.post(" http://localhost:8000/api/swap", swapData)
 
              console.log(response.data)
               toast.success('Swap Successful', {position:"top-left"});
@@ -154,9 +155,9 @@ toast.error('Swap failed. Please try again.');
                 <Container fluid className='swapCon'>
 
                 <Row className='swapRow'>
-
+ <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)"}}>Swap</p>
                   <Col className='swapCol'> 
-         <p style={{fontWeight:"bold"}}>Swap</p>
+        
 
         {wallet && wallet.balances ? (
           <form onSubmit={handleSwap}>
@@ -202,7 +203,7 @@ toast.error('Swap failed. Please try again.');
          <br></br>
          <br></br>
    <button type="submit" className='btn btn-outline-success btn-sm'
-    style = {{border:"1px solid white", width:"99px",color:'white', backgroundColor:"rgba(37, 55, 95, 0.6)",marginTop:"30px",borderRadius:"12px",paddingLeft:"7px"}} 
+    style = {{border:"1px solid white", width:"99px",color:'white', backgroundColor:"rgba(0, 12, 12, 1)",marginTop:"30px",borderRadius:"12px",paddingLeft:"7px"}} 
     onClick={handleSwap}
     disabled = {loading}
     >{loading ?'wait, sending...' : 'send'}</button>

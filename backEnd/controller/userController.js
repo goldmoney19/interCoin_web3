@@ -164,12 +164,17 @@ export const getBalanceByUserId = async(req, res) => {
 
 export const makeDeposit = async(req, res) => {
 
+
+        const session = await mongoose.startSession();
+    session.startTransaction();
+
+         
          try {
 
     const {userId,currency, amount } = req.body
 
     if(!userId || !currency || !amount === undefined || amount <= 0){
-
+            await session.abortTransaction();
          res.status(400).json({message:"invalid deposit data provided"})
     }
 
@@ -184,7 +189,7 @@ export const makeDeposit = async(req, res) => {
 )
 
 if(!updatedWallet){
-
+     await session.abortTransaction();
     res.status(400).json({message:"Wallet not found and could not be created."})
 }
 
@@ -199,16 +204,16 @@ const newTransaction = new Transaction({
             amountReceived: amount,
             rate: 1, 
             type: 'deposit',
-            status: 'completed',
+            status: 'successful',
          
         })
 
-        await newTransaction.save();
-
+        await newTransaction.save({session});
+  await session.commitTransaction();
      res.status(200).json({ message: "Deposit successful", updatedWallet, newTransaction });
     }
     catch(error){
-
+await session.abortTransaction();
      res.status(500).json({ errorMessage: 'Server error during deposit.', details: error.message });
 
     }
@@ -267,28 +272,29 @@ export const swapFunds = async (req, res) => {
         cXAF: 990,
         USDx: 1.09
     }
-
-
-    }
+}
      // Start a database transaction to ensure atomicity
-    // const session = await mongoose.startSession();
-    // session.startTransaction();
+    
+    
+    
+     const session = await mongoose.startSession();
+    session.startTransaction();
 try{
    const {userId, fromCurrency, toCurrency, amount} = req.body
 
    if(!userId || !toCurrency || !fromCurrency || amount === undefined || amount <= 0){
    
-    // await session.abortTransaction();
+    await session.abortTransaction();
        return res.status(400).json({ message: "swap input details is incorrect"});
       
      }
 
     //  const findWallet = await findOne({userId:userId, currency:fromCurrency}).session(session);
-     const findWallet = await Wallet.findOne({ userId: userId })
+     const findWallet = await Wallet.findOne({ userId: userId }).session(session)
 
         // Check if the wallet exists and has the required currency balance
         if (!findWallet || !findWallet.balances[fromCurrency] || findWallet.balances[fromCurrency] < amount) {
-            // await session.abortTransaction();
+            await session.abortTransaction();
             return res.status(400).json({ message: `Insufficient funds in ${fromCurrency} wallet or wallet not found.` });
         }
 
@@ -296,7 +302,7 @@ try{
          const fx_rate = FX_RATES[fromCurrency][toCurrency];
 
          if(!fx_rate){
-    //  await session.abortTransaction();
+     await session.abortTransaction();
             res.status(404).json({message:"currency pair does not exist"})
          }
 
@@ -311,7 +317,7 @@ try{
                  )
 
                   if (!updateFromWallet) {
-            // await session.abortTransaction();
+             await session.abortTransaction();
             return res.status(500).json({ message: "Failed to update the sender's wallet." });
         }
 
@@ -325,7 +331,7 @@ try{
 
         if(!updateToWallet ){
 
-            //  await session.abortTransaction();
+             await session.abortTransaction();
             return res.status(500).json({ message: "Failed to update the receiver's wallet." });
         }
 
@@ -339,24 +345,26 @@ try{
             amountReceived: convertedRates,
             rate: fx_rate,
             type: 'swap',
-            status: 'completed'
+            status: 'Successful'
         });
 
-        await newTransaction.save();
-                // await newTransaction.save({ session });
+                await newTransaction.save({ session });
 
 
         // Commit the transaction to save all changes
         // await session.commitTransaction();
         // session.endSession();
-
+   await session.commitTransaction();
         res.status(200).json({ message: "Swap successful", updateFromWallet, updateToWallet , newTransaction});
 
 
     }catch(error){
 
-
+await session.abortTransaction();
 console.error(error)
+
+}finally{
+      session.endSession()
 
 }
 
@@ -395,18 +403,24 @@ export const transferFunds = async (req, res) => {
 
 
     }
+
+
+     const session = await mongoose.startSession();
+    session.startTransaction();
             
       
     try{
                  const {senderId, receiverId, amount, fromCurrency, toCurrency} = req.body
              
         if(!senderId || !receiverId, !fromCurrency, !toCurrency, !amount == undefined || amount <= 0 ){
+      await session.abortTransaction();
 
               return res.status(400).json({message:"invalid transfer details"})
         }
 
 
         if(senderId === receiverId){
+                  await session.abortTransaction();
 
              return res.status(400).json({message:"cannot send transfer to yourself"})
         }
@@ -414,12 +428,14 @@ export const transferFunds = async (req, res) => {
         const senderWallet = await Wallet.findOne({userId:senderId})
 
         if(!senderWallet){
+                      await session.abortTransaction();
 
              return res.status(400).json({message:"sender id not found"})
              
         }
 
         if(senderWallet.balances[fromCurrency] < amount || senderWallet.balances[fromCurrency] === undefined){
+                await session.abortTransaction();
 
       return res.status(400).json({message:`you have insufficient balance in ${fromCurrency} account`})
 
@@ -432,11 +448,13 @@ export const transferFunds = async (req, res) => {
 
 
 
-const receiverWallet = await Wallet.findOne({ userId: receiverId})
+const receiverWallet = await Wallet.findOne({ userId: receiverId}).session(session)
 
 
               if (!receiverWallet) {
             // A transaction must be an intra-app transfer, so the receiver must have a wallet.
+                await session.abortTransaction();
+
             return res.status(404).json({ message: "Receiver not found." });
         }
                        
@@ -452,6 +470,7 @@ const receiverWallet = await Wallet.findOne({ userId: receiverId})
 
 
         if(!updateSenderWallet){
+      await session.abortTransaction();
 
  return res.status(404).json({message:"faild to update sender wallet"})
 
@@ -482,8 +501,8 @@ const receiverWallet = await Wallet.findOne({ userId: receiverId})
             status: 'completed'
         });
 
-      await newTransaction.save();
-
+      await newTransaction.save({session});
+await session.commitTransaction();
  res.status(200).json({ 
             message: "Transfer successful.", 
             transaction: newTransaction
@@ -491,8 +510,8 @@ const receiverWallet = await Wallet.findOne({ userId: receiverId})
         });
 
     } catch(error){
-
-console.log({message:`bad waka .${error}`})
+await session.abortTransaction();
+console.log({message:`failed transfer .${error}`})
     }
 
 }

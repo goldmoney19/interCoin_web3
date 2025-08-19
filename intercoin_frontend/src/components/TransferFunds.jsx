@@ -3,12 +3,12 @@ import {useState , useEffect} from 'react'
 import axios from 'axios';
 import {Container, Row, Col, Nav,Card} from 'react-bootstrap'
 import "../App.css"
-import Cookies from "cookie-universal";
+
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 
-const cookies = new Cookies();
+
 
 
 
@@ -53,7 +53,7 @@ useEffect(() => {
     const fetchCurrency = async () => {
 
                 try{
-           const response = await axios.get(" https://intercoin-web3.onrender.com/api/getCurrency")
+           const response = await axios.get("https://intercoin-web3.onrender.com/api/getCurrency")
                        
               // console.log(response.data)
 
@@ -77,7 +77,7 @@ const handleTransfer = async (e) => {
 
     setLoading(true)
 
-         const senderId = cookies.get("user-id");
+           const senderId =  localStorage.getItem("user-id")
 
          if (!senderId ) {
                       toast.error('User not authenticated. Please log in.');
@@ -112,7 +112,7 @@ const handleTransfer = async (e) => {
 
 console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
 
-      const response = await axios.post(" https://intercoin-web3.onrender.com/api/transfer", _dataa)
+      const response = await axios.post("https://intercoin-web3.onrender.com/api/transfer", _dataa)
              
       console.log(response.data);
      toast.success('Transfer Successful', {position:"top-left"});
@@ -136,9 +136,9 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
                   <Container fluid className='transferCon'>
                   
                                 <Row className='transferRow'>
-                
+                         <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)"}}>Transfer</p>
+
                                   <Col className='transferCol'> 
-         <p>Transfer</p>
 
          { wallet && wallet.balances ?(
            
@@ -147,7 +147,7 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
             <input type='text'
          value={receiverId}
          placeholder='receiver id'
-         style={{backgroundColor:"white", color:"black", borderRadius:"12px",paddingLeft:"7px"}}
+         style={{backgroundColor:"white", color:"black", borderRadius:"12px",paddingLeft:"7px", marginTop:"40px"}}
          onChange={(e) =>setReceiverId(e.target.value)}
          />
 
@@ -206,7 +206,7 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
          <br></br>
          <br></br>
      <button type="submit" className='btn btn-outline-success btn-sm' 
-              style={{border:"1px solid white", width:"99px",backgroundColor:"rgba(37, 55, 95, 0.6)", color:"white", marginTop:"30px",borderRadius:"12px"}}
+              style={{border:"1px solid white", width:"99px",backgroundColor:"rgba(0, 12, 12, 1)", color:"white", marginTop:"30px",borderRadius:"12px"}}
                 onClick={handleTransfer}
                 disabled = {loading}
                 ><Nav.Link>{loading ? 'sending...' :'send'}</Nav.Link>

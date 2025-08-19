@@ -50,7 +50,7 @@ function CurrencyBalance(){
                                   
   <Row className='currencyBalanceRow' >
 
-           <p style={{color:"white", fontSize:"18px", fontFamily:"EB Garamond,serif"
+           <p style={{color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"20px"
 }}>Wallet Balance</p>
 
            <Col className='currencyBalanceCol'> 

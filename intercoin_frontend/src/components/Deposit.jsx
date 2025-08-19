@@ -70,6 +70,11 @@ useEffect(() =>{
             setLoading(false);
         }
 
+
+
+
+        
+
         try{
 
                  const _data = {
@@ -116,9 +121,9 @@ useEffect(() =>{
       <Container fluid className='depositCon'>
   
                 <Row className='depositRow'>
+         <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)"}}> deposit funds</p>
 
                   <Col className='depositCol'> 
-         <p style={{fontWeight:"bold",paddingBottom:"30px"}}> deposit funds</p>
 
 
        <Form onSubmit={handleDeposit}>
@@ -149,7 +154,7 @@ onChange={(e) =>setAmount(e.target.value)}
 <br></br>
 <br></br>
      <button type="submit" className='btn btn-outline-success btn-sm'
-     style = {{border:"1px solid white", width:"99px",color:'white', backgroundColor:"rgba(37, 55, 95, 0.6)", borderRadius:"12px",paddingLeft:"7px"}} 
+     style = {{border:"1px solid white", width:"99px",color:'white', backgroundColor:"rgba(0, 12, 12, 1)", borderRadius:"12px",paddingLeft:"7px"}} 
 
      onClick={handleDeposit}
      disabled = {loading}

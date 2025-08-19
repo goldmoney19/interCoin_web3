@@ -90,9 +90,18 @@ function Login(){
              
                    <Row style={{marginTop:"90px", height:"450px"}}>
              
-                     <Col >
+                     <Col style={{fontFamily:"EB Garamond,serif",
+  border: "none",
+  height:" 440px",
+  marginTop: "50px",
+    margin:"40px",
+  color: "black",
+  backgroundColor: "rgb(232, 232, 241)",
+  boxShadow:" 4px 4px rgb(117, 65, 65)",
+   borderRadius: "12px"
+}}>
         <br></br>
-         <h2 style={{color:"white"}}>Login</h2>
+         <h2 style={{color:"black"}}>Login</h2>
         <form onSubmit={handleSubmit}>
 
          <label></label><br></br>
@@ -138,7 +147,7 @@ function Login(){
             <br></br>
               <br></br>
 
-          <span style={{textAlign:"left", color:"white"}}>if you don't have an account :</span> <button className = 'btn btn-sm btn-warning'
+          <span style={{textAlign:"left", color:"black"}}>if you don't have an account :</span> <button className = 'btn btn-sm btn-warning'
            style={{backgroundColor:"rgba(26, 18, 92, 0.4)", border:"1px solid rgba(26, 18, 92, 0.4)"}}> <Nav.Link href ="/register"  style = {{color:'white'}}>SignUp</Nav.Link></button> 
         <br></br>
        

@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   text-align: center;
-   background-color:black;
+   background-color:rgb(243, 234, 234);
 }
 
 
@@ -218,11 +218,13 @@ border: none;
   height: 500px;
   margin-top: 50px;
   color: azure;
+  
 }
 
 .swapCon{
   margin-top: 220px;
   height: 700px;
+  
 }
 
 .depositRow{
@@ -334,13 +336,13 @@ height: 100%;
   width: 100%;
    border: none;
    margin-top: 0px;
-   background-color: black;
+   background-color: rgb(255, 255, 255);
 } 
 
 
 .balance_con{
 
-   background-color:black;
+   background-color:rgb(255, 255, 255);
   border:none;
 min-height: 700px;
   width: 100%;
@@ -371,7 +373,7 @@ margin-top: 80px;
 .displayBalanceKeys{
 
   color: white;
-   background-color:rgba(60, 3, 110, 0.2);
+   background-color:rgba(60, 3, 110, 0.8);
     margin-top:130px;
     font-size: 17px;
      font-family:"EB Garamond,serif";
@@ -383,7 +385,7 @@ margin-top: 80px;
 .displayBalanceValue{
   font-family:"EB Garamond,serif";
   color: white;
-   background-color:rgba(52, 2, 97, 0.2);
+   background-color:rgba(52, 2, 97, 0.8);
     height: 30px;
 }
 
@@ -429,7 +431,7 @@ box-shadow: 2px 2px white;
 .profileSetCol{
 
   color:white; 
-  background-color:rgba(122, 42, 4, 0.15); 
+  background-color:rgba(117, 43, 8, 0.7); 
   min-height:100px;
 border-radius: 12px;
 border:none;
@@ -483,11 +485,11 @@ border: none;
 .chooseActionCol{
 
    border-radius: 0px;
-   background-color:rgba(0, 0, 0, 0.918);
+   background-color:rgba(0, 0, 0, 0.2);
     min-height:90px;
     font-family:"EB Garamond,serif";
     padding-top:27px;
-    border: 1px solid rgba(106, 8, 192,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
      box-shadow: 1.5px 1.5px rgba(106, 8, 192,0.2);
      width: 40px;
 }
@@ -511,7 +513,7 @@ border: none;
     border:none;
  width:90%;
  height: 150px;
- background-color: rgba(55, 10, 87,0.3);
+ background-color: rgba(26, 3, 43, 0.8);
  color:white;
  border-radius:13px ;
    box-shadow: 2px 2px white;;
@@ -525,22 +527,29 @@ border: none;
   border:none;
   height: 500px;
     margin-top: 50px;
-    
-
+   
+   
 }
 
 .swapCol{
     font-family:"EB Garamond,serif";
+background-color: rgb(232, 232, 241);
+  border: 2px solid rgb(117, 65, 65);
+  height: 370px;
+  color: rgb(3, 17, 17);
+   margin:40px;
+   box-shadow: 4px 4px rgb(117, 65, 65);
+   border-radius: 12px;
 
-  border: none;
-  height: 500px;
-  margin-top: 50px;
-  color: azure;
+ 
 }
 
 .swapCon{
   margin-top: 140px;
-  height: 700px;
+  height: 500px;
+    border: none;
+    width: 95%;
+
 }
 
 .depositRow{
@@ -555,9 +564,13 @@ border: none;
 .depositCol{
    font-family:"EB Garamond,serif";
   border: none;
-  height: 500px;
+  height: 300px;
   margin-top: 50px;
-  color: azure;
+  margin:40px;
+  color: black;
+  background-color: rgb(232, 232, 241);
+  box-shadow: 4px 4px rgb(117, 65, 65);
+   border-radius: 12px;
 }
 
 .depositCon{
@@ -578,9 +591,14 @@ border: none;
 .transferCol{
 font-family:"EB Garamond,serif";
   border: none;
-  height: 500px;
+  height: 440px;
   margin-top: 50px;
-  color: azure;
+    margin:40px;
+  color: black;
+  background-color: rgb(232, 232, 241);
+  box-shadow: 4px 4px rgb(117, 65, 65);
+   border-radius: 12px;
+}
 }
 
 .transferCon{
