@@ -10,7 +10,7 @@ const auditLogSchema = new mongoose.Schema({
    deviceInfo:String,
   country: String,
   browser:String,
-   timestamp: Date()
+   timestamp:  { type: Date, default: Date.now },
 
   
 
