@@ -155,7 +155,8 @@ toast.error('Swap failed. Please try again.');
                 <Container fluid className='swapCon'>
 
                 <Row className='swapRow'>
- <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)"}}>Swap</p>
+     <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"}}> swap funds</p>
+
                   <Col className='swapCol'> 
         
 

@@ -136,7 +136,7 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
                   <Container fluid className='transferCon'>
                   
                                 <Row className='transferRow'>
-                         <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)"}}>Transfer</p>
+  <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"}}>Transfer Funds</p>
 
                                   <Col className='transferCol'> 
 

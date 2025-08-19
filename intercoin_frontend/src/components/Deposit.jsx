@@ -121,7 +121,7 @@ useEffect(() =>{
       <Container fluid className='depositCon'>
   
                 <Row className='depositRow'>
-         <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)"}}> deposit funds</p>
+         <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"}}> deposit funds</p>
 
                   <Col className='depositCol'> 
 

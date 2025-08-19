@@ -148,7 +148,7 @@ function Login(){
               <br></br>
 
           <span style={{textAlign:"left", color:"black"}}>if you don't have an account :</span> <button className = 'btn btn-sm btn-warning'
-           style={{backgroundColor:"rgba(26, 18, 92, 0.4)", border:"1px solid rgba(26, 18, 92, 0.4)"}}> <Nav.Link href ="/register"  style = {{color:'white'}}>SignUp</Nav.Link></button> 
+           style={{backgroundColor:"rgba(0, 12, 12, 1)", border:"1px solid rgba(26, 18, 92, 0.4)"}}> <Nav.Link href ="/register"  style = {{color:'white'}}>SignUp</Nav.Link></button> 
         <br></br>
        
        
