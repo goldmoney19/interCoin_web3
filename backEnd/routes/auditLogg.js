@@ -1,7 +1,7 @@
 import express from "express"
 
 
-import { auditingLog } from "../controller/auditLogg";
+import { auditingLog } from "../controller/auditLogg.js";
 
 
 const auditt = express.Router();
