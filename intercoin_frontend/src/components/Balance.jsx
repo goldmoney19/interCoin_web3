@@ -47,9 +47,17 @@ function Balance(){
                <ChooseAction />
               </Row>
 
+              <br></br>
+    <br></br>
+<p style={{paddingLeft:"30px",textAlign:"left",fontWeight:"bold",color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"20px"
+}}>Rate Conversion</p>
+    <Row>
+               <ExchangeRateCalculate />
+              </Row>
    <br></br>
     <br></br>
-    <br></br>
+ <p style={{paddingLeft:"30px",textAlign:"left",fontWeight:"bold",color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"20px"
+}}>Transaction History</p>
                <Row>
                <TransactionHistory />
               </Row> 
