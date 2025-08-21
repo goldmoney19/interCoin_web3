@@ -336,7 +336,7 @@ try{
      }
 
     //  const findWallet = await findOne({userId:userId, currency:fromCurrency}).session(session);
-     const findWallet = await Wallet.findOne({ userId: userId }).session(session)
+     const findWallet = await UserWallet2.findOne({ userId: userId }).session(session)
 
         // Check if the wallet exists and has the required currency balance
         if (!findWallet || !findWallet.balances[fromCurrency] || findWallet.balances[fromCurrency] < amount) {
@@ -356,8 +356,8 @@ try{
 
         const updateFromWallet = await Wallet.findOneAndUpdate(
 
-                {userId: userId},
-                {$inc : { [`balances.${fromCurrency}`]: -amount} },
+                {userId: userId, currency:fromCurrency},
+                {$inc : { balances: -amount} },
                 { new: true}
 
                  )
@@ -367,10 +367,10 @@ try{
             return res.status(500).json({ message: "Failed to update the sender's wallet." });
         }
 
-        const updateToWallet = await Wallet.findOneAndUpdate(
+        const updateToWallet = await userWallet2.findOneAndUpdate(
 
-            {userId:userId},
-            { [`balances.${toCurrency}`] : convertedRates},
+            {UserId:userId, currency:toCurrency},
+            { $inc: {balance: convertedRates}},
             { new: true, upsert: true}
 
         )
@@ -471,7 +471,7 @@ export const transferFunds = async (req, res) => {
              return res.status(400).json({message:"cannot send transfer to yourself"})
         }
 
-        const senderWallet = await Wallet.findOne({userId:senderId})
+        const senderWallet = await UserWallet2.findOne({userId:senderId, currency:fromCurrency})
 
         if(!senderWallet){
                       await session.abortTransaction();
@@ -480,10 +480,10 @@ export const transferFunds = async (req, res) => {
              
         }
 
-        if(senderWallet.balances[fromCurrency] < amount || senderWallet.balances[fromCurrency] === undefined){
+        if(senderWallet.balance < amount || senderWallet.balance === undefined){
                 await session.abortTransaction();
 
-      return res.status(400).json({message:`you have insufficient balance in ${fromCurrency} account`})
+      return res.status(400).json({message:`you have insufficient balance in ${senderWallet.balance} account`})
 
         }
 
@@ -494,7 +494,7 @@ export const transferFunds = async (req, res) => {
 
 
 
-const receiverWallet = await Wallet.findOne({ userId: receiverId}).session(session)
+const receiverWallet = await UserWallet2.findOne({ userId: receiverId, currency:toCurrency}).session(session)
 
 
               if (!receiverWallet) {
@@ -506,10 +506,10 @@ const receiverWallet = await Wallet.findOne({ userId: receiverId}).session(sessi
                        
            
 
-        const updateSenderWallet = await Wallet.findOneAndUpdate(
+        const updateSenderWallet = await UserWallet2.findOneAndUpdate(
 
-            {userId:senderId},
-            {$inc : {[`balances.${fromCurrency}`] : -amount}},
+            {userId:senderId, currency:toCurrency},
+            {$inc : {balances : -amount}},
             { new: true }
             
         )
@@ -523,10 +523,10 @@ const receiverWallet = await Wallet.findOne({ userId: receiverId}).session(sessi
         }
 
 
-        const updateReceiverWallet = await Wallet.findOneAndUpdate(
+        const updateReceiverWallet = await UserWallet2.findOneAndUpdate(
 
-                 {userId:receiverId},
-                  { $inc : {[`balances.${toCurrency}`] : convertedAmount}},
+                 {userId:receiverId, currency:toCurrency},
+                  { $inc : {balances: convertedAmount}},
             { new: true, upsert: true}
         )
 
