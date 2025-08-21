@@ -104,7 +104,9 @@ export const login = async(req, res) => {
 
          }
 
-       
+       console.log("existingUser:", existingUser);
+console.log("existingUser._id:", existingUser._id);
+
         console.log(existingUser._id)
            res.status(200).json({user:existingUser, userId:existingUser._id, useRole:existingUser.role, useEmail:existingUser.email});
           
