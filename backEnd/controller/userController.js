@@ -71,7 +71,6 @@ export const createUser = async(req, res) =>{
         });
 
 
-          res.status(200).json({message:"user created successfully", savedData, insertedWallets });
 
     }catch(error){
      res.status(500).json({errorMessage:error.message})
@@ -94,18 +93,20 @@ export const login = async(req, res) => {
 
          if(!existingUser){
 
-            throw new error("email dosent exist");
+            throw new Error("email dosent exist");
          }
       
          const isPasswordValid = await bcrypt.compare(password, existingUser.password);
 
          if(!isPasswordValid){
           console.log('password not valid');
-          throw new error("password not valid");
+          throw new Error("password not valid");
 
          }
 
-       
+       console.log("existingUser:", existingUser);
+console.log("existingUser._id:", existingUser._id);
+
         console.log(existingUser._id)
            res.status(200).json({user:existingUser, userId:existingUser._id, useRole:existingUser.role, useEmail:existingUser.email});
           
