@@ -47,19 +47,9 @@ function Balance(){
                <ChooseAction />
               </Row>
 
-<p style={{paddingLeft:"20px",paddingTop:"40px",textAlign:"left",fontWeight:"normal",
-       fontSize:"20px", fontFamily: "EB Garamond,serif", textShadow:"2px 2px rgba(223, 190, 190, 1)", 
-       color:"black"}}> Currency conversion</p>
-
-            <Row>
-               <ExchangeRateCalculate />
-              </Row>
-
-              <p style={{paddingLeft:"20px",paddingTop:"10px",textAlign:"left",fontWeight:"normal",
-       fontSize:"20px", fontFamily: "EB Garamond,serif", textShadow:"2px 2px rgba(223, 190, 190, 1)", 
-       color:"black"}}> Transaction History</p>
-  
-
+   <br></br>
+    <br></br>
+    <br></br>
                <Row>
                <TransactionHistory />
               </Row> 
