@@ -5,7 +5,6 @@ import dotenv from "dotenv"
 import route from "./routes/userRoutes.js"
 import auditt from "./routes/auditLogg.js"
 import wallet2route from "./routes/wallet2Routes.js"
-import upload from "./configuration/multerConfig.js"
 
 import cors from "cors"
 import cookieParser from "cookie-parser"
