@@ -27,20 +27,20 @@ const currencies = ['cNGN', 'cXAF', 'USDx', 'EURx'];
 
 
 
-useEffect(() =>{
+// useEffect(() =>{
     
 
-              const user =  localStorage.getItem("user-id")
+//               const user =  localStorage.getItem("user-id")
 
-               if(user === null){
+//                if(user === null){
 
-                navigate("/login")
-               }else{
+//                 navigate("/login")
+//                }else{
 
-                setIsLogged(true)
-               }
+//                 setIsLogged(true)
+//                }
 
-         },[navigate] )
+//          },[navigate] )
 
 
 

@@ -3,6 +3,10 @@ import {useState , useEffect} from 'react'
 import Balance from './Balance'
 import "../App.css"
 import {Container, Row, Col, Nav,Card} from 'react-bootstrap'
+import send from '../assets/sendMoney.png'
+import deposit from '../assets/depositMoney.png'
+import swap from '../assets/swapMoney.png'
+import withdraw from '../assets/withdrawMoney.png'
 
 
 
@@ -14,26 +18,26 @@ function ChooseAction(){
      const weOffer_info = [
 
             {   id:"/deposit",
-                
+                 image:deposit,
              text:"Deposit",
             },
 
             {
                 id:"/swap",
-               
+                 image:swap,
                 text:"swap",
             },
 
             {
                 id:"/transfer_funds",
-               
+                image:send,
                 text:"transfer",
             },
 
               {
                 id:"/exchangeRateCalculate",
-               
-                text:"calculator",
+                image:withdraw,
+                text:"withdraw",
             },
 
 
@@ -43,20 +47,21 @@ function ChooseAction(){
 
     return (
                 <div className='homeContainer'> 
-          
+           
  <Row className='chooseActionRow justify-content-center' >
                         {           
   weOffer_info.map((item) => (  
-    <Col xs = {6} sm={3} className='chooseActionCol ' >
-               
+    <Col xs = {2} sm={4} className='chooseActionCol ' >
+               <Nav.Link href ={item.id} > <img src = {item.image} style={{width:"30px",height:"28px"}} /></Nav.Link>
                    
                     
-      <button 
+      {/* <button 
        className='chooseActionbtn'
        >
         <Nav.Link href ={item.id} >{item.text}</Nav.Link></button>
-                                    
+                                     */}
                                   
+    <p style={{paddingTop:"25px",fontSize:"12px",paddingLeft:"0px"}}>{item.text}</p>
         
     </Col>
       )) } 

@@ -35,7 +35,7 @@ try{
     const result = await backendResponse.json();
     console.log("Backend result:", result);
 
-   setResponse(result?.response || result?.message || JSON.stringify(result) || "No response returned.");
+   setResponse(result.answer || "No response returned.");
 
   } catch (error) {
     console.error('Error fetching LLM response:', error);
@@ -48,13 +48,7 @@ try{
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white shadow-xl rounded-2xl p-6 md:p-10 w-full max-w-2xl transform transition-all hover:scale-105 duration-300">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-center text-indigo-700 mb-6 font-sans">
-          Intercoin AI Assistant
-        </h1>
-        <p className="text-center text-gray-600 mb-8 leading-relaxed">
-          Ask me questions about currency conversion, market rates, and more.
-        </p>
-
+       
         <form onSubmit={handleAsk} className="flex flex-col gap-4">
           <textarea
             className="w-full h-24 p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 resize-none font-sans text-gray-800 placeholder-gray-400"
@@ -84,9 +78,9 @@ try{
         </form>
 
         {response && (
-          <div className="mt-8 bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-500">
-            <h3 className="text-xl font-bold text-indigo-800 mb-2">Response</h3>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-wrap font-sans">{response}</p>
+          <div >
+            <h3 >Response</h3>
+            <p style = {{color:"black"}} >{response}</p>
           </div>
         )}
       </div>

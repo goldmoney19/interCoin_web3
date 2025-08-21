@@ -6,6 +6,7 @@ import "../App.css"
 import Cookies from "cookie-universal";
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import rate from '../assets/swapImg.png'
 
 
 
@@ -29,20 +30,20 @@ function ExchangeRateCalculate({ onSwapSuccess }){
     // const [loading, setLoading] = useState(false);
 
 
-useEffect(() =>{
+// useEffect(() =>{
     
 
-              const user =  localStorage.getItem("user-id")
+//               const user =  localStorage.getItem("user-id")
 
-               if(user === null){
+//                if(user === null){
 
-                navigate("/login")
-               }else{
+//                 navigate("/login")
+//                }else{
 
-                setIsLogged(true)
-               }
+//                 setIsLogged(true)
+//                }
 
-         },[navigate] )
+//          },[navigate] )
 
 
 
@@ -177,20 +178,20 @@ useEffect(() =>{
     return (
                 <div className='homeContainer'> 
 
-                <Container fluid className='swapCon'>
 
-                <Row className='swapRow'>
+                <Row className='rateRow'>
 
-                  <Col className='swapCol'> 
-         <p style={{fontWeight:"bold"}}>Rate Calculator</p>
+                  <Col className='rateCol'> 
 
         {wallet && wallet.balances ? (
           <form onSubmit={handleSwap}>
          
-                  <label>From currency : </label> <select
-                   style={{backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
-                   value={fromCurrency}
-                   onChange={(e) =>setFromCurrency(e.target.value)}>
+                 
+                   <select
+ style={{height:"35px",boxShadow:"2px 2px grey",backgroundColor:"white", color:"black", 
+  marginTop:"0px", borderRadius:"12px",paddingLeft:"7px"}}
+ value={fromCurrency}
+ onChange={(e) =>setFromCurrency(e.target.value)}>
             
              {Object.keys(wallet.balances).map((currency) => (
                   <option key={currency} value={currency}>
@@ -199,11 +200,31 @@ useEffect(() =>{
                 ))}
          
                    </select>
-         <br></br>
-         <br></br>
 
-          <label>To currency : </label>  <select
-              style={{backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
+                   <input type='Number'
+         value={amount}
+         onChange={(e) =>setAmount(e.target.value)}
+         placeholder='Enter Amount'
+        
+style={{height:"35px",boxShadow:"2px 2px grey",marginLeft:"25px",width:"100px",
+  backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",
+  paddingLeft:"7px"}}
+         />
+         <br></br>
+        <img src = {rate} style={{alignSelf:"flex-start", height:"30px",width:"30px",
+    marginTop:"20px",marginRight:"10px"}}/> 
+          <button   type="submit" className='btn btn-outline-success btn-sm'
+    style = {{border:"1px solid white", width:"109px",height:"45px",color:'black', 
+      backgroundColor:"rgba(55, 137, 175, 0.6)",marginTop:"20px",borderRadius:"12px",
+      paddingLeft:"7px", fontSize:"17px"}} 
+    onClick={handleSwap}><Nav.Link>calculate</Nav.Link></button>
+
+
+<br></br>
+           <select
+              style={{height:"35px",boxShadow:"2px 2px grey",backgroundColor:"white", 
+                color:"black", marginTop:"0px", borderRadius:"12px",paddingLeft:"7px"}}
+
                    value={toCurrency}
                    onChange={(e) =>setToCurrency(e.target.value)}>
           
@@ -216,22 +237,17 @@ useEffect(() =>{
               
          
                    </select>
+
+   <span style={{paddingLeft:"15px",}}><input
+    disabled
+   style={{height:"35px",boxShadow:"2px 2px grey",
+   marginLeft:"15px",width:"100px",
+    backgroundColor:"white", color:"black", marginTop:"10px", borderRadius:"12px",
+    paddingLeft:"7px",fontWeight:"bold", fontSize:"18px"}} type = 'number' value = {amountConverted}/></span>
          <br></br>
          <br></br>
-         
-         <input type='Number'
-         value={amount}
-         onChange={(e) =>setAmount(e.target.value)}
-         placeholder='Enter Amount'
-         style={{backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
-         />
-          <br></br>
-         <br></br>
-         <span style={{paddingLeft:"15px"}}>{amountConverted}</span>
-         <br></br>
-   <button type="submit" className='btn btn-outline-success btn-sm'
-    style = {{border:"1px solid white", width:"99px",color:'white', backgroundColor:"rgba(37, 55, 95, 0.6)",marginTop:"30px",borderRadius:"12px",paddingLeft:"7px"}} 
-    onClick={handleSwap}><Nav.Link>calculate</Nav.Link></button>
+
+ 
          
                 </form>
         
@@ -242,7 +258,6 @@ useEffect(() =>{
 
       </Col>
       </Row>
-      </Container>
           </div> )
 
 

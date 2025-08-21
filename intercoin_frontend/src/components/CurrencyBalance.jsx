@@ -11,10 +11,10 @@ const cookies = new Cookies();
 
 function CurrencyBalance(){
 
-     const userId = cookies.get("user-id");
-    const email_user = localStorage.getItem("email");
+     const userId = localStorage.getItem("user-id");
+   //  const email_user = localStorage.getItem("email");
 
-   const [penthause, setPenthause] = useState([]);
+   const [wallets, setWallets] = useState([]);
   
     
    
@@ -32,7 +32,7 @@ function CurrencyBalance(){
 
                const result = await response.data;
                              console.log(result); 
-                             setPenthause(result)
+                             setWallets(result)
     }
                      catch (error) {
      console.log("cannot fetch", error) 
@@ -42,6 +42,9 @@ function CurrencyBalance(){
                     fetchUsers();
                }, [userId]);
 
+
+
+
     return (
                 <div className='homeContainer'> 
 
@@ -50,52 +53,39 @@ function CurrencyBalance(){
                                   
   <Row className='currencyBalanceRow' >
 
-           <p style={{color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"20px"
-}}>Wallet Balance</p>
+         
 
-           <Col className='currencyBalanceCol'> 
+        
 
-<table className='tableStyle'>
-                <br></br>         
-    <thead>
-          <tr className='tableRowKey' >
+
+                   
+   
              {
                                               
-               penthause.map((item) => (
+             
                         
-        Object.entries(item.balances).map(([key, value]) => (
+       wallets.map((wallet) => (
                                                                     
-                                                                      
-            <td className='displayBalanceKeys'>{key}</td>
-                                             
-                                        
-  ))  ))  }
-             </tr>
-    </thead>
-                        
-      <tbody>
-          <tr className='tableRowValue' style = {{marginTop:"10px"}}>
-       {
-                                              
-                penthause.map((item) => (
-                        
-         Object.entries(item.balances).map(([key, value]) => (
-                                                                    
-                                                                      
-             <td className='displayBalanceValue' >{value}</td>
-                                             
-                                        
-  )) )) }
-       </tr>
-    </tbody>
-                        
-    </table>
-                                                
-                                       
-                                     
+<Col xs = {4} style={{border:"2px solid grey",
+    height:"135px",margin:"auto", width:"115px", marginBottom:"10px", 
+    borderRadius:"15px", boxShadow:"2px 2px grey", backgroundColor:"rgba(255, 255, 255, 0.99)"}}>      
+            <img src = {wallet.imageUrl}
+         style={{ height: "60px", objectFit: "contain", padding: "0px",width:"60px" }}                    />
+                          <p style={{padding:"0px",fontSize:"15px",fontWeight:"bold",fontFamily:"EB Garamond,serif"}}>  {wallet.currency}</p>
 
+                 <p style={{padding:"0px",fontSize:"19px",fontWeight:"bold",fontFamily:"EB Garamond,serif"}}>  {wallet.balance}</p>
+                    </Col>  
 
-                 </Col>
+          
+                                        
+                                        
+  )) 
+
+               }
+
+                      
+
+              
                          </Row>
                         
           

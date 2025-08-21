@@ -24,20 +24,20 @@ function TransactionHistory(){
 
 
 
-useEffect(() =>{
+// useEffect(() =>{
     
 
-              const user =  localStorage.getItem("user-id")
+//               const user =  localStorage.getItem("user-id")
 
-               if(user === null){
+//                if(user === null){
 
-                navigate("/login")
-               }else{
+//                 navigate("/login")
+//                }else{
 
-                setIsLogged(true)
-               }
+//                 setIsLogged(true)
+//                }
 
-         },[navigate] )
+//          },[navigate] )
 
 
 
@@ -80,10 +80,10 @@ useEffect(() =>{
 
            <Container className='transactionHistoryCon'>
 
-            <Row>
- <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"}}>Transaction History</p>
+            <Row className='transactionHistoryRow'>
+ {/* <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"}}>Transaction History</p> */}
                { penthause? (
-                <Col>
+                <Col className='transactionHistoryCol'>
                    
                     
                         
@@ -92,8 +92,8 @@ useEffect(() =>{
 
  <Nav.Link href ={`/transactionDetailsById/` +item._id} type='button'>
    
-    <div style={{border:"1px solid white", height:"70px",borderRadius:"25px", 
-   marginTop:"30px", backgroundColor:"rgba(55, 2, 102, 0.8)"}}>
+    <div style={{border:"1px solid white", height:"60px",borderRadius:"25px", 
+   marginTop:"30px", backgroundColor:"rgba(0, 0, 0, 0.86)"}}>
       
       <Row>
           <Col xs = {6}>

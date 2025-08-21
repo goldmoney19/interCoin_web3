@@ -4,8 +4,11 @@ import Wallet from "../model/Wallet.js"
 import Transaction from "../model/Transaction.js";
 import express from "express"
 import mongoose from "mongoose"
+import path from "path"
 
 import dotenv from "dotenv";
+import Wallet2 from "../model/Wallet2.js";
+import UserWallet2 from "../model/UserWallet2.js";
 dotenv.config();
 
 const { LLM_API_KEY, LLM_API_URL } = process.env;
@@ -45,17 +48,30 @@ export const createUser = async(req, res) =>{
           
           const savedData = await newUser.save();
 
-          const newWallet = await Wallet.create({
-  userId: savedData._id,
-  balances: {
-    cNGN: 0,
-    cXAF: 0,
-    USDx: 0,
-    EURx:0
-  }
-});
-          // res.status(200).json(savedData);
-          res.status(200).json({message:"user created successfully", savedData, newWallet });
+          const currencies = await Wallet2.find()
+
+            if (!currencies || currencies.length === 0) {
+            return res.status(400).json({ message: "No currencies available to initialize." });
+        }
+
+        const userWallets = currencies.map((currencyItem) =>({
+
+           UserId:savedData._id,
+           currency:currencyItem.currencyName,
+           balance:0,
+
+      }))
+
+     const  insertedWallets =  await UserWallet2.insertMany(userWallets)
+
+           res.status(200).json({
+            message: "User created successfully and wallets initialized.",
+            user: savedData,
+            wallets: insertedWallets
+        });
+
+
+          res.status(200).json({message:"user created successfully", savedData, insertedWallets });
 
     }catch(error){
      res.status(500).json({errorMessage:error.message})
@@ -147,7 +163,11 @@ export const getBalanceByUserId = async(req, res) => {
                    const { user_id } = req.body;
                      console.log("Incoming user_id:", user_id)
 
-        const userWallets = await Wallet.find({ userId: user_id });
+                     if (!user_id) {
+      return res.status(400).json({ message: "user_id is required" });
+    }
+
+        const userWallets = await UserWallet2.find({ UserId: user_id });
                  
                 if(!userWallets){
 
@@ -155,7 +175,28 @@ export const getBalanceByUserId = async(req, res) => {
                 }
 
 
-                  res.status(200).json(userWallets);
+                 const currencies = userWallets.map((wallet) => wallet.currency);
+    const walletMeta = await Wallet2.find({ currencyName: { $in: currencies } });
+
+    // Map currencyName -> imageUrl
+    const currencyToImageMap = {};
+    walletMeta.forEach((w) => {
+      currencyToImageMap[w.currencyName] = w.imageUrl;
+    });
+  
+    const baseUrl = "http://localhost:8000";
+    // Attach image to each wallet
+    const walletsWithImages = userWallets.map((wallet) => ({
+      _id: wallet._id,
+      UserId: wallet.UserId,
+      currency: wallet.currency,
+      balance: wallet.balance,
+      imageUrl: currencyToImageMap[wallet.currency]  
+    ? `${baseUrl}/uploads/${path.basename(currencyToImageMap[wallet.currency])}`
+    : null,
+    }));
+console.log(walletsWithImages)
+    res.status(200).json(walletsWithImages);
 
            }
          catch(error){ 

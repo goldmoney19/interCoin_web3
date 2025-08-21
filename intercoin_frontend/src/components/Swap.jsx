@@ -27,20 +27,20 @@ function Swap({ onSwapSuccess }){
     const [loading, setLoading] = useState(false);
 
      
-useEffect(() =>{
+// useEffect(() =>{
     
 
-              const user =  localStorage.getItem("user-id")
+//               const user =  localStorage.getItem("user-id")
 
-               if(user === null){
+//                if(user === null){
 
-                navigate("/login")
-               }else{
+//                 navigate("/login")
+//                }else{
 
-                setIsLogged(true)
-               }
+//                 setIsLogged(true)
+//                }
 
-         },[navigate] )
+//          },[navigate] )
 
 
 
@@ -127,7 +127,7 @@ useEffect(() =>{
                 amount: swapAmount
             };
 
-             const response = await axios.post(" http://localhost:8000/api/swap", swapData)
+             const response = await axios.post("https://intercoin-web3.onrender.com/api/swap", swapData)
 
              console.log(response.data)
               toast.success('Swap Successful', {position:"top-left"});

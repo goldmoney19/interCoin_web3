@@ -15,6 +15,7 @@ import TransactionDetailsById from './components/TransactionDetailsById'
 import CurrencyBalancePage from './components/CurrencyBalancePage'
 import ExchangeRateCalculate from './components/ExchangeRateCalculate'
 import InterCoinAi from './components/InterCoinAi'
+import InsertWallets from './components/InsertWallets'
 
 
 
@@ -59,9 +60,10 @@ function App() {
 
            <Route path = "/exchangeRateCalculate" element = {<ExchangeRateCalculate />} />
 
-                     <Route path = "/interCoinAi" element = {<InterCoinAi />} />
+         <Route path = "/interCoinAi" element = {<InterCoinAi />} />
 
-        
+           <Route path = "/insertWallets" element = {<InsertWallets />} />
+
 
 
  </Routes>

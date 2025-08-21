@@ -37,7 +37,7 @@ console.log(formData);
 
                     const portf = {email , password}
                    
-                   await axios.post(" https://intercoin-web3.onrender.com/api/user", formData)
+                   await axios.post("https://intercoin-web3.onrender.com/api/user", formData)
                   .then((response)=>{
 
                     console.log(response);
@@ -48,9 +48,12 @@ console.log(formData);
 
                   })
                   .catch((error)=>{
-        toast.error('Inputs cannot be empty', {position:"top-right"});
+       
+                 console.error("Register error:", error.response?.data || error.message);
+    toast.error(error.response?.data?.errorMessage || 'Something went wrong', {position:"top-right"});
 
-                     console.error(error)
+                      toast.error('Inputs cannot be empty', {position:"top-right"});
+
                   })
 
           

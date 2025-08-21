@@ -4,10 +4,12 @@ import bodyParser from "body-parser"
 import dotenv from "dotenv"
 import route from "./routes/userRoutes.js"
 import auditt from "./routes/auditLogg.js"
-
+import wallet2route from "./routes/wallet2Routes.js"
+import upload from "./configuration/multerConfig.js"
 
 import cors from "cors"
 import cookieParser from "cookie-parser"
+import path from 'path';
 
 
 
@@ -15,7 +17,10 @@ import cookieParser from "cookie-parser"
 
 
 
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 
@@ -67,7 +72,14 @@ mongoose
         app.use(auditt);
 
      
+app.use('/uploads', express.static(path.join(__dirname, 'Uploads')));
+app.use(express.static(path.join(__dirname, 'dist')));
+
+
+
 app.use('/api', route);
+
+app.use("/api", wallet2route)
         
          
 

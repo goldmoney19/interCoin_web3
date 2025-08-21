@@ -23,20 +23,20 @@ const [transaction, setTrasaction] = useState()
 
 
 
-useEffect(() =>{
+// useEffect(() =>{
     
 
-              const user =  localStorage.getItem("user-id")
+//               const user =  localStorage.getItem("user-id")
 
-               if(user === null){
+//                if(user === null){
 
-                navigate("/login")
-               }else{
+//                 navigate("/login")
+//                }else{
 
-                setIsLogged(true)
-               }
+//                 setIsLogged(true)
+//                }
 
-         },[navigate] )
+//          },[navigate] )
 
 
 
@@ -95,47 +95,47 @@ backgroundColor:" rgb(232, 232, 241)",
                     <table style={{border:"none", width:"100%", height:"600px"}}>
                 {transaction?(
                         <thead>
-                            <tr style={{border:"none", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
+                            <tr style={{borderBottom:"2px solid grey", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
                             <td>Type </td> 
                              <td className="transactionType">{transaction.type}</td>
                               </tr>
 
-                               <tr style={{border:"none", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
+                               <tr style={{borderBottom:"2px solid grey", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
                             <td>Amount Sent </td> 
                              <td >{transaction.amountSent}</td>
                               </tr>
 
-                                 <tr style={{border:"none", fontFamily:"EB Garamond,serif", height:"60px",fontSize:"17px"}}>
+                                 <tr style={{borderBottom:"2px solid grey", fontFamily:"EB Garamond,serif", height:"60px",fontSize:"17px"}}>
                             <td>Amount Received </td> 
                              <td >{transaction.amountReceived}</td>
                               </tr>
 
-                               <tr style={{border:"none", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
+                               <tr style={{borderBottom:"2px solid grey", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
                             <td>From Currency </td> 
                              <td >{transaction.fromCurrency}</td>
                               </tr>
 
-                               <tr style={{border:"none", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
+                               <tr style={{borderBottom:"2px solid grey", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
                             <td>to Currency </td> 
                              <td >{transaction.toCurrency}</td>
                               </tr>
 
-                              <tr style={{border:"none", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
+                              <tr style={{borderBottom:"2px solid grey", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
                             <td>rate </td> 
                              <td >{transaction.rate}</td>
                               </tr>
 
-                              <tr style={{border:"none", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
+                              <tr style={{borderBottom:"2px solid grey", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
                             <td>type </td> 
                              <td >{transaction.type}</td>
                               </tr>
 
-                              <tr style={{border:"none", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
+                              <tr style={{borderBottom:"2px solid grey", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
                             <td>status </td> 
                              <td >{transaction.status}</td>
                               </tr>
 
-                               <tr style={{border:"none", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
+                               <tr style={{borderBottom:"2px solid grey", fontFamily:"EB Garamond,serif", height:"60px", fontSize:"17px"}}>
                             <td>date </td> 
                              <td style={{fontSize:"17px"}}>{transaction.timestamp}</td>
                               </tr>
