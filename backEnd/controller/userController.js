@@ -59,6 +59,8 @@ export const createUser = async(req, res) =>{
            UserId:savedData._id,
            currency:currencyItem.currencyName,
            balance:0,
+            imageUrl: currencyItem.imageUrl
+           
 
       }))
 
