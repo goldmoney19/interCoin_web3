@@ -187,16 +187,13 @@ export const getBalanceByUserId = async(req, res) => {
       currencyToImageMap[w.currencyName] = w.imageUrl;
     });
   
-    const baseUrl = "http://localhost:8000";
     // Attach image to each wallet
     const walletsWithImages = userWallets.map((wallet) => ({
       _id: wallet._id,
       UserId: wallet.UserId,
       currency: wallet.currency,
       balance: wallet.balance,
-      imageUrl: currencyToImageMap[wallet.currency]  
-    ? `${baseUrl}/uploads/${path.basename(currencyToImageMap[wallet.currency])}`
-    : null,
+      imageUrl: currencyToImageMap[wallet.currency] || null,
     }));
 console.log(walletsWithImages)
     res.status(200).json(walletsWithImages);
