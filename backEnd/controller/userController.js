@@ -228,8 +228,8 @@ export const makeDeposit = async(req, res) => {
     }
 
 
-   const updatedWallet = await Wallet2.findOneAndUpdate(
-  { userId: userId, currency: currency },
+   const updatedWallet = await UserWallet2.findOneAndUpdate(
+  { UserId: userId, currency: currency },
   { $inc: { balance: amount } },
   { new: true, upsert: true, setDefaultsOnInsert: true }
 )
