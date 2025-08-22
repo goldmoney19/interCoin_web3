@@ -494,7 +494,7 @@ export const transferFunds = async (req, res) => {
 
 
 
-const receiverWallet = await UserWallet2.findOne({ userId: receiverId, currency:toCurrency}).session(session)
+const receiverWallet = await UserWallet2.findOne({ UserId: receiverId, currency:toCurrency}).session(session)
 
 
               if (!receiverWallet) {
@@ -508,7 +508,7 @@ const receiverWallet = await UserWallet2.findOne({ userId: receiverId, currency:
 
         const updateSenderWallet = await UserWallet2.findOneAndUpdate(
 
-            {userId:senderId, currency:toCurrency},
+            {UserId:senderId, currency:toCurrency},
             {$inc : {balance : -amount}},
             { new: true }
             
@@ -525,7 +525,7 @@ const receiverWallet = await UserWallet2.findOne({ userId: receiverId, currency:
 
         const updateReceiverWallet = await UserWallet2.findOneAndUpdate(
 
-                 {userId:receiverId, currency:toCurrency},
+                 {UserId:receiverId, currency:toCurrency},
                   { $inc : {balance: convertedAmount}},
             { new: true, upsert: true}
         )
