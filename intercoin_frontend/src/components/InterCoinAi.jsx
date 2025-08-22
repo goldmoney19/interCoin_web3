@@ -52,13 +52,15 @@ try{
         <form onSubmit={handleAsk} className="flex flex-col gap-4">
           <textarea
             className="w-full h-24 p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300 resize-none font-sans text-gray-800 placeholder-gray-400"
-            placeholder="e.g., What's the most stable rate today? or Convert 500 cNGN to USDx"
+            placeholder="Ask Inter Coin AI"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
+             style={{borderRadius:"12px"}}
           />
 
           <button
             type="submit"
+            style={{borderRadius:"12px"}}
             className={`w-full py-3 px-6 rounded-xl font-semibold text-lg transition-all duration-300 ${
               isLoading
                 ? 'bg-indigo-300 cursor-not-allowed'

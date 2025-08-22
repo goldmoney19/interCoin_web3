@@ -16,20 +16,20 @@ const navigate = useNavigate()
 
 
 
-        //    useEffect(() => {
+           useEffect(() => {
 
-        //          const user = localStorage.getItem("user-id");
-        //             if(user === null){
+                 const user = localStorage.getItem("user-id");
+                    if(user === null){
 
                         
-        //                 navigate("/login")
-        //             }else{
-        //                setIsLogged(true)
+                        navigate("/login")
+                    }else{
+                       setIsLogged(true)
 
-        //             }
+                    }
 
 
-        //    }, [navigate])
+           }, [navigate])
 
 
    const handleSubmit = async(e) => {

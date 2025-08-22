@@ -33,7 +33,7 @@ function Navvbar() {
 
 <Navbar collapseOnSelect expand="lg" className="navbarr_body navbar navbar-dark " fixed="top" style={{backgroundColor:"white"}}>
       <Container style={{fontFamily: "EB Garamond,serif"}}>
-        <Navbar.Brand href="/" style={{color:"black",fontWeight:"bold",fontSize:"22px"}}>Inter- coin</Navbar.Brand>
+        <Navbar.Brand href="/" style={{color:"black",fontWeight:"bold",fontSize:"22px"}}>Inter - Coin</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav"   style={{backgroundColor:"rgba(54, 60, 63, 0.36)", color:"black"}}/>
         <Navbar.Collapse id="responsive-navbar-nav" >
           <Nav className="me-auto text-primary">

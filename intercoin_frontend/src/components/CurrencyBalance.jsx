@@ -44,7 +44,6 @@ function CurrencyBalance(){
 
 
 
-
     return (
                 <div className='homeContainer'> 
 
@@ -73,7 +72,7 @@ function CurrencyBalance(){
          style={{ height: "40px", objectFit: "contain", marginTop: "3px",width:"60px" }}                    />
                           <p style={{padding:"0px",fontSize:"15px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.currency}</p>
 
-                 <p style={{paddingTop:"0px",fontSize:"19px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.balance}</p>
+                 <p style={{paddingTop:"0px",fontSize:"19px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.balance.toLocaleString()}</p>
                     </Col>  
 
           

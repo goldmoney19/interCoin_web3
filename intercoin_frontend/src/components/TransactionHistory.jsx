@@ -24,20 +24,20 @@ function TransactionHistory(){
 
 
 
-// useEffect(() =>{
+useEffect(() =>{
     
 
-//               const user =  localStorage.getItem("user-id")
+              const user =  localStorage.getItem("user-id")
 
-//                if(user === null){
+               if(user === null){
 
-//                 navigate("/login")
-//                }else{
+                navigate("/login")
+               }else{
 
-//                 setIsLogged(true)
-//                }
+                setIsLogged(true)
+               }
 
-//          },[navigate] )
+         },[navigate] )
 
 
 
@@ -93,7 +93,7 @@ function TransactionHistory(){
  <Nav.Link href ={`/transactionDetailsById/` +item._id} type='button'>
    
     <div style={{border:"1px solid white", height:"60px",borderRadius:"25px", 
-   marginTop:"30px", backgroundColor:"rgba(0, 0, 0, 0.86)"}}>
+   marginTop:"30px", backgroundColor:"rgba(27, 3, 24, 0.79)"}}>
       
       <Row>
           <Col xs = {6}>
