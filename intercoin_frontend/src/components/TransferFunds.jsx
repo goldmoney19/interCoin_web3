@@ -168,7 +168,7 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
 
                      <option key={currency._id} value={currency.currency}>
 
-                        {currency.currency}
+                        {currency.currencyName}
                         
                         </option>
                  )) }
