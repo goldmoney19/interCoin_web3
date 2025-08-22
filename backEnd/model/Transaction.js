@@ -12,7 +12,7 @@ const transactionSchema = new mongoose.Schema({
   amountReceived:{type:Number, required:true},
   rate: { type: Number, required: true },
   type: { type: String, enum: ['deposit', 'swap', 'remittance', 'receive'], required: true },
-    status: { type: String, enum: ['pending', 'successful', 'failed'], default: 'pending' },
+    status: { type: String, enum: ['pending', 'Successful', 'failed'], default: 'pending' },
 
   
 
