@@ -471,7 +471,7 @@ export const transferFunds = async (req, res) => {
              return res.status(400).json({message:"cannot send transfer to yourself"})
         }
 
-        const senderWallet = await UserWallet2.findOne({userId:senderId, currency:fromCurrency})
+        const senderWallet = await UserWallet2.findOne({UserId:senderId, currency:fromCurrency})
 
         if(!senderWallet){
                       await session.abortTransaction();
