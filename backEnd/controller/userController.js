@@ -250,7 +250,7 @@ const newTransaction = new Transaction({
             amountReceived: amount,
             rate: 1, 
             type: 'deposit',
-            status: 'successful',
+            status: 'Successful',
          
         })
 
@@ -483,7 +483,7 @@ export const transferFunds = async (req, res) => {
         if(senderWallet.balance < amount || senderWallet.balance === undefined){
                 await session.abortTransaction();
 
-      return res.status(400).json({message:"no money"})
+      return res.status(400).json({message:"insufficient money"})
 
         }
 
@@ -509,7 +509,7 @@ const receiverWallet = await UserWallet2.findOne({ userId: receiverId, currency:
         const updateSenderWallet = await UserWallet2.findOneAndUpdate(
 
             {userId:senderId, currency:toCurrency},
-            {$inc : {balances : -amount}},
+            {$inc : {balance : -amount}},
             { new: true }
             
         )
@@ -526,7 +526,7 @@ const receiverWallet = await UserWallet2.findOne({ userId: receiverId, currency:
         const updateReceiverWallet = await UserWallet2.findOneAndUpdate(
 
                  {userId:receiverId, currency:toCurrency},
-                  { $inc : {balances: convertedAmount}},
+                  { $inc : {balance: convertedAmount}},
             { new: true, upsert: true}
         )
 
@@ -544,7 +544,7 @@ const receiverWallet = await UserWallet2.findOne({ userId: receiverId, currency:
             amountReceived: convertedAmount,
             rate: fx_rate,
             type: 'remittance', 
-            status: 'completed'
+            status: 'Successful'
         });
 
       await newTransaction.save({session});

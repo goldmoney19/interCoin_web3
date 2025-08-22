@@ -68,7 +68,7 @@ function CurrencyBalance(){
                                                                     
 <Col xs = {4} style={{border:"2px solid grey",
     height:"110px",margin:"auto", width:"115px", marginBottom:"10px", 
-    borderRadius:"15px", boxShadow:"2px 2px grey", backgroundColor:"rgba(255, 255, 255, 0.99)"}}>      
+    borderRadius:"15px", boxShadow:"2px 2px grey", backgroundColor:"rgba(255, 255, 255, 0.99)",overflowX:"scroll"}}>      
             <img src = {wallet.imageUrl}
          style={{ height: "40px", objectFit: "contain", marginTop: "3px",width:"60px" }}                    />
                           <p style={{padding:"0px",fontSize:"15px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.currency}</p>
