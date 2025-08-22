@@ -121,15 +121,15 @@ const currencies = ['cNGN', 'cXAF', 'USDx', 'EURx'];
       <Container fluid className='depositCon'>
   
                 <Row className='depositRow'>
-         <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"}}> deposit funds</p>
+         <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif",  color:"black"}}> Deposit funds</p>
 
                   <Col className='depositCol'> 
 
 
        <Form onSubmit={handleDeposit}>
 
-        <label>To wallet : </label>   <select
-          style={{backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
+       <select
+          style={{width:"90%",height:"45px",backgroundColor:"white", color:"black", marginTop:"60px", borderRadius:"12px",paddingLeft:"7px"}}
           value={currency}
           onChange={(e) =>setCurrency(e.target.value)}>
    {
@@ -142,10 +142,8 @@ const currencies = ['cNGN', 'cXAF', 'USDx', 'EURx'];
 
           </select>
 <br></br>
-<br></br>
-
 <input type='Number'
-  style={{backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
+  style={{marginLeft:"0px",height:"45px",width:"90%",backgroundColor:"white", color:"black", marginTop:"60px", borderRadius:"12px",paddingLeft:"7px"}}
   placeholder='Amount'
 value={amount}
 onChange={(e) =>setAmount(e.target.value)}
@@ -154,7 +152,9 @@ onChange={(e) =>setAmount(e.target.value)}
 <br></br>
 <br></br>
      <button type="submit" className='btn btn-outline-success btn-sm'
-     style = {{border:"1px solid white", width:"99px",color:'white', backgroundColor:"rgba(0, 12, 12, 1)", borderRadius:"12px",paddingLeft:"7px"}} 
+     style = {{marginTop:"30px", border:"1px solid white", width:"80%",
+      color:'white', backgroundColor:"rgba(0, 12, 12, 1)", borderRadius:"12px",
+      paddingLeft:"7px", height:"45px"}} 
 
      onClick={handleDeposit}
      disabled = {loading}

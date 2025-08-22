@@ -272,7 +272,7 @@ await session.abortTransaction();
 export const getAllCurrencies = async(req, res) => {
 
            try{
-       const userData = await Wallet.find();
+       const userData = await Wallet2.find();
        
             if(!userData || userData.length < 0){
                return res.status(404).json({message:"no currency not found"})

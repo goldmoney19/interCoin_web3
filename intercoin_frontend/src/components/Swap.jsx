@@ -152,19 +152,19 @@ toast.error('Swap failed. Please try again.');
     return (
                 <div className='homeContainer'> 
 
-                <Container fluid className='swapCon'>
+                <Container fluid className='swapcashCon'>
 
-                <Row className='swapRow'>
-     <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"}}> swap funds</p>
+                <Row className='swapcashRow'>
+     <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", color:"black"}}> Swap funds</p>
 
-                  <Col className='swapCol'> 
+                  <Col className='swapcashCol'> 
         
 
         {wallet && wallet.balances ? (
           <form onSubmit={handleSwap}>
          
-                  <label>From wallet : </label> <select
-                   style={{backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
+                  <select
+                   style={{width:"80%",height:"45px",backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
                    value={fromCurrency}
                    onChange={(e) =>setFromCurrency(e.target.value)}>
             
@@ -178,8 +178,8 @@ toast.error('Swap failed. Please try again.');
          <br></br>
          <br></br>
 
-          <label>To wallet : </label>  <select
-              style={{backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
+           <select
+              style={{width:"80%",height:"45px",backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
                    value={toCurrency}
                    onChange={(e) =>setToCurrency(e.target.value)}>
           
@@ -199,12 +199,12 @@ toast.error('Swap failed. Please try again.');
          value={amount}
          onChange={(e) =>setAmount(e.target.value)}
          placeholder='Enter Amount'
-         style={{backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
+         style={{width:"80%",height:"45px",backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
          />
          <br></br>
          <br></br>
    <button type="submit" className='btn btn-outline-success btn-sm'
-    style = {{border:"1px solid white", width:"99px",color:'white', backgroundColor:"rgba(0, 12, 12, 1)",marginTop:"30px",borderRadius:"12px",paddingLeft:"7px"}} 
+    style = {{height:"40px",border:"1px solid white", width:"80%",color:'white', backgroundColor:"rgba(0, 12, 12, 1)",marginTop:"30px",borderRadius:"12px",paddingLeft:"7px"}} 
     onClick={handleSwap}
     disabled = {loading}
     >{loading ?'wait, sending...' : 'send'}</button>

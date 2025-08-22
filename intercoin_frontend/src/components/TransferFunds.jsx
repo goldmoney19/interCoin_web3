@@ -136,7 +136,7 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
                   <Container fluid className='transferCon'>
                   
                                 <Row className='transferRow'>
-  <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"}}>Transfer Funds</p>
+  <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif",  color:"black"}}>Transfer Funds</p>
 
                                   <Col className='transferCol'> 
 
@@ -147,7 +147,7 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
             <input type='text'
          value={receiverId}
          placeholder='receiver id'
-         style={{backgroundColor:"white", color:"black", borderRadius:"12px",paddingLeft:"7px", marginTop:"40px"}}
+         style={{width:"80%",height:"50px",backgroundColor:"white", color:"black", borderRadius:"12px",paddingLeft:"7px", marginTop:"40px"}}
          onChange={(e) =>setReceiverId(e.target.value)}
          />
 
@@ -156,10 +156,11 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
          <br></br>
 
 
-        <label>From wallet : </label>  
+      
           <select
           
-           style={{backgroundColor:"white", color:"black", marginTop:"30px",borderRadius:"12px",paddingLeft:"7px"}}
+  style={{backgroundColor:"white", color:"black", marginTop:"30px",borderRadius:"12px",
+  paddingLeft:"7px", width:'80%',height:"45px"}}
           value={fromCurrency}
            onChange={(e) =>setFromCurrency(e.target.value)}>
       
@@ -178,9 +179,9 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
            <br></br>
          <br></br>
 
-        <label>To wallet : </label>   
+        
          <select
-          style={{backgroundColor:"white", color:"black", marginTop:"30px" ,borderRadius:"12px",paddingLeft:"7px"}}
+ style={{height:"45px",width:"80%",backgroundColor:"white", color:"black", marginTop:"30px" ,borderRadius:"12px",paddingLeft:"7px"}}
            value={toCurrency}
            onChange={(e) =>setToCurrency(e.target.value)}>
     
@@ -199,14 +200,13 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
          
          <input type='Number'
          value={amount}
-          style={{backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
+          style={{height:"45px",width:"80%",backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
           onChange={(e) =>setAmount(e.target.value)}
          placeholder='amount'
          />
-         <br></br>
-         <br></br>
+         
      <button type="submit" className='btn btn-outline-success btn-sm' 
-              style={{border:"1px solid white", width:"99px",backgroundColor:"rgba(0, 12, 12, 1)", color:"white", marginTop:"30px",borderRadius:"12px"}}
+              style={{height:"50px",width:"60%",border:"1px solid white", backgroundColor:"rgba(0, 12, 12, 1)", color:"white", marginTop:"30px",borderRadius:"12px"}}
                 onClick={handleTransfer}
                 disabled = {loading}
                 ><Nav.Link>{loading ? 'sending...' :'send'}</Nav.Link>

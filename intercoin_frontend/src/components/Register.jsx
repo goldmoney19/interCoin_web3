@@ -67,28 +67,28 @@ console.log(formData);
 
     <Container style={{ height:"600px"}}>
 
-      <Row style={{marginTop:"90px", height:"450px"}}>
-
+      <Row style={{marginTop:"90px", height:"540px", border:"none"}}>
+<h2  style={{color:"black",paddingBottom:"20px"}}>Sign up</h2>
         <Col style={{fontFamily:"EB Garamond,serif",
-  border: "none",
+  border: "2px solid rgba(129, 129, 187, 1)",
   height:" 440px",
   marginTop: "50px",
-    margin:"40px",
+    margin:"15px",
   color: "black",
-  backgroundColor: "rgb(232, 232, 241)",
-  boxShadow:" 4px 4px rgb(117, 65, 65)",
+  backgroundColor: "rgba(129, 129, 187, 1)",
+  boxShadow:"rgba(129, 129, 187, 1)",
    borderRadius: "12px"
 }}>
 
          <br></br>
-         <h2  style={{color:"black"}}>Sign up</h2>
+         
         <form onSubmit={handleSubmit} encType='multipart/form-data'>
 
          <label></label><br></br>
          <input 
          placeholder = 'Email'
          id='email'
-         style = {{ backgroundColor:'white', color:'black', borderRadius:"12px",paddingLeft:"10px"}}
+         style = {{ width:"80%", height:"45px",backgroundColor:'white', color:'black', borderRadius:"12px",paddingLeft:"10px"}}
            type='email'  
           name ="email"
            value = {email} 
@@ -103,7 +103,7 @@ console.log(formData);
          
          <input type='password' 
          placeholder = 'password'
-         style = {{ backgroundColor:'white', color:'black', borderRadius:"12px",paddingLeft:"10px"}}
+         style = {{  width:"80%", height:"45px",backgroundColor:'white', color:'black', borderRadius:"12px",paddingLeft:"10px"}}
          id="password"
           value ={password}
            name = "password"
@@ -118,7 +118,7 @@ console.log(formData);
        <br></br>
 
         <button className = 'btn btn-sm btn-secondary'  type='submit' 
-         style = {{ backgroundColor:'white', color:"black", width:"100px"}}
+         style = {{  width:"80%", height:"45px",backgroundColor:'white', color:"black"}}
          disabled = {loading}
         >
         {loading ? 'sending...' : 'Register'}
