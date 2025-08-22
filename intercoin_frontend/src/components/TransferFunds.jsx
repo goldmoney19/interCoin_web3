@@ -18,7 +18,7 @@ function TransferFunds(){
   const navigate = useNavigate();
 const [isLogged, setIsLogged] = useState(false)
     
-    const [wallet, setWallet] = useState(null)
+    const [wallet, setWallet] = useState([])
       const [loading, setLoading] = useState(false)
 
      const [fromCurrency, setFromCurrency] = useState("cNGN")
@@ -57,7 +57,7 @@ useEffect(() => {
                        
               // console.log(response.data)
 
-              setWallet(response.data[0])
+              setWallet(response.data)
 
                 }catch(error){
 
@@ -140,7 +140,7 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
 
                                   <Col className='transferCol'> 
 
-         { wallet && wallet.balances ?(
+         { wallet && wallet.length > 0 ?(
            
         <form onSubmit={handleTransfer}> 
 
@@ -164,11 +164,11 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
           value={fromCurrency}
            onChange={(e) =>setFromCurrency(e.target.value)}>
       
-           {Object.keys(wallet.balances).map((currency) =>(
+           {wallet.map((currency) =>(
 
-                     <option key={currency} value={currency}>
+                     <option key={currency._id} value={currency.currency}>
 
-                        {currency}
+                        {currency.currency}
                         
                         </option>
                  )) }
@@ -185,11 +185,11 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
            value={toCurrency}
            onChange={(e) =>setToCurrency(e.target.value)}>
     
-           {Object.keys(wallet.balances).map((currency) =>(
+           {wallet.map((currency) =>(
 
-                     <option key={currency} value={currency}>
+                     <option key={currency._id} value={currency.currencyName}>
 
-                        {currency}
+                        {currency.currencyName}
                         
                         </option>
                  )) }
