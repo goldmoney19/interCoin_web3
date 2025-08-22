@@ -67,13 +67,13 @@ function CurrencyBalance(){
        wallets.map((wallet) => (
                                                                     
 <Col xs = {4} style={{border:"2px solid grey",
-    height:"135px",margin:"auto", width:"115px", marginBottom:"10px", 
+    height:"110px",margin:"auto", width:"115px", marginBottom:"10px", 
     borderRadius:"15px", boxShadow:"2px 2px grey", backgroundColor:"rgba(255, 255, 255, 0.99)"}}>      
             <img src = {wallet.imageUrl}
-         style={{ height: "60px", objectFit: "contain", padding: "0px",width:"60px" }}                    />
-                          <p style={{padding:"0px",fontSize:"15px",fontWeight:"bold",fontFamily:"EB Garamond,serif"}}>  {wallet.currency}</p>
+         style={{ height: "40px", objectFit: "contain", marginTop: "3px",width:"60px" }}                    />
+                          <p style={{padding:"0px",fontSize:"15px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.currency}</p>
 
-                 <p style={{padding:"0px",fontSize:"19px",fontWeight:"bold",fontFamily:"EB Garamond,serif"}}>  {wallet.balance}</p>
+                 <p style={{paddingTop:"0px",fontSize:"19px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.balance}</p>
                     </Col>  
 
           

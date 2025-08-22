@@ -30,7 +30,7 @@ function Balance(){
            <Container fluid  className='balance_con' >
                     
                   
-                 <p style={{paddingLeft:"30px",textAlign:"left",fontWeight:"bold",color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"20px"
+                 <p style={{paddingLeft:"30px",textAlign:"left",fontWeight:"lighter",color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"0px"
 }}>Wallet Balance</p>
                  <Row>
                <CurrencyBalance />
@@ -51,7 +51,7 @@ function Balance(){
                <br></br>
               <br></br>
    
-<p style={{paddingLeft:"30px",textAlign:"left",fontWeight:"bold",color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"20px"
+<p style={{paddingLeft:"30px",textAlign:"left",fontWeight:"lighter",color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"0px"
 }}>Rate Conversion</p>
     <Row>
                <ExchangeRateCalculate />
@@ -60,7 +60,7 @@ function Balance(){
 
    <br></br>
   
-    <p style={{paddingLeft:"30px",textAlign:"left",fontWeight:"bold",color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"0px"
+    <p style={{paddingLeft:"30px",textAlign:"left",fontWeight:"lighter",color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"0px"
 }}>Transaction History</p>
                <Row>
                <TransactionHistory />

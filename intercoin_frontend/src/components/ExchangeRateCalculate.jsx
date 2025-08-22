@@ -17,7 +17,7 @@ const cookies = new Cookies();
 function ExchangeRateCalculate({ onSwapSuccess }){
     const navigate = useNavigate();
    const [isLogged, setIsLogged] = useState(false)
-        const [wallet, setWallet] = useState(null);
+        const [wallet, setWallet] = useState([]);
 
     const [fromCurrency, setFromCurrency] = useState('cNGN');
      const [toCurrency, setToCurrency] = useState('cXAF');
@@ -58,19 +58,9 @@ function ExchangeRateCalculate({ onSwapSuccess }){
         const response = await axios.get("https://intercoin-web3.onrender.com/api/getCurrency")
 
                 if (response.data && response.data.length > 0) {
-            const fetchedWallet = response.data[0]; 
+            const fetchedWallet = response.data; 
             setWallet(fetchedWallet);
     
-            // Get the list of currencies from the balances object keys.
-            const currencies = Object.keys(fetchedWallet.balances);
-    
-            // Set initial values for the dropdowns once data is available.
-            if (currencies.length > 0) {
-              setFromCurrency(currencies[0]);
-            }
-            if (currencies.length > 1) {
-              setToCurrency(currencies[1]);
-            }
         }
 
          }catch(error){
@@ -183,7 +173,7 @@ function ExchangeRateCalculate({ onSwapSuccess }){
 
                   <Col className='rateCol'> 
 
-        {wallet && wallet.balances ? (
+        {wallet && wallet.length > 0 ? (
           <form onSubmit={handleSwap}>
          
                  
@@ -193,15 +183,15 @@ function ExchangeRateCalculate({ onSwapSuccess }){
  value={fromCurrency}
  onChange={(e) =>setFromCurrency(e.target.value)}>
             
-             {Object.keys(wallet.balances).map((currency) => (
-                  <option key={currency} value={currency}>
-                    {currency}
+             {wallet?.map((currency) => (
+                  <option key={currency._id} value={currency.currencyName}>
+                    {currency.currencyName}
                   </option>
                 ))}
          
                    </select>
 
-                   <input type='Number'
+                      <input type='Number'
          value={amount}
          onChange={(e) =>setAmount(e.target.value)}
          placeholder='Enter Amount'
@@ -229,11 +219,12 @@ style={{height:"35px",boxShadow:"2px 2px grey",marginLeft:"25px",width:"100px",
                    onChange={(e) =>setToCurrency(e.target.value)}>
           
           
-           {Object.keys(wallet.balances).map((currency) => (
-                  <option key={currency} value={currency}>
-                    {currency}
+            {wallet?.map((currency) => (
+                  <option key={currency._id} value={currency.currencyName}>
+                    {currency.currencyName}
                   </option>
                 ))}
+         
               
          
                    </select>

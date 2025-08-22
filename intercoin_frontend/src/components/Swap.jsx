@@ -55,19 +55,13 @@ function Swap({ onSwapSuccess }){
         const response = await axios.get("https://intercoin-web3.onrender.com/api/getCurrency")
 
                 if (response.data && response.data.length > 0) {
-            const fetchedWallet = response.data[0]; 
+            const fetchedWallet = response.data; 
             setWallet(fetchedWallet);
     
-            // Get the list of currencies from the balances object keys.
-            const currencies = Object.keys(fetchedWallet.balances);
+       
+            
     
-            // Set initial values for the dropdowns once data is available.
-            if (currencies.length > 0) {
-              setFromCurrency(currencies[0]);
-            }
-            if (currencies.length > 1) {
-              setToCurrency(currencies[1]);
-            }
+           
         }
 
          }catch(error){
@@ -117,17 +111,19 @@ function Swap({ onSwapSuccess }){
             return;
         }
 
-
-        try{
-
-             const swapData = {
+         const swapData = {
                 userId,
                 fromCurrency,
                 toCurrency,
                 amount: swapAmount
             };
+   
 
-             const response = await axios.post("https://intercoin-web3.onrender.com/api/swap", swapData)
+        try{
+
+            
+
+              const response = await axios.post("https://intercoin-web3.onrender.com/api/swap", swapData)
 
              console.log(response.data)
               toast.success('Swap Successful', {position:"top-left"});
@@ -138,7 +134,7 @@ function Swap({ onSwapSuccess }){
             }
 
         }catch(error){
-            console.log(error)
+            console.error(error.message)
 toast.error('Swap failed. Please try again.');
     
 
@@ -160,7 +156,7 @@ toast.error('Swap failed. Please try again.');
                   <Col className='swapcashCol'> 
         
 
-        {wallet && wallet.balances ? (
+        {wallet && wallet.length > 0 ? (
           <form onSubmit={handleSwap}>
          
                   <select
@@ -168,9 +164,9 @@ toast.error('Swap failed. Please try again.');
                    value={fromCurrency}
                    onChange={(e) =>setFromCurrency(e.target.value)}>
             
-             {Object.keys(wallet.balances).map((currency) => (
-                  <option key={currency} value={currency}>
-                    {currency}
+             {wallet.map((currency) => (
+                  <option key={currency._id} value={currency.currencyName}>
+                    {currency.currencyName}
                   </option>
                 ))}
          
@@ -184,9 +180,9 @@ toast.error('Swap failed. Please try again.');
                    onChange={(e) =>setToCurrency(e.target.value)}>
           
           
-           {Object.keys(wallet.balances).map((currency) => (
-                  <option key={currency} value={currency}>
-                    {currency}
+           {wallet.map((currency) => (
+                  <option key={currency._id} value={currency.currencyName}>
+                    {currency.currencyName}
                   </option>
                 ))}
               

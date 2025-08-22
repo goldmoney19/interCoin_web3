@@ -328,21 +328,21 @@ export const swapFunds = async (req, res) => {
 try{
    const {userId, fromCurrency, toCurrency, amount} = req.body
 
-   if(!userId || !toCurrency || !fromCurrency || amount === undefined || amount <= 0){
+   if(!userId || !toCurrency || !fromCurrency || amount <= 0){
    
     await session.abortTransaction();
        return res.status(400).json({ message: "swap input details is incorrect"});
       
      }
 
-    //  const findWallet = await findOne({userId:userId, currency:fromCurrency}).session(session);
-     const findWallet = await UserWallet2.findOne({ userId: userId }).session(session)
+     const findWallet = await UserWallet2.findOne({ UserId: userId, currency: fromCurrency}).session(session)
 
-        // Check if the wallet exists and has the required currency balance
-        if (!findWallet || !findWallet.balances[fromCurrency] || findWallet.balances[fromCurrency] < amount) {
+         if (!findWallet || findWallet.balance < amount) {
             await session.abortTransaction();
-            return res.status(400).json({ message: `Insufficient funds in ${fromCurrency} wallet or wallet not found.` });
-        }
+           return res.status(304).json({ message: "no funds" });
+         }
+            console.log("Wallet found:", findWallet);
+console.log("Amount to swap:", amount);
 
 
          const fx_rate = FX_RATES[fromCurrency][toCurrency];
@@ -354,10 +354,10 @@ try{
 
         const convertedRates = amount * fx_rate;
 
-        const updateFromWallet = await Wallet.findOneAndUpdate(
+        const updateFromWallet = await UserWallet2.findOneAndUpdate(
 
-                {userId: userId, currency:fromCurrency},
-                {$inc : { balances: -amount} },
+                {UserId: userId, currency:fromCurrency},
+                {$inc : { balance: -amount} },
                 { new: true}
 
                  )
@@ -367,7 +367,7 @@ try{
             return res.status(500).json({ message: "Failed to update the sender's wallet." });
         }
 
-        const updateToWallet = await userWallet2.findOneAndUpdate(
+        const updateToWallet = await UserWallet2.findOneAndUpdate(
 
             {UserId:userId, currency:toCurrency},
             { $inc: {balance: convertedRates}},
@@ -483,7 +483,7 @@ export const transferFunds = async (req, res) => {
         if(senderWallet.balance < amount || senderWallet.balance === undefined){
                 await session.abortTransaction();
 
-      return res.status(400).json({message:`you have insufficient balance in ${senderWallet.balance} account`})
+      return res.status(400).json({message:"no money"})
 
         }
 
