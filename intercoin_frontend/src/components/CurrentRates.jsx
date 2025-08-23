@@ -25,7 +25,7 @@ function CurrentRates(){
 
          
          <p className='conversionText2' >Currency conversion</p>
-          <span><button className='conversionbtnn'>check</button></span>
+          <span><Nav.Link href = "exchangeRateCalculate"><button className='conversionbtnn'>check</button> </Nav.Link></span>
                     </Col>
                         </Row>
                     

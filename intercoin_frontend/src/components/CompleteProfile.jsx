@@ -25,7 +25,7 @@ function CompleteProfile(){
 
          
          <p className='profileSetText2' >Transaction history</p>
-          <span><button className='profileSetText2btnn'>view</button></span>
+          <span><Nav.Link href='TransactionHistory'><button className='profileSetText2btnn'>view</button></Nav.Link></span>
                     </Col>
                         </Row>
                     

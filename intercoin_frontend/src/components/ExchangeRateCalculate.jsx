@@ -166,20 +166,23 @@ useEffect(() =>{
   }
 
     return (
-                <div className='homeContainer'> 
+                <div className='ratehomeContainer'> 
 
-
+             <Container className='rateCon'>
                 <Row className='rateRow'>
 
                   <Col className='rateCol'> 
+                  <p style={{fontSize:"20px;",paddingTop:"170px"}}> Exchange rate</p>
 
         {wallet && wallet.length > 0 ? (
           <form onSubmit={handleSwap}>
          
                  
                    <select
- style={{height:"35px",boxShadow:"2px 2px grey",backgroundColor:"white", color:"black", 
-  marginTop:"0px", borderRadius:"12px",paddingLeft:"7px"}}
+ style={{height:"35px",backgroundColor:"white",
+   color:"black", border:"none",width:"120px",
+   fontFamily:"EB Garamond,serif",
+  marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
  value={fromCurrency}
  onChange={(e) =>setFromCurrency(e.target.value)}>
             
@@ -196,11 +199,12 @@ useEffect(() =>{
          onChange={(e) =>setAmount(e.target.value)}
          placeholder='Enter Amount'
         
-style={{height:"35px",boxShadow:"2px 2px grey",marginLeft:"25px",width:"100px",
+style={{height:"35px", border:"none",marginLeft:"25px",width:"130px",
   backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",
   paddingLeft:"7px"}}
          />
          <br></br>
+          <br></br>
         <img src = {rate} style={{alignSelf:"flex-start", height:"30px",width:"30px",
     marginTop:"20px",marginRight:"10px"}}/> 
           <button   type="submit" className='btn btn-outline-success btn-sm'
@@ -208,11 +212,13 @@ style={{height:"35px",boxShadow:"2px 2px grey",marginLeft:"25px",width:"100px",
       backgroundColor:"rgba(55, 137, 175, 0.6)",marginTop:"20px",borderRadius:"12px",
       paddingLeft:"7px", fontSize:"17px"}} 
     onClick={handleSwap}><Nav.Link>calculate</Nav.Link></button>
-
-
+<br></br>
+ <br></br>
 <br></br>
            <select
-              style={{height:"35px",boxShadow:"2px 2px grey",backgroundColor:"white", 
+              style={{height:"35px",backgroundColor:"white", border:"none",
+                width:"120px", fontFamily:"EB Garamond,serif",
+
                 color:"black", marginTop:"0px", borderRadius:"12px",paddingLeft:"7px"}}
 
                    value={toCurrency}
@@ -231,8 +237,8 @@ style={{height:"35px",boxShadow:"2px 2px grey",marginLeft:"25px",width:"100px",
 
    <span style={{paddingLeft:"15px",}}><input
     disabled
-   style={{height:"35px",boxShadow:"2px 2px grey",
-   marginLeft:"15px",width:"100px",
+   style={{height:"35px",
+   marginLeft:"15px",width:"120px", border:"none",
     backgroundColor:"white", color:"black", marginTop:"10px", borderRadius:"12px",
     paddingLeft:"7px",fontWeight:"bold", fontSize:"18px"}} type = 'number' value = {amountConverted}/></span>
          <br></br>
@@ -249,6 +255,7 @@ style={{height:"35px",boxShadow:"2px 2px grey",marginLeft:"25px",width:"100px",
 
       </Col>
       </Row>
+      </Container>
           </div> )
 
 

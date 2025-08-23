@@ -75,13 +75,14 @@ useEffect(() =>{
 
 
     return (
-                <div className='homeContainer'> 
+                <div className ='transactionHistoryhomeContainer'> 
       
 
            <Container className='transactionHistoryCon'>
 
             <Row className='transactionHistoryRow'>
- {/* <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black"}}>Transaction History</p> */}
+ <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", 
+   textShadow:"3px 3px rgba(223, 190, 190, 1)", color:"black",paddingTop:"60px"}}>Transaction History</p>
                { penthause? (
                 <Col className='transactionHistoryCol'>
                    

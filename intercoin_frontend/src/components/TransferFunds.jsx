@@ -158,7 +158,8 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
          
     <br></br> 
 
-      
+     <p style={{textAlign:"left",paddingLeft:"37px"}}>From</p>
+
           <select
           
   style={{float:"left",backgroundColor:"white", color:"black", marginTop:"0px",
@@ -218,7 +219,7 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
          <br></br>
          <br></br>
      <button type="submit" className='btn btn-outline-success btn-sm' 
-  style={{height:"45px",width:"60%",border:"1px solid black", 
+  style={{height:"45px",border:"1px solid black", 
     backgroundColor:"white", color:"black", marginTop:"30px",
     borderRadius:"0px", width:"190px",fontSize:"16px"}}
      onClick={handleTransfer}
