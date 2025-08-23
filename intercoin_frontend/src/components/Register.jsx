@@ -63,21 +63,32 @@ console.log(formData);
 
 
 
-    return <div style = {{ fontFamily:"EB Garamond,serif",height:"700px"}}> 
+    return <div style = {{ fontFamily:"EB Garamond,serif",height:"680px",
+    backgroundColor:"rgba(232, 249, 255, 1)"}}> 
 
     <Container style={{ height:"600px"}}>
+      <Row>
+ <Col xs = {12}>
+          
+          <p style={{paddingTop:"80px", fontSize:"20px",fontWeight:"bold"}} >Create Your Account</p>
+          <p style={{fontSize:"19px",color:"rgba(48, 27, 27, 1)",paddingTop:"0px", fontWeight:"lighter"}}>Join a secure and stable digital financial future..</p>
+                    <p style={{fontSize:"17px",color:"rgba(48, 27, 27, 1)",paddingTop:"0px", fontWeight:"lighter"}}>Pegged to a basket of global currencies, InterCoin is immune to crypto market volatility..</p>
 
-      <Row style={{marginTop:"90px", height:"540px", border:"none"}}>
-<h2  style={{color:"black",paddingBottom:"20px"}}>Sign up</h2>
+
+
+
+             
+          </Col>
+          </Row>
+      <Row style={{marginTop:"0px", height:"430px", border:"none"}}>
+
+
         <Col style={{fontFamily:"EB Garamond,serif",
-  border: "2px solid rgba(129, 129, 187, 1)",
-  height:" 440px",
-  marginTop: "50px",
-    margin:"15px",
+  border: "none",
+  height:" 400px",
+  marginTop: "260px",
+    margin:"0px",
   color: "black",
-  backgroundColor: "rgba(129, 129, 187, 1)",
-  boxShadow:"rgba(129, 129, 187, 1)",
-   borderRadius: "12px"
 }}>
 
          <br></br>
@@ -88,7 +99,9 @@ console.log(formData);
          <input 
          placeholder = 'Email'
          id='email'
-         style = {{ width:"80%", height:"45px",backgroundColor:'white', color:'black', borderRadius:"12px",paddingLeft:"10px"}}
+         style = {{ width:"80%", height:"45px",backgroundColor:'white',
+          border:"none",
+           color:'black', borderRadius:"12px",paddingLeft:"10px"}}
            type='email'  
           name ="email"
            value = {email} 
@@ -103,7 +116,9 @@ console.log(formData);
          
          <input type='password' 
          placeholder = 'password'
-         style = {{  width:"80%", height:"45px",backgroundColor:'white', color:'black', borderRadius:"12px",paddingLeft:"10px"}}
+         style = {{  width:"80%", height:"45px",backgroundColor:'white', 
+          border:"none",
+          color:'black', borderRadius:"12px",paddingLeft:"10px"}}
          id="password"
           value ={password}
            name = "password"
@@ -118,10 +133,10 @@ console.log(formData);
        <br></br>
 
         <button className = 'btn btn-sm btn-secondary'  type='submit' 
-         style = {{  width:"80%", height:"45px",backgroundColor:'white', color:"black"}}
+         style = {{fontSize:"16px",  width:"80%", height:"45px",backgroundColor:'white', color:"black"}}
          disabled = {loading}
         >
-        {loading ? 'sending...' : 'Register'}
+        {loading ? 'sending...' : 'Signup'}
         
         </button>
         <br></br>
@@ -130,7 +145,7 @@ console.log(formData);
               <br></br>
 
      <span style={{textAlign:"left", color:"black"}}>if you already have an account :</span> <button className = 'btn btn-sm btn-warning'
-      style={{backgroundColor:"rgba(0, 12, 12, 1)", border:"1px solid rgba(26, 18, 92, 0.4)"}}> <Nav.Link href ="/login"  style = {{color:'white'}}>login</Nav.Link></button> 
+      style={{backgroundColor:"rgba(0, 12, 12, 1)", border:"1px solid rgba(26, 18, 92, 0.4)"}}> <Nav.Link href ="/login"  style = {{color:'white'}}>Signin</Nav.Link></button> 
              
 
         </form>

@@ -84,32 +84,48 @@ function Login(){
   
       }
    
-             return <div style = {{ fontFamily:"EB Garamond,serif",height:"700px"}}> 
+             return <div style = {{ fontFamily:"EB Garamond,serif",height:"690px",
+             backgroundColor:"rgb(239,242,255)"}}> 
 
-               <Container style={{height:"600px"}}>
+               <Container style={{height:"680px", border:"none"}}>
+          <Row>
+            <Col xs = {12}>
           
-                   <Row style={{marginTop:"120px", height:"450px",  border: "none",}}>
-              <h2 style={{color:"black"}}>Sign in</h2>
+          <p style={{paddingTop:"80px", fontSize:"20px",fontWeight:"bold"}} >The Future of Digital Money is Inter Coin.</p>
+          <p style={{fontSize:"15.5px",color:"rgba(48, 27, 27, 1)",paddingTop:"0px", fontWeight:"lighter"}}>InterCoin combines the benefits of blockchain with the reliability of fiat currency.
+             Secure, low-cost, and instant global transactions.</p>
+
+
+
+             
+          </Col>
+
+
+
+          </Row>
+                   <Row style={{marginTop:"0px", height:"450px",  border: "none",}}>
+              <h2 style={{color:"black",paddingTop:"20px",fontSize:"19px"}}>Sign in</h2>
 
                      <Col style={{fontFamily:"EB Garamond,serif",
-  border: "2px solid rgba(129, 129, 187, 1)",
-  height:" 440px",
-  marginTop: "5px",
+  border: "none",
+  height:" 360px",
+  marginTop: "20px",
     margin:"16px",
   color: "black",
-  backgroundColor: "rgba(129, 129, 187, 1)",
-  boxShadow:" 4px 4px rgb(117, 65, 65)",
+  // boxShadow:" 4px 4px rgb(117, 65, 65)",
    borderRadius: "12px"
 }}>
-        <br></br>
+       
         
         <form onSubmit={handleSubmit}>
 
-         <label></label><br></br>
+         
          <input 
          id='email'
          placeholder = 'Email'
-          style = {{ width:"80%",height:"45px",backgroundColor:'white', color:'black' , borderRadius:"12px",paddingLeft:"10px"}}
+          style = {{ width:"80%",height:"45px",backgroundColor:'white',
+            border:"none", 
+            color:'black' , borderRadius:"12px",paddingLeft:"10px"}}
            type='email'  
           name ="email"
            value = {email} 
@@ -122,7 +138,9 @@ function Login(){
 
          <label></label><br></br>
          <input type='password' 
-          style = {{width:"80%",height:"45px", backgroundColor:'white', color:'black',  borderRadius:"12px",paddingLeft:"10px"}}
+          style = {{width:"80%",height:"45px", backgroundColor:'white',
+            border:"none",
+             color:'black',  borderRadius:"12px",paddingLeft:"10px"}}
           placeholder = 'Password'
          id="password"
           value ={password}
@@ -138,7 +156,8 @@ function Login(){
         <br></br>
 
         <button  type='submit' className='btn btn-primary'
-        style = {{width:"80%",height:"45px", backgroundColor:'white', color:"black", }}
+        style = {{width:"70%",height:"45px", backgroundColor:'white', 
+          color:"black",border:"1px solid black" }}
         disabled = {loading}
         >
          {loading ? 'sending...' : 'login'}
@@ -148,8 +167,8 @@ function Login(){
             <br></br>
               <br></br>
 
-          <span style={{textAlign:"left", color:"white"}}>if you don't have an account :</span> <button className = 'btn btn-sm btn-warning'
-           style={{backgroundColor:"rgba(0, 12, 12, 1)", border:"1px solid rgba(26, 18, 92, 0.4)"}}> <Nav.Link href ="/register"  style = {{color:'white'}}>SignUp</Nav.Link></button> 
+<span style={{textAlign:"left", color:"black"}}>if you don't have an account :</span> <button className = 'btn btn-sm btn-warning'
+   style={{backgroundColor:"rgba(0, 12, 12, 1)", border:"1px solid rgba(26, 18, 92, 0.4)"}}> <Nav.Link href ="/register"  style = {{color:'white'}}>SignUp</Nav.Link></button> 
         <br></br>
        
        

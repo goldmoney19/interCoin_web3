@@ -35,7 +35,7 @@ function ChooseAction(){
             },
 
               {
-                id:"/exchangeRateCalculate",
+                id:"#",
                 image:withdraw,
                 text:"withdraw",
             },

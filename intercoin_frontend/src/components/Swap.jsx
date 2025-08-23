@@ -3,6 +3,7 @@ import {useState , useEffect} from 'react'
 import axios from 'axios';
 import {Container, Row, Col, Nav,Card} from 'react-bootstrap'
 import "../App.css"
+import ChooseAction from './ChooseAction';
 
 
 import toast from 'react-hot-toast';
@@ -146,21 +147,24 @@ toast.error('Swap failed. Please try again.');
   }
 
     return (
-                <div className='homeContainer'> 
+                <div className='swaphomeContainer' > 
 
-                <Container fluid className='swapcashCon'>
+                <Container className='swapcashCon'>
 
                 <Row className='swapcashRow'>
-     <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif", color:"black"}}> Swap funds</p>
+     <p style={{fontWeight:"lighter", fontSize:"20px",paddingTop:"50px", fontFamily: "EB Garamond,serif", 
+      color:"black"}}> Swap funds</p>
 
                   <Col className='swapcashCol'> 
         
 
         {wallet && wallet.length > 0 ? (
           <form onSubmit={handleSwap}>
-         
+               
+               <p style={{textAlign:"left",paddingLeft:"37px"}}>From</p>
                   <select
-                   style={{width:"80%",height:"45px",backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
+                   style={{border:"none",width:"80%",height:"45px",backgroundColor:"white",
+                     color:"black", marginTop:"0px", borderRadius:"12px",paddingLeft:"7px"}}
                    value={fromCurrency}
                    onChange={(e) =>setFromCurrency(e.target.value)}>
             
@@ -171,11 +175,13 @@ toast.error('Swap failed. Please try again.');
                 ))}
          
                    </select>
-         <br></br>
-         <br></br>
+ 
+       
+                          <p style={{paddingTop:"20px",textAlign:"left",paddingLeft:"37px"}}>To</p>
 
            <select
-              style={{width:"80%",height:"45px",backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
+              style={{width:"80%",height:"45px",backgroundColor:"white", color:"black", 
+                marginTop:"0px", borderRadius:"12px",paddingLeft:"7px", border:"none"}}
                    value={toCurrency}
                    onChange={(e) =>setToCurrency(e.target.value)}>
           
@@ -189,18 +195,21 @@ toast.error('Swap failed. Please try again.');
          
                    </select>
          <br></br>
-         <br></br>
+         
          
          <input type='Number'
          value={amount}
          onChange={(e) =>setAmount(e.target.value)}
          placeholder='Enter Amount'
-         style={{width:"80%",height:"45px",backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
+         style={{border:"none",width:"80%",height:"45px",backgroundColor:"white",
+           color:"black",
+           marginTop:"30px", borderRadius:"0px",paddingLeft:"7px"}}
          />
          <br></br>
          <br></br>
    <button type="submit" className='btn btn-outline-success btn-sm'
-    style = {{height:"40px",border:"1px solid white", width:"80%",color:'white', backgroundColor:"rgba(0, 12, 12, 1)",marginTop:"30px",borderRadius:"12px",paddingLeft:"7px"}} 
+    style = {{fontSize:"17px",height:"36px",border:"1px solid black", width:"80%",
+      color:'black', backgroundColor:"white",marginTop:"20px",paddingLeft:"7px"}} 
     onClick={handleSwap}
     disabled = {loading}
     >{loading ?'wait, sending...' : 'send'}</button>
@@ -214,6 +223,10 @@ toast.error('Swap failed. Please try again.');
 
       </Col>
       </Row>
+
+        <Row>
+               <ChooseAction />
+              </Row>
       </Container>
           </div> )
 

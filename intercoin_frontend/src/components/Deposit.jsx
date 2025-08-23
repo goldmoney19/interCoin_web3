@@ -7,6 +7,7 @@ import { Form, Button, Row, Col, Alert ,Nav, Container} from 'react-bootstrap';
 import Cookies from "cookie-universal";
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import ChooseAction from './ChooseAction';
 
 
 const cookies = new Cookies();
@@ -116,20 +117,22 @@ useEffect(() =>{
 
     }
 
-    return (<div className='homeContainer'> 
+    return (<div className='deposithomeContainer'> 
 
-      <Container fluid className='depositCon'>
+      <Container className='depositCon' style={{width:"87%"}}>
   
                 <Row className='depositRow'>
-         <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif",  color:"black"}}> Deposit funds</p>
+   <p style={{fontWeight:"lighter", fontSize:"20px",
+    fontFamily: "EB Garamond,serif",  color:"black",paddingTop:"70px"}}> Deposit funds</p>
 
-                  <Col className='depositCol'> 
+                  <Col className='depositCol' > 
 
 
        <Form onSubmit={handleDeposit}>
-
+      {/* <p style={{textAlign:"left",paddingLeft:"20px"}}>To</p> */}
        <select
-          style={{width:"90%",height:"45px",backgroundColor:"white", color:"black", marginTop:"60px", borderRadius:"12px",paddingLeft:"7px"}}
+          style={{width:"90%",height:"45px",backgroundColor:"rgba(255, 255, 255, 1)", color:"black", 
+            marginTop:"30px", borderRadius:"12px",paddingLeft:"7px",border:"none"}}
           value={currency}
           onChange={(e) =>setCurrency(e.target.value)}>
    {
@@ -142,19 +145,23 @@ useEffect(() =>{
 
           </select>
 <br></br>
+<br></br>
+<br></br>
+     
+
 <input type='Number'
-  style={{marginLeft:"0px",height:"45px",width:"90%",backgroundColor:"white", color:"black", marginTop:"60px", borderRadius:"12px",paddingLeft:"7px"}}
+  style={{marginLeft:"0px",height:"45px",width:"90%",backgroundColor:"white", color:"black", 
+    marginTop:"0px", borderRadius:"12px",paddingLeft:"7px",border:"none"}}
   placeholder='Amount'
 value={amount}
 onChange={(e) =>setAmount(e.target.value)}
 />
 <br></br>
 <br></br>
-<br></br>
      <button type="submit" className='btn btn-outline-success btn-sm'
      style = {{marginTop:"30px", border:"1px solid white", width:"80%",
-      color:'white', backgroundColor:"rgba(0, 12, 12, 1)", borderRadius:"12px",
-      paddingLeft:"7px", height:"45px"}} 
+      color:'black', backgroundColor:"rgba(255, 255, 255, 1)", 
+      paddingLeft:"7px", height:"35px",border:"1px solid black",fontSize:"18px"}} 
 
      onClick={handleDeposit}
      disabled = {loading}
@@ -166,6 +173,10 @@ onChange={(e) =>setAmount(e.target.value)}
 
   </Col>
       </Row>
+    
+      <Row>
+               <ChooseAction />
+              </Row>
       </Container>
 
           </div> )

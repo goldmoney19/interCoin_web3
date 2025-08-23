@@ -27,7 +27,7 @@ const navigate = useNavigate()
            }, [navigate])
 
     return (
-                <div className='homeContainer'> 
+                <div > 
                 <p></p>
            <Balance />
             

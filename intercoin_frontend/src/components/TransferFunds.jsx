@@ -3,7 +3,7 @@ import {useState , useEffect} from 'react'
 import axios from 'axios';
 import {Container, Row, Col, Nav,Card} from 'react-bootstrap'
 import "../App.css"
-
+import ChooseAction from './ChooseAction';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
@@ -131,12 +131,13 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
 
 
     return (
-                <div className='homeContainer'> 
+                <div className='transferhomeContainer' style={{border:"none",backgroundColor:"rgb(239,242,255)"}}> 
 
-                  <Container fluid className='transferCon'>
+                  <Container className='transferCon' style={{border:"none"}}>
                   
-                                <Row className='transferRow'>
-  <p style={{fontWeight:"bold", fontSize:"22px", fontFamily: "EB Garamond,serif",  color:"black"}}>Transfer Funds</p>
+                                <Row className='transferRow' style={{border:"none"}}>
+  <p style={{fontWeight:"light", fontSize:"20px", fontFamily: "EB Garamond,serif", 
+     color:"black",paddingTop:"50px"}}>Transfer Funds</p>
 
                                   <Col className='transferCol'> 
 
@@ -144,23 +145,27 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
            
         <form onSubmit={handleTransfer}> 
 
-            <input type='text'
-         value={receiverId}
-         placeholder='receiver id'
-         style={{width:"80%",height:"50px",backgroundColor:"white", color:"black", borderRadius:"12px",paddingLeft:"7px", marginTop:"40px"}}
-         onChange={(e) =>setReceiverId(e.target.value)}
+    <input type='text'
+ value={receiverId}
+ placeholder='receiver id'
+  style={{width:"80%",height:"50px",backgroundColor:"white", color:"black",
+     borderRadius:"0px",paddingLeft:"7px", marginTop:"10px",border:"none"}}
+  onChange={(e) =>setReceiverId(e.target.value)}
          />
 
-
+ <br></br>
          <br></br>
-         <br></br>
-
+         
+    <br></br> 
 
       
           <select
           
-  style={{backgroundColor:"white", color:"black", marginTop:"30px",borderRadius:"12px",
-  paddingLeft:"7px", width:'80%',height:"45px"}}
+  style={{float:"left",backgroundColor:"white", color:"black", marginTop:"0px",
+    borderRadius:"12px",
+    marginLeft:"20px",
+    border:"none",
+  paddingLeft:"7px", width:'40%',height:"45px"}}
           value={fromCurrency}
            onChange={(e) =>setFromCurrency(e.target.value)}>
       
@@ -176,12 +181,12 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
            </select>
 
         
-           <br></br>
-         <br></br>
-
+        
         
          <select
- style={{height:"45px",width:"80%",backgroundColor:"white", color:"black", marginTop:"30px" ,borderRadius:"12px",paddingLeft:"7px"}}
+ style={{float:"right",height:"45px",width:"40%",backgroundColor:"white",
+   color:"black", marginTop:"0px" ,borderRadius:"12px",paddingLeft:"7px",
+  border:"none", marginRight:"20px",}}
            value={toCurrency}
            onChange={(e) =>setToCurrency(e.target.value)}>
     
@@ -198,18 +203,26 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
          <br></br>
          <br></br>
          
-         <input type='Number'
-         value={amount}
-          style={{height:"45px",width:"80%",backgroundColor:"white", color:"black", marginTop:"30px", borderRadius:"12px",paddingLeft:"7px"}}
-          onChange={(e) =>setAmount(e.target.value)}
-         placeholder='amount'
-         />
+    <br></br> 
+
          
+  <input type='Number'
+ value={amount}
+   style={{height:"45px",width:"80%",backgroundColor:"white", color:"black", 
+    border:"none",
+    marginTop:"30px", borderRadius:"0px",paddingLeft:"7px"}}
+   onChange={(e) =>setAmount(e.target.value)}
+  placeholder='Enter amount'
+         />
+         <br></br>
+         <br></br>
      <button type="submit" className='btn btn-outline-success btn-sm' 
-              style={{height:"50px",width:"60%",border:"1px solid white", backgroundColor:"rgba(0, 12, 12, 1)", color:"white", marginTop:"30px",borderRadius:"12px"}}
-                onClick={handleTransfer}
-                disabled = {loading}
-                ><Nav.Link>{loading ? 'sending...' :'send'}</Nav.Link>
+  style={{height:"45px",width:"60%",border:"1px solid black", 
+    backgroundColor:"white", color:"black", marginTop:"30px",
+    borderRadius:"0px", width:"190px",fontSize:"16px"}}
+     onClick={handleTransfer}
+     disabled = {loading}
+     ><Nav.Link>{loading ? 'sending...' :'send'}</Nav.Link>
     </button>
          
 
@@ -224,6 +237,11 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
 
     </Col>
         </Row>
+        <br></br>
+        <br></br>
+          <Row>
+               <ChooseAction />
+              </Row>
         </Container>
           </div> )
 

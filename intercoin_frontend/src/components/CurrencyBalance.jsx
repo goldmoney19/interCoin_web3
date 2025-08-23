@@ -71,10 +71,10 @@ function CurrencyBalance(){
     }}>      
       <img src = {wallet.imageUrl}
  style={{height: "35px", objectFit: "contain", 
- marginTop: "6px",width:"40px" }}   />
-   <span style={{padding:"0px",fontSize:"15px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.currency}</span>
+ marginTop: "6px",width:"40px" ,float:"left",}}   />
+   <p style={{float:"left",paddingLeft:"10px",paddingTop:"10px",fontSize:"15px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.currency}</p>
 
-                 <span style={{paddingTop:"0px",fontSize:"19px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.balance.toLocaleString()}</span>
+                 <p style={{float:"right",paddingTop:"10px",fontSize:"19px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.balance.toLocaleString()}</p>
                     </Col>  
 
           

@@ -30,7 +30,8 @@ function Balance(){
            <Container className='balance_con' >
                     
                   
-                 <p style={{paddingLeft:"15px",textAlign:"left",fontWeight:"lighter",color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"0px"
+ <p style={{paddingLeft:"15px",textAlign:"left",fontWeight:"lighter",color:"black",
+  fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"0px",paddingTop:"20px"
 }}>Wallet Balance</p>
                  <Row>
                <CurrencyBalance />
@@ -56,9 +57,14 @@ function Balance(){
               </Row> 
 
               <br></br>
-  
+            
+             <Row>
+              <Nav.Link href = "/interCoinAi">
+              <button style={{width:"90%",margin:"auto", backgroundColor:"rgba(5, 12, 12, 0.8)"}}>
+                  Chat with Ai</button></Nav.Link> 
+              </Row> 
 
-             <br></br>
+           
 
                     </Container>
     
