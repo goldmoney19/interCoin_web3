@@ -371,8 +371,8 @@ border:none;
 @media screen and (max-width:1000px){
 
  .balance_cover{
-height: 100%;
-    border:none;
+height: 640px;
+    border:2px solid blue;
   width: 100%;
    border: none;
    margin-top: 0px;
@@ -381,6 +381,7 @@ height: 100%;
 
 
 .balance_con{
+height: 640px;
 
    background-color:rgb(239, 242, 255);
   border:none;
@@ -599,15 +600,15 @@ border: none;
 }
 
 .swapcashCon{
-  margin-top: 60px;
-  height: 610px;
+  margin-top: 0px;
+  height: 670px;
   border:none;
 
 }
 
 
 .swapcashRow{
-  margin-top: 20px;
+  margin-top: 0px;
 
   border:none;
   height: 500px;

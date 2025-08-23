@@ -152,7 +152,7 @@ toast.error('Swap failed. Please try again.');
                 <Container className='swapcashCon'>
 
                 <Row className='swapcashRow'>
-     <p style={{fontWeight:"lighter", fontSize:"20px",paddingTop:"50px", fontFamily: "EB Garamond,serif", 
+     <p style={{fontWeight:"lighter", fontSize:"20px",paddingTop:"90px", fontFamily: "EB Garamond,serif", 
       color:"black"}}> Swap funds</p>
 
                   <Col className='swapcashCol'> 
@@ -164,7 +164,9 @@ toast.error('Swap failed. Please try again.');
                <p style={{textAlign:"left",paddingLeft:"37px"}}>From</p>
                   <select
                    style={{border:"none",width:"80%",height:"45px",backgroundColor:"white",
-                     color:"black", marginTop:"0px", borderRadius:"12px",paddingLeft:"7px"}}
+                     color:"black", marginTop:"0px", borderRadius:"12px",paddingLeft:"7px",
+                    fontFamily: "EB Garamond,serif"
+                    }}
                    value={fromCurrency}
                    onChange={(e) =>setFromCurrency(e.target.value)}>
             
@@ -181,7 +183,8 @@ toast.error('Swap failed. Please try again.');
 
            <select
               style={{width:"80%",height:"45px",backgroundColor:"white", color:"black", 
-                marginTop:"0px", borderRadius:"12px",paddingLeft:"7px", border:"none"}}
+                marginTop:"0px", borderRadius:"12px",paddingLeft:"7px", border:"none",
+              fontFamily: "EB Garamond,serif"}}
                    value={toCurrency}
                    onChange={(e) =>setToCurrency(e.target.value)}>
           
@@ -209,7 +212,8 @@ toast.error('Swap failed. Please try again.');
          <br></br>
    <button type="submit" className='btn btn-outline-success btn-sm'
     style = {{fontSize:"17px",height:"36px",border:"1px solid black", width:"80%",
-      color:'black', backgroundColor:"white",marginTop:"20px",paddingLeft:"7px"}} 
+      color:'black', backgroundColor:"white",marginTop:"20px",paddingLeft:"7px", fontFamily:"EB Garamond,serif"
+}} 
     onClick={handleSwap}
     disabled = {loading}
     >{loading ?'wait, sending...' : 'send'}</button>
@@ -224,7 +228,7 @@ toast.error('Swap failed. Please try again.');
       </Col>
       </Row>
 
-        <Row>
+        <Row style={{marginTop:"30px"}}>
                <ChooseAction />
               </Row>
       </Container>

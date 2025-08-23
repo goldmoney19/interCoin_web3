@@ -131,7 +131,8 @@ useEffect(() =>{
        <Form onSubmit={handleDeposit}>
       {/* <p style={{textAlign:"left",paddingLeft:"20px"}}>To</p> */}
        <select
-          style={{width:"90%",height:"45px",backgroundColor:"rgba(255, 255, 255, 1)", color:"black", 
+          style={{width:"90%",height:"45px",backgroundColor:"rgba(255, 255, 255, 1)", 
+            color:"black", fontFamily: "EB Garamond,serif",
             marginTop:"30px", borderRadius:"12px",paddingLeft:"7px",border:"none"}}
           value={currency}
           onChange={(e) =>setCurrency(e.target.value)}>
@@ -161,7 +162,8 @@ onChange={(e) =>setAmount(e.target.value)}
      <button type="submit" className='btn btn-outline-success btn-sm'
      style = {{marginTop:"30px", border:"1px solid white", width:"80%",
       color:'black', backgroundColor:"rgba(255, 255, 255, 1)", 
-      paddingLeft:"7px", height:"35px",border:"1px solid black",fontSize:"18px"}} 
+      fontFamily: "EB Garamond,serif",
+      paddingLeft:"7px", height:"45px",border:"1px solid black",fontSize:"18px"}} 
 
      onClick={handleDeposit}
      disabled = {loading}

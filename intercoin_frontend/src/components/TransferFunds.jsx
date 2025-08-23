@@ -164,6 +164,7 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
   style={{float:"left",backgroundColor:"white", color:"black", marginTop:"0px",
     borderRadius:"12px",
     marginLeft:"20px",
+    fontFamily: "EB Garamond,serif",
     border:"none",
   paddingLeft:"7px", width:'40%',height:"45px"}}
           value={fromCurrency}
@@ -186,7 +187,7 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
          <select
  style={{float:"right",height:"45px",width:"40%",backgroundColor:"white",
    color:"black", marginTop:"0px" ,borderRadius:"12px",paddingLeft:"7px",
-  border:"none", marginRight:"20px",}}
+  border:"none", marginRight:"20px",fontFamily: "EB Garamond,serif"}}
            value={toCurrency}
            onChange={(e) =>setToCurrency(e.target.value)}>
     
