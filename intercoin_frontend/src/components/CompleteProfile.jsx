@@ -24,7 +24,7 @@ function CompleteProfile(){
                             <Col sm = {12} className='profileSetCol'  >
 
          
-         <span className='profileSetText2' >Transaction history</span>
+         <p className='profileSetText2' >Transaction history</p>
           <span><button className='profileSetText2btnn'>view</button></span>
                     </Col>
                         </Row>

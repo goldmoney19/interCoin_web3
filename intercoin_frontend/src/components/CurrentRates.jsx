@@ -24,7 +24,7 @@ function CurrentRates(){
                             <Col sm = {12} className='conversionCol'  >
 
          
-         <span className='conversionText2' >Currency conversion</span>
+         <p className='conversionText2' >Currency conversion</p>
           <span><button className='conversionbtnn'>check</button></span>
                     </Col>
                         </Row>

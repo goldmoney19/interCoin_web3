@@ -453,10 +453,12 @@ color:black;
  font-size:14px;
 padding-right: 90px; 
  padding-top:17px;
-    font-family:"EB Garamond,serif"
+    font-family:"EB Garamond,serif";
+    float: left;
 }
 
 .profileSetText2btnn{
+  float: right;
    font-family:"EB Garamond,serif";
  font-size: 13px;
 }
@@ -499,15 +501,19 @@ border:none;
 
 color:black;
  font-size:14px;
-padding-right: 90px; 
- padding-top:17px;
-    font-family:"EB Garamond,serif"
+padding-right: 10px; 
+ padding-top:9px;
+    font-family:"EB Garamond,serif";
+    text-align: left;
+     float: left;
+
 }
 
 .conversionbtnn{
 
  font-family:"EB Garamond,serif";
  font-size: 13px;
+ float: right;
 
 }
 
