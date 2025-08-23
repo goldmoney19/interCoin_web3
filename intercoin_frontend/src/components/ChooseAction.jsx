@@ -51,8 +51,10 @@ function ChooseAction(){
  <Row className='chooseActionRow ' >
                         {           
   weOffer_info.map((item) => (  
-    <Col xs = {2}className='chooseActionCol '  style={{width:"63px"}}>
-               <Nav.Link href ={item.id} > <img src = {item.image} style={{width:"40px",height:"35px"}} /></Nav.Link>
+    <Col xs = {2}className='chooseActionCol '  style={{width:"63px",height:"70px",
+      border:"1px solid red"
+    }}>
+               <Nav.Link href ={item.id} > <img src = {item.image} style={{width:"40px",height:"35px", border:"2px solid blue"}} /></Nav.Link>
                    
                     
       {/* <button 
