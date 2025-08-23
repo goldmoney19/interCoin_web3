@@ -23,9 +23,9 @@ function CompleteProfile(){
 
                             <Col sm = {12} className='profileSetCol'  >
 
-          <p className='profileSetText1'  >Complete your account setup</p>
-         <p className='profileSetText2' >Provide information to get started</p>
-
+         
+         <span className='profileSetText2' >Transaction history</span>
+          <span><button className='profileSetText2btnn'>view</button></span>
                     </Col>
                         </Row>
                     

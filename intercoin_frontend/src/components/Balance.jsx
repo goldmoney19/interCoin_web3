@@ -27,7 +27,7 @@ function Balance(){
  
      return  <div className='balance_cover'  >
 
-           <Container fluid  className='balance_con' >
+           <Container className='balance_con' >
                     
                   
                  <p style={{paddingLeft:"15px",textAlign:"left",fontWeight:"lighter",color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"0px"
@@ -38,17 +38,23 @@ function Balance(){
                        
    <br></br>
     
-   <br></br>
-              {/* <Row>
-               <CompleteProfile />
-              </Row> */}
-  
-               <Row>
+                <Row>
                <ChooseAction />
               </Row>
 
 
                <br></br>
+
+                <Row>
+               <CompleteProfile />
+              </Row> 
+
+              <br></br>
+
+              <Row>
+               <CurrentRates />
+              </Row> 
+
               <br></br>
    
 <p style={{paddingLeft:"15px",textAlign:"left",fontWeight:"lighter",color:"Black", fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"0px"

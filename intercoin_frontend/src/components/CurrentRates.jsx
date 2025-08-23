@@ -9,20 +9,26 @@ import { useNavigate } from 'react-router-dom';
 
 
 
+
 function CurrentRates(){
+
+
 
     return (
                 <div className='homeContainer'> 
-       
 
-            <Row className='current_rates'>
+                    
 
-                <Col>
-                      <h4 style={{  fontFamily:"EB Garamond,serif"}}>Current Rates</h4>
-                
-                </Col>
-            </Row>
-        
+                        <Row className='conversionRow' >
+
+                            <Col sm = {12} className='conversionCol'  >
+
+         
+         <span className='conversionText2' >Currency conversion</span>
+          <span><button className='conversionbtnn'>check</button></span>
+                    </Col>
+                        </Row>
+                    
            
           </div> )
 

@@ -48,11 +48,11 @@ function ChooseAction(){
     return (
                 <div className='homeContainer'> 
            
- <Row className='chooseActionRow justify-content-center' >
+ <Row className='chooseActionRow ' >
                         {           
   weOffer_info.map((item) => (  
-    <Col xs = {2} sm={4} className='chooseActionCol ' >
-               <Nav.Link href ={item.id} > <img src = {item.image} style={{width:"30px",height:"28px"}} /></Nav.Link>
+    <Col xs = {2}className='chooseActionCol '  style={{width:"63px"}}>
+               <Nav.Link href ={item.id} > <img src = {item.image} style={{width:"40px",height:"35px"}} /></Nav.Link>
                    
                     
       {/* <button 
@@ -61,7 +61,7 @@ function ChooseAction(){
         <Nav.Link href ={item.id} >{item.text}</Nav.Link></button>
                                      */}
                                   
-    <p style={{paddingTop:"25px",fontSize:"12px",paddingLeft:"0px"}}>{item.text}</p>
+    <p style={{paddingTop:"20px",fontSize:"12px",paddingLeft:"0px"}}>{item.text}</p>
         
     </Col>
       )) } 

@@ -65,14 +65,16 @@ function CurrencyBalance(){
                         
        wallets.map((wallet) => (
                                                                     
-<Col xs = {4} style={{border:"2px solid grey",
-    height:"110px",margin:"auto", width:"115px", marginBottom:"10px", 
-    borderRadius:"15px", boxShadow:"2px 2px grey", backgroundColor:"rgba(255, 255, 255, 0.99)",overflowX:"scroll"}}>      
-            <img src = {wallet.imageUrl}
-         style={{ height: "40px", objectFit: "contain", marginTop: "3px",width:"60px" }}                    />
-                          <p style={{padding:"0px",fontSize:"15px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.currency}</p>
+<Col xs = {4} style={{textAlign:"left",border:"none",
+    height:"45px", width:"100%", marginBottom:"0px", 
+    borderRadius:"8px", boxShadow:"2px 2px grey", backgroundColor:"rgba(222, 235, 247, 0.99)",
+    }}>      
+      <img src = {wallet.imageUrl}
+ style={{height: "35px", objectFit: "contain", 
+ marginTop: "6px",width:"40px" }}   />
+   <span style={{padding:"0px",fontSize:"15px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.currency}</span>
 
-                 <p style={{paddingTop:"0px",fontSize:"19px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.balance.toLocaleString()}</p>
+                 <span style={{paddingTop:"0px",fontSize:"19px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.balance.toLocaleString()}</span>
                     </Col>  
 
           

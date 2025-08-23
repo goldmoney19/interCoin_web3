@@ -174,7 +174,7 @@ border: none;
     font-family:"EB Garamond,serif";
     border:none;
     padding-top:20px;
-    width: 40px;
+   
     
 }
 
@@ -381,7 +381,7 @@ height: 100%;
 
 .balance_con{
 
-   background-color:rgb(255, 255, 255);
+   background-color:rgb(239, 242, 255);
   border:none;
 min-height: 700px;
   width: 100%;
@@ -392,41 +392,44 @@ min-height: 700px;
 .currencyBalanceRow{
 
 
-/* border:2px solid  rgba(0, 0, 0, 0.562); */
+ border:none; 
 border-radius: 15px;
-box-shadow: 2px 2px rgba(0, 0, 0, 0.911);
+box-shadow:"none";
 padding: 4px;
-width: 95%;
-background-color: rgba(205, 193, 252, 0.61);
-height: 250px;
+width: 90%;
+background-color: white;
+height: 220px;
+
 }
 
 
 
 
-/* 
+
 
 .profileSetRow{
 
     border:none;
-    width: 80%;
-  border: none;
+    width: 90%;
+  border:none;
   margin: auto;
   align-self: center;
   border-radius: 12px;
   box-shadow: 3px 3px white;
-
+  height: 50px;
+  background-color: white;
 
 }
 
 
 .profileSetCol{
 
-  color:white; 
-  background-color:rgba(117, 43, 8, 0.7); 
-  min-height:100px;
+  color:black; 
+  background-color: white;
+  min-height:40px;
 border-radius: 12px;
 border:none;
+padding-top: 9px;
   
 
 
@@ -446,12 +449,72 @@ color: white;
 
 .profileSetText2{
 
-color: white;
+color:black;
  font-size:14px;
- text-align: center;
-  padding-top:10px;
+padding-right: 90px; 
+ padding-top:17px;
     font-family:"EB Garamond,serif"
-} */
+}
+
+.profileSetText2btnn{
+   font-family:"EB Garamond,serif";
+ font-size: 13px;
+}
+
+
+
+
+.conversionRow{
+
+    border:none;
+    width: 90%;
+  border:none;
+  margin: auto;
+  align-self: center;
+  border-radius: 12px;
+  box-shadow: 3px 3px white;
+  height: 50px;
+  background-color: white;
+
+}
+
+
+.conversionCol{
+
+  color:black; 
+  background-color: white;
+  min-height:40px;
+border-radius: 12px;
+border:none;
+ padding-top: 9px;
+
+  
+
+}
+
+
+
+
+.conversionText2{
+
+color:black;
+ font-size:14px;
+padding-right: 90px; 
+ padding-top:17px;
+    font-family:"EB Garamond,serif"
+}
+
+.conversionbtnn{
+
+ font-family:"EB Garamond,serif";
+ font-size: 13px;
+
+}
+
+
+
+
+
 
 .homeContainer{
 
@@ -463,48 +526,30 @@ border: none;
 
 .chooseActionRow{
    width:100%;
-   border:none;
-    border-radius: 0px;
+ border: 0.5px solid white;    border-radius: 0px;
     height: 100px;
   align-content: space-between;
-    
-        
-
-
-
+    background-color:rgb(239, 242, 255);
 }
 
 
 .chooseActionCol{
-
-   border-radius: 20px;
-   background-color:rgba(159, 191, 218, 0.753);;
-    height:30px;
+  
+   border-radius: 0px;
+   background-color:white;
+    height:29px;
     font-family:"EB Garamond,serif";
     padding-top:12px;
-    border: none;
-     box-shadow: 3px 3px rgba(1, 23, 27, 0.856);
-     
+   
+      width: 0px;
      margin:12px;
 }
 
-.chooseActionbtn{
-    
-  margin-right:0px;
-   color:white;
-     box-shadow: 2px 2px rgb(206, 202, 238);
-    height:35px;
-    width:90px;
-    border-radius: 12px;
-    font-size: 13px;
-    text-shadow: 1px 1px rgb(17, 5, 95);
-     background-color:rgba(20, 12, 43, 0.795);
-  
-}
 
-.current_rates{
 
-    border:none;
+.rate_conversion{
+
+    border:2px solid red;
  width:90%;
  height: 150px;
  background-color: rgba(26, 3, 43, 0.8);
