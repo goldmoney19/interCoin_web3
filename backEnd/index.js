@@ -54,7 +54,6 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
-app.options('*', cors()); // Allow preflight across all routes
 
 const PORT = process.env.PORT || 7000;
 const MONGOURL = process.env.MONGO_URL;
