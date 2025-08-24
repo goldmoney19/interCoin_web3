@@ -31,10 +31,10 @@ function Navvbar() {
       
       return( <div>
 
-<Navbar collapseOnSelect expand="lg" className="navbarr_body navbar navbar-light " fixed="top" style={{backgroundColor:"rgba(232, 234, 241, 1)"}}>
+<Navbar collapseOnSelect expand="lg" className="navbarr_body navbar navbar-light " fixed="top" style={{backgroundColor:"rgb(239, 242, 255)"}}>
       <Container style={{fontFamily: "EB Garamond,serif"}}>
         <Navbar.Brand href="/" style={{color:"black",fontWeight:"bold",fontSize:"22px"}}>Inter - Coin</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav"   style={{backgroundColor:"rgba(54, 60, 63, 0.36)", color:"black"}}/>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav"   style={{border:"none",backgroundColor:"rgb(239, 242, 255)", color:"black",height:"39px"}}/>
         <Navbar.Collapse id="responsive-navbar-nav" >
           <Nav className="me-auto text-primary">
           <Nav.Link href ="/" style={{fontSize:"21px",borderBottom:"1px solid rgba(107, 59, 59, 1)"}}><span style={{color:"black" ,fontSize:"20px",textAlign:"left"}}>Home</span></Nav.Link>

@@ -31,7 +31,7 @@ function Balance(){
                     
                   
  <p style={{paddingLeft:"15px",textAlign:"left",fontWeight:"lighter",color:"black",
-  fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"0px",paddingTop:"20px"
+  fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"0px",paddingTop:"49px"
 }}>Wallet Balance</p>
                  <Row>
                <CurrencyBalance />
