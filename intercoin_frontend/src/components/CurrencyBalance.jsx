@@ -15,6 +15,7 @@ function CurrencyBalance(){
    //  const email_user = localStorage.getItem("email");
 
    const [wallets, setWallets] = useState([]);
+   const [loading, setLoading] = useState(true);
   
     
    
@@ -36,6 +37,9 @@ function CurrencyBalance(){
     }
                      catch (error) {
      console.log("cannot fetch", error) 
+    }finally{
+
+     setLoading(false)
     }
      }
         
@@ -61,7 +65,7 @@ function CurrencyBalance(){
    
              {
                                               
-             
+          !loading ? ( 
                         
        wallets.map((wallet) => (
                                                                     
@@ -82,9 +86,13 @@ function CurrencyBalance(){
                                         
   )) 
 
-               }
+  
+          ):(
 
-                      
+<p>preparing balance....</p>
+          )
+
+               }
 
               
                          </Row>
