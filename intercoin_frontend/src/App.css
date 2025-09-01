@@ -1938,7 +1938,7 @@ margin-top:120px;
 .loginRow2 .signin{
   color:black;
   padding-top: 0px;
-  font-size:19px;
+  font-size:21px;
   padding-bottom: 30px;
   font-weight: bold;
 }
@@ -2006,9 +2006,9 @@ font-size: 15px;
 
 background-color:rgba(0, 12, 12, 1);
  border:1px solid rgba(26, 18, 92, 0.4);
-height:34px ;
+height:28px ;
 width:65px;
-font-size: 15px;
+font-size: 12px;
 }
 
 .navCover{

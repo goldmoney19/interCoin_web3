@@ -44,7 +44,7 @@ console.log(formData);
                     console.log(response);
                      toast.success(response.data.message, {position:"top-right"});
                      console.log("user inserted");
-                      // navigate("/login");
+                      navigate("/login");
                  
 
                   }
@@ -150,7 +150,7 @@ console.log(formData);
           height:"45px",backgroundColor:'rgb(31, 0, 46)', color:"white"}}
          disabled = {loading}
         >
-        {loading ? 'signing up...' : 'Signup'}
+        {loading ? 'signing up...' : 'Sign up'}
         
         </button>
         <br></br>
@@ -158,8 +158,8 @@ console.log(formData);
             <br></br>
               <br></br>
 
-     <span style={{textAlign:"left", color:"black"}}> or </span> <button className = 'btn btn-sm btn-warning'
-      style={{backgroundColor:"rgba(0, 12, 12, 1)", border:"1px solid rgba(26, 18, 92, 0.4)"}}> <Nav.Link href ="/login"  style = {{color:'white'}}>Signin</Nav.Link></button>  
+     <span style={{textAlign:"left", color:"black", paddingRight:"10px"}}> or </span> <button className = 'btn btn-sm btn-warning'
+      style={{fontSize:"12.5px",height:"28px",backgroundColor:"rgba(0, 12, 12, 1)", border:"1px solid rgba(26, 18, 92, 0.4)"}}> <Nav.Link href ="/login"  style = {{color:'white'}}>Sign in</Nav.Link></button>  
              
 
         </form>

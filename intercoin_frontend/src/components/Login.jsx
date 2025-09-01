@@ -110,7 +110,7 @@ function Login(){
        
         
         <form onSubmit={handleSubmit}>
- <h2 className='signin'>Sign in</h2>
+ <h2 className='signin'>Login to your account</h2>
          
          <p   style={{textAlign:"left", paddingLeft:"40px", fontSize:"14px"}}>Email</p>
           <img src ={deposit} style={{height:"15px",width:"15px", marginTop:"10px",marginRight:"5px"}} />
@@ -151,13 +151,13 @@ function Login(){
         <button  type='submit' className='loginBtnn'
         disabled = {loading}
         >
-         {loading ? 'signing...' : 'Login'}
+         {loading ? 'signing...' : 'Sign in'}
         </button>
          <br></br>
          <br></br>
-         <span style = {{paddingRight:'10px'}}>0r</span> 
+         <span style = {{paddingRight:'10px'}}>or</span> 
           <button className = 'btn btn-sm bttn3'
-   > <Nav.Link href ="/register"  style = {{color:'white'}}>SignUp</Nav.Link></button>  
+   > <Nav.Link href ="/register"  style = {{color:'white'}}>Sign up</Nav.Link></button>  
           
             <br></br>
               <br></br>

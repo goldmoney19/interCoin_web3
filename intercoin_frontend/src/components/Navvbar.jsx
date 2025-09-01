@@ -8,6 +8,7 @@ import send from "../assets/sendMoney.png"
 import profile from "../assets/profilePic2.jpg"
 import profile_img from "../assets/profile_img.jpg"
 import notification from "../assets/notification.jpg"
+import toast from 'react-hot-toast'
 
 
 
@@ -26,7 +27,7 @@ function Navvbar() {
             useEffect(() => {
  
                   const user = localStorage.getItem("user-id");
-                     if(!user === null){
+                     if(user !== null){
  
                         
                         setIsLogged(true)
@@ -35,21 +36,27 @@ function Navvbar() {
  
  
             }, [navigate])
+
+
+  const LogoutUser = () => {
  
-  // const LogoutUser = () => {
+          
+           cookies.remove("token");
+           localStorage.removeItem("email");
+            localStorage.removeItem("user");
+             localStorage.removeItem("user-id");
+         
+          toast.success("Logout successful", {position:"top-right"});
+ 
+           navigate("/login");
+ 
+   }
 
-  //         cookies.remove("PHPSESSID");
-  //         cookies.remove("access-token");
-  //         localStorage.removeItem("email");
-  //          localStorage.removeItem("user");
-  //           localStorage.removeItem("user-id");
-        
-  //        toast.success("Logout successful", {position:"top-right"});
 
-  //         navigate("/");
 
-  // }
-      
+
+
+
       return( <div>
 
 <Navbar collapseOnSelect expand="lg" className="navbar navbar-light navCover" fixed="top" >
@@ -94,6 +101,7 @@ function Navvbar() {
       {/* <Nav.Link href ="/login"  style={{color:"white" ,fontSize:"21px",borderBottom:"0.1px solid rgba(107, 59, 59, 1)"}}><span style={{color:"black" ,fontSize:"18px"}}>Login</span></Nav.Link> */}
 
 
+                             <Nav.Link href ="#" onClick={LogoutUser} style={{color:"red"}}>Logout</Nav.Link>
          
 
           </Nav>

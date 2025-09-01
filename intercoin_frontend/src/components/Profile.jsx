@@ -35,19 +35,19 @@ useEffect(() =>{
          },[navigate] )
 
 
-              const LogoutUser = () => {
+  //             const LogoutUser = () => {
 
          
-          cookies.remove("token");
-          localStorage.removeItem("email");
-           localStorage.removeItem("user");
-            localStorage.removeItem("user-id");
+  //         cookies.remove("token");
+  //         localStorage.removeItem("email");
+  //          localStorage.removeItem("user");
+  //           localStorage.removeItem("user-id");
         
-         toast.success("Logout successful", {position:"top-right"});
+  //        toast.success("Logout successful", {position:"top-right"});
 
-          navigate("/login");
+  //         navigate("/login");
 
-  }
+  // }
 
 
     return (
@@ -75,7 +75,7 @@ useEffect(() =>{
           <br></br>
 
             <div style={{border:'1px solid grey',color:"white",backgroundColor:"red", fontFamily:"EB Garamond,serif"}}>
-                    <Nav.Link href ="#" onClick={LogoutUser} >Logout</Nav.Link>
+                    {/* <Nav.Link href ="#" onClick={LogoutUser} >Logout</Nav.Link> */}
 
           </div>
           <br></br>
