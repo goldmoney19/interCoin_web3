@@ -149,11 +149,10 @@ toast.error('Swap failed. Please try again.');
     return (
                 <div className='swaphomeContainer' > 
 
-                <Container className='swapcashCon'>
+                <Container fluid className='swapcashCon'>
 
                 <Row className='swapcashRow'>
-     <p style={{fontWeight:"lighter", fontSize:"20px",paddingTop:"90px", fontFamily: "EB Garamond,serif", 
-      color:"black"}}> Swap funds</p>
+     <p className='swapHeading'> Swap funds</p>
 
                   <Col className='swapcashCol'> 
         
@@ -161,12 +160,9 @@ toast.error('Swap failed. Please try again.');
         {wallet && wallet.length > 0 ? (
           <form onSubmit={handleSwap}>
                
-               <p style={{textAlign:"left",paddingLeft:"37px"}}>From</p>
+               <p className='swapFrom'>From</p>
                   <select
-                   style={{border:"none",width:"80%",height:"45px",backgroundColor:"white",
-                     color:"black", marginTop:"0px", borderRadius:"12px",paddingLeft:"7px",
-                    fontFamily: "EB Garamond,serif"
-                    }}
+                   className='swapFromSelect'
                    value={fromCurrency}
                    onChange={(e) =>setFromCurrency(e.target.value)}>
             
@@ -179,12 +175,10 @@ toast.error('Swap failed. Please try again.');
                    </select>
  
        
-                          <p style={{paddingTop:"20px",textAlign:"left",paddingLeft:"37px"}}>To</p>
+                          <p className='swapTo'>To</p>
 
            <select
-              style={{width:"80%",height:"45px",backgroundColor:"white", color:"black", 
-                marginTop:"0px", borderRadius:"12px",paddingLeft:"7px", border:"none",
-              fontFamily: "EB Garamond,serif"}}
+            className='swapToSelect'
                    value={toCurrency}
                    onChange={(e) =>setToCurrency(e.target.value)}>
           
@@ -204,16 +198,12 @@ toast.error('Swap failed. Please try again.');
          value={amount}
          onChange={(e) =>setAmount(e.target.value)}
          placeholder='Enter Amount'
-         style={{border:"none",width:"80%",height:"45px",backgroundColor:"white",
-           color:"black",
-           marginTop:"30px", borderRadius:"0px",paddingLeft:"7px"}}
+        className='swapAmount'
          />
          <br></br>
          <br></br>
-   <button type="submit" className='btn btn-outline-success btn-sm'
-    style = {{fontSize:"17px",height:"36px",border:"1px solid black", width:"80%",
-      color:'black', backgroundColor:"white",marginTop:"20px",paddingLeft:"7px", fontFamily:"EB Garamond,serif"
-}} 
+   <button type="submit" className='swapBtn'
+  
     onClick={handleSwap}
     disabled = {loading}
     >{loading ?'wait, sending...' : 'send'}</button>

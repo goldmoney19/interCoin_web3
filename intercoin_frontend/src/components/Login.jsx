@@ -6,6 +6,7 @@ import Cookies from "cookie-universal"
 // import toast from 'react-hot-toast';
 import {Button, Nav , Col, Row, Container} from 'react-bootstrap'
 import toast from 'react-hot-toast';
+import deposit from "../assets/depositMoney.png"
 
 
 const cookies = new Cookies();
@@ -84,17 +85,16 @@ function Login(){
   
       }
    
-             return <div style = {{ fontFamily:"EB Garamond,serif",height:"690px",
-             backgroundColor:"rgb(239,242,255)"}}> 
+             return <div className='loginHomeContainer' > 
 
-               <Container style={{height:"680px", border:"none"}}>
-          <Row>
-            <Col xs = {12}>
+               <Container fluid className ="loginCon">
+          <Row className ="loginRow"> 
+            <Col xs = {12} className ="loginCol"> 
           
-          <p style={{paddingTop:"80px", fontSize:"20px",fontWeight:"bold"}} >The Future of Digital Money is Inter Coin.</p>
-          <p style={{fontSize:"15.5px",color:"rgba(48, 27, 27, 1)",paddingTop:"0px", fontWeight:"lighter"}}>InterCoin combines the benefits of blockchain with the reliability of fiat currency.
-             Secure, low-cost, and instant global transactions.</p>
-
+        {/* <p className = "paragraph1" >Inter Coin Digital Money </p> 
+          <p className = "pargraph2">InterCoin combines the benefits of blockchain with the reliability of fiat currency.
+             Secure, low-cost, and instant global transactions.</p>  */}
+    
 
 
              
@@ -103,29 +103,21 @@ function Login(){
 
 
           </Row>
-                   <Row style={{marginTop:"0px", height:"450px",  border: "none",}}>
-              <h2 style={{color:"black",paddingTop:"20px",fontSize:"19px"}}>Sign in</h2>
+                   <Row className ="loginRow2" >
+            
 
-                     <Col style={{fontFamily:"EB Garamond,serif",
-  border: "none",
-  height:" 360px",
-  marginTop: "20px",
-    margin:"16px",
-  color: "black",
-  // boxShadow:" 4px 4px rgb(117, 65, 65)",
-   borderRadius: "12px"
-}}>
+                     <Col className ="loginCol2" >
        
         
         <form onSubmit={handleSubmit}>
-
+ <h2 className='signin'>Sign in</h2>
          
+         <p   style={{textAlign:"left", paddingLeft:"40px", fontSize:"14px"}}>Email</p>
+          <img src ={deposit} style={{height:"15px",width:"15px", marginTop:"10px",marginRight:"5px"}} />
          <input 
          id='email'
-         placeholder = 'Email'
-          style = {{ width:"80%",height:"45px",backgroundColor:'white',
-            border:"none", 
-            color:'black' , borderRadius:"12px",paddingLeft:"10px"}}
+         placeholder = 'Type your email'
+         className='loginInput'
            type='email'  
           name ="email"
            value = {email} 
@@ -134,14 +126,15 @@ function Login(){
           } 
            />
          <br></br>
-         <br></br>
+         <br></br><br></br>
+           
 
-         <label></label><br></br>
+          <p style={{textAlign:"left", paddingLeft:"40px", fontSize:"14px"}}>Password</p> 
+          <img src ={deposit} style={{height:"15px",width:"15px", marginTop:"10px", marginRight:"5px"}} />
          <input type='password' 
-          style = {{width:"80%",height:"45px", backgroundColor:'white',
-            border:"none",
-             color:'black',  borderRadius:"12px",paddingLeft:"10px"}}
-          placeholder = 'Password'
+       
+         className='loginInput2'
+          placeholder = 'Type your password'
          id="password"
           value ={password}
            name = "password"
@@ -154,21 +147,23 @@ function Login(){
         <br></br>
         <br></br>
         <br></br>
+        <br></br>
 
-        <button  type='submit' className='btn btn-primary'
-        style = {{width:"70%",height:"45px", backgroundColor:'white', 
-          color:"black",border:"1px solid black" }}
+        <button  type='submit' className='loginBtnn'
         disabled = {loading}
         >
-         {loading ? 'sending...' : 'login'}
+         {loading ? 'sending...' : 'Login'}
         </button>
          <br></br>
-          <br></br>
+         <br></br>
+         <p   >Or</p> 
+         {/* <button className = 'btn btn-sm bttn3'
+   > <Nav.Link href ="/register"  style = {{color:'white'}}>SignUp</Nav.Link></button>  */}
+          
             <br></br>
               <br></br>
 
-<span style={{textAlign:"left", color:"black"}}>if you don't have an account :</span> <button className = 'btn btn-sm btn-warning'
-   style={{backgroundColor:"rgba(0, 12, 12, 1)", border:"1px solid rgba(26, 18, 92, 0.4)"}}> <Nav.Link href ="/register"  style = {{color:'white'}}>SignUp</Nav.Link></button> 
+
         <br></br>
        
        

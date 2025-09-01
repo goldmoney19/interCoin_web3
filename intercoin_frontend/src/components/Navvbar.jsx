@@ -2,6 +2,11 @@ import React from 'react'
 import {Container, Nav, Navbar} from 'react-bootstrap'
 import {Link, useNavigate} from 'react-router-dom'
 import Cookies from "cookie-universal"
+import deposit from "../assets/depositMoney.png"
+import send from "../assets/sendMoney.png"
+import profile from "../assets/profilePic2.jpg"
+import notification from "../assets/notification.jpg"
+
 
 
 const cookies = new Cookies();
@@ -31,15 +36,21 @@ function Navvbar() {
       
       return( <div>
 
-<Navbar collapseOnSelect expand="lg" className="navbarr_body navbar navbar-light " fixed="top" style={{backgroundColor:"rgb(239, 242, 255)"}}>
-      <Container style={{fontFamily: "EB Garamond,serif"}}>
-        <Navbar.Brand href="/" style={{color:"black",fontWeight:"bold",fontSize:"22px"}}>Inter - Coin</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav"   style={{border:"none",backgroundColor:"rgb(239, 242, 255)", color:"black",height:"39px"}}/>
+<Navbar collapseOnSelect expand="lg" className="navbar navbar-light navCover" fixed="top" >
+      <Container fluid style={{fontFamily: "EB Garamond,serif"  ,border:"none"}}>
+        <Navbar href="/" className='naviBrand'>InterCoinx</Navbar>
+         <Navbar href="/" className='imageProf'>
+         <img src =  {notification} className='profImage' />
+         <img src =  {profile} className='profImage1' />
+         </Navbar>
+
+      
+        <Navbar.Toggle aria-controls="responsive-navbar-nav"   style={{border:"none",backgroundColor:"white", color:"black",height:"35px",width:"54px"}}/>
         <Navbar.Collapse id="responsive-navbar-nav" >
           <Nav className="me-auto text-primary">
-          <Nav.Link href ="/" style={{fontSize:"21px",borderBottom:"1px solid rgba(107, 59, 59, 1)"}}><span style={{color:"black" ,fontSize:"20px",textAlign:"left"}}>Home</span></Nav.Link>
+          <Nav.Link href ="/"><span className='navlinkHome'>Home</span></Nav.Link>
           
-          <Nav.Link href ="/profile_page" style={{borderBottom:"1px solid rgba(107, 59, 59, 1)"}}><span style={{color:"black",fontSize:"18px"}}>Profile</span></Nav.Link>
+          <Nav.Link href ="/profile_page" ><span className='navlinkProfile' >Profile</span></Nav.Link>
             {/* <Nav.Link href ="/TransactionHistory" style={{color:"white" ,fontSize:"21px",borderBottom:"0.1px solid rgba(107, 59, 59, 1)"}}><span style={{color:"black"}}>Transaction history</span></Nav.Link> */}
             
          
@@ -47,7 +58,7 @@ function Navvbar() {
             
             {/*<Nav.Link href ="" onClick={LogoutUser}>logout</Nav.Link>*/}
             
-       <Nav.Link href ="/exchangeRateCalculate"  style={{borderBottom:"0.1px solid rgba(107, 59, 59, 1)"}}><span style={{color:"black" ,fontSize:"18px"}}>Rate Calculator</span></Nav.Link>
+       <Nav.Link href ="/exchangeRateCalculate"  ><span className='navlinkRate'>Rate Calculator</span></Nav.Link>
    
    {/* <Nav.Link href ="/deposit"  style={{color:"white" ,fontSize:"21px",borderBottom:"none"}}><span style={{color:"black" ,fontSize:"18px"}}>Deposit</span></Nav.Link> */}
 

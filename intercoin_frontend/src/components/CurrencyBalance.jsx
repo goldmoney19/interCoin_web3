@@ -6,6 +6,10 @@ import "../App.css"
 import Cookies from "cookie-universal";
 
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const cookies = new Cookies();
 
 
@@ -48,6 +52,16 @@ function CurrencyBalance(){
 
 
 
+
+
+                var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
     return (
                 <div className='homeContainer'> 
 
@@ -58,27 +72,24 @@ function CurrencyBalance(){
 
          
 
-        
+     <span className='currencyBalanceHeading'>Wallet Balance</span>
 
 
                    
-   
+    <Slider {...settings}>
              {
                                               
           !loading ? ( 
                         
        wallets.map((wallet) => (
                                                                     
-<Col xs = {4} style={{textAlign:"left",border:"none",
-    height:"45px", width:"100%", marginBottom:"0px", 
-    borderRadius:"8px", boxShadow:"2px 2px grey", backgroundColor:"rgba(222, 235, 247, 0.99)",
-    }}>      
+<Col xs = {12} className='currencyBalanceCol'
+ >      
       <img src = {wallet.imageUrl}
- style={{height: "35px", objectFit: "contain", 
- marginTop: "6px",width:"40px" ,float:"left",}}   />
-   <p style={{float:"left",paddingLeft:"10px",paddingTop:"10px",fontSize:"15px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.currency}</p>
+ className='currencyBalanceImage'  />
+   <p className='currencyBalanceText1'>  {wallet.currency} account</p>
 
-                 <p style={{float:"right",paddingTop:"10px",fontSize:"19px",fontWeight:"lighter",fontFamily:"EB Garamond,serif"}}>  {wallet.balance.toLocaleString()}</p>
+    <p className='currencyBalanceText2'>  {wallet.balance.toLocaleString()}</p>
                     </Col>  
 
           
@@ -93,7 +104,7 @@ function CurrencyBalance(){
           )
 
                }
-
+</Slider>
               
                          </Row>
                         

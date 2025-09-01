@@ -119,11 +119,10 @@ useEffect(() =>{
 
     return (<div className='deposithomeContainer'> 
 
-      <Container className='depositCon' style={{width:"87%"}}>
+      <Container fluid className='depositCon' style={{width:"87%"}}>
   
                 <Row className='depositRow'>
-   <p style={{fontWeight:"lighter", fontSize:"20px",
-    fontFamily: "EB Garamond,serif",  color:"black",paddingTop:"70px"}}> Deposit funds</p>
+   <p className='depositHeading'> Deposit funds</p>
 
                   <Col className='depositCol' > 
 
@@ -131,9 +130,7 @@ useEffect(() =>{
        <Form onSubmit={handleDeposit}>
       {/* <p style={{textAlign:"left",paddingLeft:"20px"}}>To</p> */}
        <select
-          style={{width:"90%",height:"45px",backgroundColor:"rgba(255, 255, 255, 1)", 
-            color:"black", fontFamily: "EB Garamond,serif",
-            marginTop:"30px", borderRadius:"12px",paddingLeft:"7px",border:"none"}}
+         className='depositSelect'
           value={currency}
           onChange={(e) =>setCurrency(e.target.value)}>
    {
@@ -151,19 +148,15 @@ useEffect(() =>{
      
 
 <input type='Number'
-  style={{marginLeft:"0px",height:"45px",width:"90%",backgroundColor:"white", color:"black", 
-    marginTop:"0px", borderRadius:"12px",paddingLeft:"7px",border:"none"}}
+ className='depositInput'
   placeholder='Amount'
 value={amount}
 onChange={(e) =>setAmount(e.target.value)}
 />
 <br></br>
 <br></br>
-     <button type="submit" className='btn btn-outline-success btn-sm'
-     style = {{marginTop:"30px", border:"1px solid white", width:"80%",
-      color:'black', backgroundColor:"rgba(255, 255, 255, 1)", 
-      fontFamily: "EB Garamond,serif",
-      paddingLeft:"7px", height:"45px",border:"1px solid black",fontSize:"18px"}} 
+     <button type="submit" className='depositBtn'
+    
 
      onClick={handleDeposit}
      disabled = {loading}

@@ -16,7 +16,7 @@
 
 
  .balance_cover{
-height: 900px;
+height: 2500px;
     border:none;
   width: 100%;
    border: none;
@@ -27,32 +27,94 @@ height: 900px;
 
    background-color:rgb(239, 242, 255);;
   border:none;
-min-height: 700px;
+min-height: 2500px;
   width: 100%;
   margin-top: 120px;
 
 } 
 
 
+.currencyBalanceHeading{
 
+padding-left:1365px;
+text-align:left;
+font-weight:lighter;
+color:black;
+font-size:58px;
+   font-family:"EB Garamond,serif";
+   padding-bottom:0px;
+  padding-top:199px
+}
 
 .currencyBalanceRow{
 
 
-border: none;
-margin-top: 80px;
-width: 60%;
+ border:none; 
+border-radius: 15px;
+box-shadow:"none";
+padding: 4px;
+width: 50%;
+background-color: white;
+height: 820px;
+
+
+}
+
+ .currencyBalanceCol{
+
+text-align:left;
+border:none;
+height:165px;
+width:100%;
+margin-bottom:0px;
+
+    border-radius:8px;
+     box-shadow:2px 2px grey;
+     background-color:rgb(239, 242, 255);
+
+
+} 
+
+
+
+.currencyBalanceImage{
+
+height: 105px;
+ object-fit: contain;
+
+ margin-top: 6px;
+ width:190px;
+  float:left;
+
 
 }
 
 
-.currencyBalanceCol{
+
+.currencyBalanceText1{
 
 
-border: none;
-margin-top: 80px;
+  float:left;
+  padding-left:10px;
+  padding-top:10px;
+  font-size:60px;
+  font-weight:lighter;
+  font-family:EB Garamond,serif;
 
 }
+
+.currencyBalanceText2{
+
+float:right;
+padding-top:10px;
+font-size:69px;
+font-weight:lighter;
+font-family:EB Garamond,serif
+
+}
+
+
+
 
 
 
@@ -82,21 +144,7 @@ margin-top: 80px;
     padding-top:30px;
 }
 
-.tableRowKey{
 
-border:2px solid black;
-margin-top:30px;
-
-}
-
-
-
-.tableRowValue{
-
-border:2px solid black;
-margin-top:30px;
-
-}
 
 
 .profileSetRow{
@@ -154,40 +202,62 @@ border: none;
   justify-content: center; /* Center children horizontally */  
 }
 
-.chooseActionRow{
-   width:60%;
-  margin: auto;
-   border:none;
-    border-radius: 0px;
-         /* box-shadow: 1.5px 1.5px  rgb(130, 130, 206); */
-
-
-
+.chooseHomeContainer{
+border: none;
+  width: 70%; /* Ensure the parent takes full width */
+  display: flex; /* Use flexbox to help with centering */
+  justify-content: center; /* Center children horizontally */  
 }
+
+
+
+.chooseActionRow{
+   width:70%;
+ border:3px solid red;  
+   border-radius: 0px;
+    height: 500px;
+  align-content: space-between;
+    background-color:rgb(239, 242, 255);
+    margin-top: 30px;
+    padding-top: 100px;
+}
+
 
 
 .chooseActionCol{
 
   
-   background-color:rgba(71, 1, 133, 0.1);
-    min-height:90px;
+ border: none;
+   border-radius: 0px;
+   /* background-color:white; */
+    /* height:29px; */
     font-family:"EB Garamond,serif";
-    border:none;
-    padding-top:20px;
+    padding-top:12px;
+   width:59px;
+   height:330px;
+      /* width: 0px; */
+     margin:auto;
+     margin-top: 80px;
    
     
 }
 
-.chooseActionbtn{
-    
-  margin-right:0px;
-   color:white;
-     box-shadow: 2px 2px rgb(102, 95, 145);
-    height:50px;
-    width:90px;
-    border-radius: 12px;
-  
+
+.chooseImage{
+
+  width:180px;
+  height:185px
 }
+
+.chooseText{
+
+padding-top:20px;
+font-size:60px;
+padding-left:0px
+
+}
+
+
 
 .current_rates{
 
@@ -202,85 +272,255 @@ border: none;
 
 }
 
-.swapRow{
 
-  border: none;
-  height: 500px;
-    margin-top: 50px;
-    
 
+.deposithomeContainer{
+  height:100vh;
+
+
+  background-color: rgb(239, 242, 255);
+border:none;
+    margin-top: 0px;
 }
 
-.swapCol{
-    font-family:"EB Garamond,serif";
-
-  border: none;
-  height: 500px;
-  margin-top: 50px;
-  color: azure;
+.depositCon{
   
+  margin-top: 100px;
+  height: 2500px;
+  border:none;
+   width:85%;
 }
 
-.swapCon{
-  margin-top: 220px;
-  height: 700px;
-  
-}
-
-.swapRow{
-
-  border: none;
-  height: 500px;
-    margin-top: 50px;
-    
-
-}
-
-.swapCol{
-    font-family:"EB Garamond,serif";
-
-  border: none;
-  height: 500px;
-  margin-top: 50px;
-  color: azure;
-  
-}
-
-.swapCon{
-  margin-top: 220px;
-  height: 700px;
-  
-}
 
 
 .depositRow{
 
-  border: none;
-  height: 500px;
+
+  height: 1900px;
     margin-top: 50px;
-    
+      border:none;
+     
+      align-self: center;
+
    
 }
 
 .depositCol{
    font-family:"EB Garamond,serif";
   border: none;
-  height: 500px;
-  margin-top: 50px;
-  color: azure;
+
+  height: 1650px;
+  margin-bottom: 70px;
+
+  color: black;
+
+} 
+
+.depositHeading{
+
+
+  font-weight:lighter;
+   font-size:90px;
+
+    font-family: "EB Garamond,serif";
+      color:black;
+    padding-top:170px
 }
 
-.depositCon{
-  margin-top: 220px;
-  height: 700px;
-  width: 95%;
+
+.depositSelect{
+
+  width:50%;
+  height:145px;
+  background-color:rgba(255, 255, 255, 1);
+color:black;
+             font-family: "EB Garamond,serif";
+margin-top:330px; 
+            border-radius:12px;
+            padding-left:7px;
+            border:none;
+            font-size: 60px;
 }
+
+
+.depositInput{
+
+  margin-left:0px;
+  height:145px;
+  width:40%;
+  background-color:white;
+   color:black;
+    margin-top:190px;
+     border-radius:12px;
+    padding-left:7px;
+    border:none;
+    font-size: 60px;
+
+}
+
+
+.depositBtn{
+
+  margin-top:230px;
+    width:30%;
+color:black;
+       background-color:rgba(255, 255, 255, 1);
+ font-family: "EB Garamond,serif";
+ padding-left:7px;
+       height:145px;
+      border:1px solid black;
+      font-size:58px
+}
+
+
+
+
+.swaphomeContainer{
+background-color: rgb(239, 242, 255);
+border:none;
+    margin-top: 0px;
+    height: 100vh;
+
+}
+
+.swapcashCon{
+  margin-top: 220px;
+  height: 2300px;
+  border:none;
+width:85%;
+}
+
+
+.swapcashRow{
+  margin-top: 0px;
+
+  border:none;
+  height: 1750px;
+   
+   
+}
+
+.swapcashCol{
+   font-family:"EB Garamond,serif";
+  border:none;
+
+  height: 1600px;
+  margin-top: 0px;
+  margin:20px;
+  /* color: black; */
+  /* background-color: rgb(25, 25, 97); */
+  /* box-shadow: 4px 4px rgb(25, 25, 97); */
+   /* border-radius: 12px; */
+}
+ 
+
+.swapHeading{
+
+  font-weight:lighter;
+   font-size:90px;
+  padding-top:0px;
+   font-family: EB Garamond,serif;
+
+      color:black;
+
+}
+
+.swapFrom{
+    font-size: 50px;
+  text-align:left;
+  padding-left:1397px;
+  padding-top: 187px;
+
+}
+
+.swapFromSelect{
+
+  border:none;
+  width:50%;
+  height:145px;
+  background-color:white;
+ color:black;
+     margin-top:0px;
+     border-radius:12px;
+     padding-left:4px;
+       font-family: "EB Garamond,serif";
+       font-size:60px
+}
+
+
+.swapTo{
+
+padding-top:150px;
+text-align:left;
+padding-left:1397px;
+font-size: 45px;
+
+}
+
+.swapToSelect{
+
+  width:50%;
+  height:145px;
+  background-color:white;
+   color:black;
+   margin-top:50px;
+ border-radius:12px;
+   padding-left:7px;
+    border:none;
+ font-family: "EB Garamond,serif";
+ font-size: 55px;
+}
+
+
+ .swapAmount{
+
+  border:none;
+  width:45%;
+  height:145px;
+  background-color:white;
+color:black;
+ margin-top:130px;
+     border-radius:0px;
+   padding-left:7px;
+   font-size: 50px;
+
+ }
+
+  .swapBtn{
+font-size:57px;
+height:156px;
+border:1px solid black;
+ width:20%;
+
+      color:black;
+       background-color:white;
+      margin-top:190px;
+      padding-left:7px;
+       font-family:"EB Garamond,serif"
+
+  
+ }
+
+
+.transferhomeContainer{
+background-color: rgb(239,242,255);
+  height: 100vh;
+}
+
+.transferCon{
+  margin-top: 2px;
+  height: 2800px;
+  background-color: rgb(239,242,255);
+  border: none;
+
+}
+
 
 
 .transferRow{
 
-  border: none;
-  height: 500px;
+  border:none;
+  height: 1900px;
     margin-top: 50px;
     
    
@@ -289,38 +529,230 @@ border: none;
 .transferCol{
 font-family:"EB Garamond,serif";
   border: none;
-  height: 500px;
+  height: 1300px;
   margin-top: 50px;
   color: azure;
 }
 
-.transferCon{
-  margin-top: 220px;
-  height: 700px;
+
+.transferHeading{
+
+  font-weight:light;
+   font-size:100px;
+   font-family: "EB Garamond,serif";
+
+     color:black;
+     padding-top:250px
 }
 
 
-.profileRow{
+.transferReceiverId{
 
-  border: none;
-  height: 500px;
-    margin-top: 50px;
-    
+width:40%;
+height:150px;
+background-color:white;
+ color:"black";
+font-size: 60px;
+     border-radius:0px;
+     padding-left:7px;
+      margin-top:70px;
+     border:none
+}
+
+
+.transferFrom{
+
+  text-align:left;
+  padding-left:797px;
+color:black;
+  font-size: 69px;
+}
+
+.transferSelectFrom{
+
+float:left;
+background-color:white;
+ color:black;
+ margin-top:0px;
+    font-size: 50px;
+    border-radius:12px;
+
+    margin-left:780px;
+
+    font-family: "EB Garamond,serif";
+
+    border:none;
+
+  padding-left:7px;
+   width:30%;
+   height:145px
+  
+}
+
+.transferToSelect{
+
+  float:right;
+  height:145px;
+  width:30%;
+  background-color:white;
+
+   color:black;
+    margin-top:0px ;
+   border-radius:12px;
+   padding-left:7px;
+font-size: 50px;
+  border:1px solid white;
+margin-right: 780px;
+  font-family: "EB Garamond,serif";
+
+}
+
+
+.transferAmount{
+
+  height:145px;
+  width:40%;
+  background-color:white;
+   color:#000000;
+   font-size: 50px;
+    border:none;
+    margin-top:230px;
+     border-radius:0px;
+    padding-left:7px;
+}
+
+.transferBtn{
+
+  height:145px;
+  border:1px solid black;
+
+    background-color:white;
+     color:black;
+     margin-top:150px;
+    border-radius:0px;
+     width:690px;
+    font-size:46px
+}
+
+
+
+
+.profileSetRow{
+
    
+    width: 70%;
+  border:none;
+  margin: auto;
+  align-self: center;
+  border-radius: 12px;
+  box-shadow: 3px 3px white;
+  height: 150px;
+  background-color: white;
+
 }
 
-.profileCol{
-font-family:"EB Garamond,serif";
-  border: none;
-  height: 500px;
-  margin-top: 50px;
-  color: azure;
+
+.profileSetCol{
+
+  color:black; 
+  background-color: white;
+  min-height:40px;
+border-radius: 12px;
+border:none;
+padding-top: 9px;
+  
+
 }
 
-.profileCon{
-  margin-top: 220px;
-  height: 700px;
+
+.profileSetText1{
+
+color: white;
+ font-size:17px;
+ font-weight:bold;
+  padding-top:10px;
+  font-family:"EB Garamond,serif"
 }
+
+
+.profileSetText2{
+
+color:black;
+ font-size:64px;
+padding-right: 90px; 
+ padding-top:11px;
+    font-family:"EB Garamond,serif";
+    float: left;
+}
+
+.profileSetText2btnn{
+  float: right;
+   font-family:"EB Garamond,serif";
+ font-size: 43px;
+}
+
+
+
+.conversionRow{
+
+    border:none;
+    width: 70%;
+  margin: auto;
+  align-self: center;
+  border-radius: 12px;
+  box-shadow: 3px 3px white;
+  height: 150px;
+  background-color: white;
+
+}
+
+
+.conversionCol{
+
+  color:black; 
+  background-color: white;
+  min-height:40px;
+border-radius: 12px;
+border:none;
+ padding-top: 9px;
+
+  
+
+}
+
+
+
+
+.conversionText2{
+
+color:black;
+ font-size:54px;
+padding-right: 10px; 
+ padding-top:21px;
+    font-family:"EB Garamond,serif";
+    text-align: left;
+     float: left;
+
+}
+
+.conversionbtnn{
+
+ font-family:"EB Garamond,serif";
+ font-size: 43px;
+ float: right;
+
+}
+
+.aiButton{
+   height: 150px;
+  width:40%;
+  margin:auto; 
+  background-color:rgba(5, 12, 12, 0.8);
+  font-size: 60px;
+}
+
+
+
 
 .transactionHistoryCon{
 
@@ -352,6 +784,225 @@ border:none;
 }
 
 
+.loginHomeContainer{
+border:none;
+
+  font-family:"EB Garamond,serif";
+  height:2100px;
+  background-color:rgb(239,242,255);
+}
+
+.loginCon{
+margin-top: 80px;
+height:1800px;
+width: 1700px;
+border:none;
+}
+
+
+
+
+
+.loginRow{
+
+border:none;
+
+}
+
+
+.loginCol{
+
+border:none;
+height: 500px;
+
+}
+
+.loginCol .paragraph1{
+
+  padding-top:80px;
+   font-size:100px;
+  font-weight:bold
+}
+
+
+.paragraph2{
+
+font-size:65px;
+color:rgba(48, 27, 27, 1);
+padding-top:0px;
+ font-weight:"lighter"
+}
+
+.loginRow2{
+
+
+margin-top:0px;
+ height:1200px;
+   border: none;
+border:none;
+}
+
+.loginRow2 .signin{
+  color:black;
+  padding-top:70px;
+  font-size:59px;
+}
+
+.loginCol2{
+
+font-family:"EB Garamond,serif";
+  border:none;
+  height: 860px;
+  margin-top: 20px;
+    margin:16px;
+  color: black;
+   border-radius: 12px;
+   padding-top: 25px;
+  
+}
+
+.loginInput{
+
+  width:40%;
+  height:155px;
+  background-color:white;
+  border:none;
+color:black ;
+border-radius:12px;
+padding-left:10px;
+ font-size: 40px;
+}
+
+.loginInput2{
+   font-size: 40px;
+  width:40%;
+  height:155px;
+   background-color:white;
+  border:none;
+ color:black;
+ border-radius:12px;
+ padding-left:10px;
+ margin-top: 90px;
+}
+
+.loginBtnn{
+   margin-top: 90px;
+  font-size: 40px;
+  width:40%;
+  height:105px;
+   background-color:white;
+color:black;
+   border:1px solid black
+}
+
+
+.loginCol2 span{
+text-align:left;
+ color:black;
+font-size: 50px;
+}
+
+
+.loginCol2 .bttn3{
+
+background-color:rgba(0, 12, 12, 1);
+ border:1px solid rgba(26, 18, 92, 0.4);
+height:80px ;
+width:140px;
+font-size: 30px;
+}
+
+
+.navCover{
+
+  background-color:rgb(239, 242, 255)
+}
+
+
+.navBrandd{
+
+  color:black;
+  font-weight:bold;
+  font-size:432px;
+}
+
+
+.naviBrand{
+
+  color: black;
+  font-weight: bolder;
+  font-size: 91px;
+}
+
+.navlinkHome{
+
+  color:black ;
+  font-size:60px;
+  text-align:left;
+  font-weight: bold;
+  padding-left: 70px;
+}
+
+
+.navlinkProfile{
+  font-size:60px;
+  font-weight: bold;
+  padding-left: 70px;
+
+ color:black;
+}
+
+.navlinkRate{
+  color:black;
+  font-size:60px;
+  font-weight: bold;
+    padding-left: 70px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -370,19 +1021,29 @@ border:none;
 
 @media screen and (max-width:1000px){
 
+  #root {
+ width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+   background-color:rgb(255, 255, 255);
+}
+
+
  .balance_cover{
 height: 660px;
     border:none;
   width: 100%;
    margin-top: 0px;
-   background-color: rgb(239, 242, 255)
+   background-color: rgb(255, 255, 255)
 } 
 
 
 .balance_con{
-height: 670px;
+height: 800px;
 
-   background-color:rgb(239, 242, 255);
+   background-color:rgb(255, 255, 255);
   border:none;
 min-height: 650px;
   width: 100%;
@@ -390,79 +1051,103 @@ min-height: 650px;
 
 } 
 
+
+
+
+
+.currencyBalanceHeading{
+
+padding-left:15px;
+text-align:left;
+font-weight:lighter;
+color:black;
+font-size:12px;
+   font-family:"EB Garamond,serif";
+   padding-bottom:0px;
+  padding-top:5px
+}
+
+
+
+
+
+
 .currencyBalanceRow{
 
 
- border:none; 
+ border:2px solid white; 
 border-radius: 15px;
 box-shadow:"none";
-padding: 4px;
+padding: 0px;
 width: 90%;
 background-color: white;
-height: 220px;
+height: 105px;
+box-shadow: 1px 1px black;
+
+}
+
+
+ .currencyBalanceCol{
+
+text-align:left;
+border:2px solid white;
+height:65px;
+width:60%;
+margin-bottom:0px;
+
+    border-radius:8px;
+     box-shadow:2px 2px grey;
+     background-color:rgb(2, 8, 37);
+
+
+} 
+
+
+
+.currencyBalanceImage{
+
+height: 35px;
+ object-fit: contain;
+margin-left: 10px;
+ margin-top: 15px;
+ width:40px;
+  float:left;
+
+
+}
+
+.currencyBalanceText1{
+
+   color:white;
+  float:left;
+  padding-left:10px;
+  padding-top:23px;
+  font-size:14px;
+  font-weight:normal;
+  font-family:EB Garamond,serif;
 
 }
 
 
 
+.currencyBalanceText2{
 
-
-
-.profileSetRow{
-
-    border:none;
-    width: 90%;
-  border:none;
-  margin: auto;
-  align-self: center;
-  border-radius: 12px;
-  box-shadow: 3px 3px white;
-  height: 50px;
-  background-color: white;
+float:right;
+padding-top:18px;
+font-size:19px;
+font-weight:lighter;
+font-family:EB Garamond,serif;
+padding-right: 30px;
+color:white
 
 }
 
 
-.profileSetCol{
+.slick-slide > div {
 
-  color:black; 
-  background-color: white;
-  min-height:40px;
-border-radius: 12px;
-border:none;
-padding-top: 9px;
-  
-
-
-
+  margin: 5px;
 }
 
-
-.profileSetText1{
-
-color: white;
- font-size:17px;
- font-weight:bold;
-  padding-top:10px;
-  font-family:"EB Garamond,serif"
-}
-
-
-.profileSetText2{
-
-color:black;
- font-size:14px;
-padding-right: 90px; 
- padding-top:17px;
-    font-family:"EB Garamond,serif";
-    float: left;
-}
-
-.profileSetText2btnn{
-  float: right;
-   font-family:"EB Garamond,serif";
- font-size: 13px;
-}
 
 
 
@@ -519,7 +1204,10 @@ padding-right: 10px;
 }
 
 
+.referalHomeDiv{
 
+  border: none;
+}
 
 
 
@@ -531,28 +1219,81 @@ border: none;
   justify-content: center; /* Center children horizontally */  
 }
 
+.chooseHomeContainer{
+border: none;
+  width: 100%; /* Ensure the parent takes full width */
+  display: flex; /* Use flexbox to help with centering */
+  justify-content: center; /* Center children horizontally */  
+
+}
+
 .chooseActionRow{
    width:100%;
- border: 0.5px solid white;    border-radius: 0px;
-    height: 100px;
+ border: 2px solid white; 
+    border-radius: 20px;
+  height: 157px;
   align-content: space-between;
-    background-color:rgb(239, 242, 255);
+    background-color:rgba(2, 8, 37,1);
+     padding-top: 10px;
 }
 
 
 .chooseActionCol{
   
-   border-radius: 0px;
-   background-color:white;
-    height:29px;
+   border-radius: 7px;
+   /* background-color:white; */
+    
     font-family:"EB Garamond,serif";
-    padding-top:12px;
-   
-      width: 0px;
+    padding-top:0px;
+   width:50%;
+   height:76px;
+    
      margin:auto;
+     border:none ;
+}
+
+.chooseActionRow2{
+   width:100%;
+ border: 2px solid white; 
+    border-radius: 20px;
+  height: 77px;
+  align-content: space-between;
+    background-color:rgba(2, 8, 37,1);
+     padding-top: 10px;
 }
 
 
+.chooseActionCol2{
+  
+   border-radius: 7px;
+   /* background-color:white; */
+    
+    font-family:"EB Garamond,serif";
+    padding-top:0px;
+   width:50%;
+   height:76px;
+    
+     margin:auto;
+     border:none ;
+}
+
+
+
+.chooseImage{
+
+  width:40px;
+  height:40px
+}
+
+
+.chooseText{
+
+padding-top:0px;
+font-size:12px;
+padding-left:0px;
+color:white;
+
+}
 
 .rate_conversion{
 
@@ -591,43 +1332,6 @@ border: none;
 }
 
 
-.swaphomeContainer{
-background-color: rgb(239, 242, 255);
-border: none;
-    margin-top: 0px;
-
-}
-
-.swapcashCon{
-  margin-top: 0px;
-  height: 670px;
-  border:none;
-
-}
-
-
-.swapcashRow{
-  margin-top: 0px;
-
-  border:none;
-  height: 500px;
-   
-   
-}
-
-.swapcashCol{
-   font-family:"EB Garamond,serif";
-  border:none;
-
-  height: 400px;
-  margin-top: 0px;
-  margin:20px;
-  /* color: black; */
-  /* background-color: rgb(25, 25, 97); */
-  /* box-shadow: 4px 4px rgb(25, 25, 97); */
-   /* border-radius: 12px; */
-}
- 
 
 .ratehomeContainer{
  width: 100%;
@@ -707,6 +1411,192 @@ border:none;
 
 } 
 
+
+.depositHeading{
+
+
+  font-weight:lighter;
+   font-size:20px;
+
+    font-family: "EB Garamond,serif";
+      color:black;
+    padding-top:70px
+}
+
+
+.depositSelect{
+
+  width:90%;
+  height:45px;
+  background-color:rgba(255, 255, 255, 1);
+color:black;
+             font-family: "EB Garamond,serif";
+margin-top:30px; 
+            border-radius:12px;
+            padding-left:7px;
+            border:none;
+            font-size: 20px;
+}
+
+
+.depositInput{
+
+  margin-left:0px;
+  height:45px;
+  width:90%;
+  background-color:white;
+   color:black;
+    margin-top:10px;
+     border-radius:12px;
+    padding-left:7px;
+    border:none;
+    font-size: 20px;
+    
+
+}
+
+.depositBtn{
+
+  margin-top:30px;
+    width:80%;
+
+      color:black;
+       background-color:"rgba(255, 255, 255, 1)";
+
+      font-family: "EB Garamond,serif";
+
+      padding-left:7px;
+       height:45px;
+      border:1px solid black;
+      font-size:18px
+}
+
+
+.swaphomeContainer{
+background-color: rgb(239, 242, 255);
+border: none;
+    margin-top: 0px;
+
+}
+
+.swapcashCon{
+  margin-top: 0px;
+  height: 670px;
+  border:none;
+
+}
+
+
+.swapcashRow{
+  margin-top: 0px;
+
+  border:none;
+  height: 500px;
+   
+   
+}
+
+.swapcashCol{
+   font-family:"EB Garamond,serif";
+  border:none;
+
+  height: 400px;
+  margin-top: 0px;
+  margin:20px;
+  /* color: black; */
+  /* background-color: rgb(25, 25, 97); */
+  /* box-shadow: 4px 4px rgb(25, 25, 97); */
+   /* border-radius: 12px; */
+}
+
+
+.swapHeading{
+
+  font-weight:lighter;
+   font-size:20px;
+  padding-top:90px;
+   font-family: EB Garamond,serif;
+
+      color:black;
+
+}
+
+
+.swapFrom{
+   font-size: 19px;
+  text-align:left;
+  padding-left:37px;
+  padding-top: 7px;
+}
+
+.swapFromSelect{
+
+  border:none;
+  width:80%;
+  height:45px;
+  background-color:white;
+ color:black;
+     margin-top:0px;
+     border-radius:12px;
+     padding-left:4px;
+       font-family: "EB Garamond,serif";
+              font-size:15px
+
+}
+
+
+.swapTo{
+
+padding-top:20px;
+text-align:left;
+padding-left:37px;
+font-size: 15px;
+
+}
+
+.swapToSelect{
+
+  width:80%;
+  height:45px;
+  background-color:white;
+   color:black;
+   margin-top:0px;
+ border-radius:12px;
+   padding-left:7px;
+    border:none;
+ font-family: "EB Garamond,serif";
+ font-size: 15px;
+}
+
+
+ .swapAmount{
+
+  border:none;
+  width:80%;
+  height:45px;
+  background-color:white;
+color:black;
+ margin-top:30px;
+     border-radius:0px;
+   padding-left:7px;
+ font-size: 18px;
+ }
+
+ .swapBtn{
+font-size:17px;
+height:46px;
+border:1px solid black;
+ width:80%;
+
+      color:black;
+       background-color:white;
+      margin-top:20px;
+      padding-left:7px;
+       font-family:"EB Garamond,serif"
+
+  
+ }
+
 .transferhomeContainer{
 width: 100%;
 border:none;
@@ -739,33 +1629,203 @@ border: none;
   color: black;
   width:"60%"
   
-  
+}
+
+.transferReceiverId{
+
+width:80%;
+height:50px;
+background-color:white;
+ color:"black";
+font-size: 16px;
+     border-radius:0px;
+     padding-left:7px;
+      margin-top:10px;
+     border:none
+}
+
+.transferHeading{
+
+  font-weight:light;
+   font-size:20px;
+   font-family: "EB Garamond,serif";
+
+     color:black;
+     padding-top:50px
+}
+
+.transferFrom{
+font-size: 16px;
+  text-align:left;
+  padding-left:37px
+}
+
+.transferSelectFrom{
+font-size: 16px;
+
+float:left;
+background-color:white;
+ color:black;
+ margin-top:0px;
+
+    border-radius:12px;
+
+    margin-left:20px;
+
+    font-family: "EB Garamond,serif";
+
+    border:none;
+
+  padding-left:7px;
+   width:40%;
+   height:45px
   
 }
 
+.transferToSelect{
+font-size: 16px;
+
+  float:right;
+  height:45px;
+  width:40%;
+  background-color:white;
+
+   color:black;
+    margin-top:0px ;
+   border-radius:12px;
+   padding-left:7px;
+
+  border:1px solid white;
+  margin-right:20px;
+  font-family: "EB Garamond,serif";
+
+}
 
 
-.profileRow{
+.transferAmount{
+
+  height:45px;
+  width:80%;
+  background-color:white;
+   color:black;
+  font-size: 17px;
+    border:none;
+    margin-top:30px;
+     border-radius:0px;
+    padding-left:7px;
+}
+
+
+.transferBtn{
+
+  height:45px;
+  border:1px solid black;
+
+    background-color:white;
+     color:black;
+     margin-top:30px;
+
+    border-radius:0px;
+     width:190px;
+    font-size:16px
+}
+
+.profilePageHomeContainer{
+
+  background-color:black;
+   border:none
+}
+
+.profilePageCon{
 
   border: none;
-  height: 500px;
-    margin-top: 50px;
-    
-   
 }
 
-.profileCol{
-font-family:"EB Garamond,serif";
-  border: none;
-  height: 500px;
-  margin-top: 50px;
-  color: azure;
+.profilePageHeading{
+
+  color:white;
+   font-family:"EB Garamond,serif";
+  padding-bottom:40px
 }
 
-.profileCon{
-  margin-top: 220px;
-  height: 700px;
+.profilePageCol{
+
+  border:1px solid grey;
+  min-height:150px;
 }
+
+.profilePageUserEmail{
+
+  border:1px solid grey;
+  color:black;
+  font-family:"EB Garamond,serif";
+   background-color:white;
+}
+
+.profileSetRow{
+
+    border:none;
+    width: 90%;
+  border:none;
+  margin: auto;
+  align-self: center;
+  border-radius: 12px;
+  box-shadow: 3px 3px white;
+  height: 50px;
+  background-color: white;
+
+}
+
+
+.profileSetCol{
+
+  color:black; 
+  background-color: white;
+  min-height:40px;
+border-radius: 12px;
+border:none;
+padding-top: 9px;
+  
+
+}
+
+
+.profileSetText1{
+
+color: white;
+ font-size:17px;
+ font-weight:bold;
+  padding-top:10px;
+  font-family:"EB Garamond,serif"
+}
+
+
+.profileSetText2{
+
+color:black;
+ font-size:14px;
+padding-right: 90px; 
+ padding-top:17px;
+    font-family:"EB Garamond,serif";
+    float: left;
+}
+
+.profileSetText2btnn{
+  float: right;
+   font-family:"EB Garamond,serif";
+ font-size: 13px;
+}
+
+
+.aiButton{
+height: 50px;
+  width:90%;
+  margin:auto; 
+  background-color:rgba(5, 12, 12, 0.8);
+  font-size: 15px;
+}
+
+
 
 
 
@@ -819,7 +1879,195 @@ width: 90%;
 }
 
 
+.loginHomeContainer{
+border:none;
+
+  font-family:"EB Garamond,serif";
+  height:690px;
+  background-color:rgb(31, 0, 46)
+}
+
+.loginCon{
+
+height:680px;
+margin-top: 0px;
+border:none;
+}
+
+.loginRow{
+margin-top: 40px;
+border:none;
+height: 100px;
+}
 
 
+.loginCol{
+padding-top: 0px;
+border:none;
+height: 120px;
+width: 60%;
+}
+
+.loginCol .paragraph1{
+
+  padding-top:0px;
+   font-size:20px;
+  font-weight:bold;
+  color:white
+}
+
+
+.paragraph2{
+
+font-size:15.5px;
+color:rgba(48, 27, 27, 1);
+padding-top:0px;
+ font-weight:"lighter"
+}
+
+.loginRow2{
+
+
+margin-top:120px;
+ height:630px;
+   border: none;
+   margin-bottom: 120px;
+}
+
+.loginRow2 .signin{
+  color:black;
+  padding-top: 0px;
+  font-size:19px;
+  padding-bottom: 30px;
+}
+
+.loginCol2{
+/* box-shadow: 2px 2px black; */
+font-family:"EB Garamond,serif";
+ border:none;
+  height: 520px;
+  margin-top: 40px;
+    margin:16px;
+  color: black;
+   border-radius: 12px;
+   padding-top: 25px;
+   background-color: white;
+ 
+ width: 50%;
+}
+
+.loginInput{
+ font-size: 14px;
+  width:80%;
+  height:45px;
+  background-color:white;
+  border:none;
+color:black ;
+border-radius:12px;
+padding-left:10px;
+box-shadow: 0.8px 0.8px black;
+}
+
+.loginInput2{
+  box-shadow: 0.8px 0.8px black;
+   margin-top: 0px;
+ font-size: 14px;
+  width:77%;
+  height:45px;
+   background-color:white;
+  border:none;
+ color:black;
+ border-radius:12px;
+ padding-left:10px
+}
+
+.loginBtnn{
+   margin-top: 10px;
+  font-size: 16px;
+  width:90%;
+  height:60px;
+  border-radius: 13px;
+   background-color:black;
+color:white;
+   border:none;
+}
+
+
+.loginCol2 span{
+text-align:right;
+ color:black;
+font-size: 15px;
+}
+
+
+.loginCol2 .bttn3{
+
+background-color:rgba(0, 12, 12, 1);
+ border:1px solid rgba(26, 18, 92, 0.4);
+height:34px ;
+width:65px;
+font-size: 15px;
+}
+
+.navCover{
+
+  background-color:white
+}
+
+
+.naviBrand{
+
+  color: black;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.navlinkHome{
+
+  color:black ;
+  font-size:20px;
+  text-align:left;
+  font-weight: bold;
+  padding-left: 0px;
+}
+
+
+.navlinkProfile{
+  font-size:20px;
+  font-weight: bold;
+  padding-left: 0px;
+ color:black;
+}
+
+.navlinkRate{
+  color:black;
+  font-size:20px;
+  font-weight: bold;
+    padding-left: 0px;
+}
+
+
+.imageProf{
+  width: 205px;
+  border: none;
+  margin-left: 2px;
+
+
+}
+
+.profImage{
+margin-left: 105px;
+  height: 40px;
+  width: 40px;
+  margin-right: 30px;
+}
+
+.profImage1{
+margin-left: 0px;
+  height: 30px;
+  width: 30px;
+object-fit: cover;
+border-radius: 15px;
+}
 
 }

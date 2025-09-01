@@ -51,16 +51,16 @@ useEffect(() =>{
 
 
     return (
-                <div className='homeContainer'  style={{backgroundColor:"black", border:"none"}}> 
-                  <Container fluid className='swapCon'  style={{border:"none"}}>
+                <div className='profilePageHomeContainer' > 
+                  <Container fluid className='profilePageCon' >
 
-                <Row className='swapRow'>
-                  <h6  style={{color:'white', fontFamily:"EB Garamond,serif",paddingBottom:"40px"}}> Account </h6>
+                <Row className='profilePageRow'>
+                  <h6 className='profilePageHeading'> Account </h6>
 
-                  <Col sm = {2} style = {{border:'1px solid grey',minHeight:'150px'}}>
+                  <Col sm = {2} className='profilePageCol'>
                          <div>
        
-        <div style={{border:'1px solid grey',color:"black",fontFamily:"EB Garamond,serif", backgroundColor:"white"}}>
+        <div className='profilePageUserEmail'>
                     <Nav.Link href ="#" >{user}</Nav.Link>
         </div>
 <br></br>

@@ -131,13 +131,12 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
 
 
     return (
-                <div className='transferhomeContainer' style={{border:"none",backgroundColor:"rgb(239,242,255)"}}> 
+                <div className='transferhomeContainer'> 
 
-                  <Container className='transferCon' style={{border:"none"}}>
+                  <Container fluid className='transferCon' >
                   
-                                <Row className='transferRow' style={{border:"none"}}>
-  <p style={{fontWeight:"light", fontSize:"20px", fontFamily: "EB Garamond,serif", 
-     color:"black",paddingTop:"50px"}}>Transfer Funds</p>
+                                <Row className='transferRow' >
+  <p  className='transferHeading'>Transfer Funds</p>
 
                                   <Col className='transferCol'> 
 
@@ -147,9 +146,9 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
 
     <input type='text'
  value={receiverId}
+ className='transferReceiverId'
  placeholder='receiver id'
-  style={{width:"80%",height:"50px",backgroundColor:"white", color:"black",
-     borderRadius:"0px",paddingLeft:"7px", marginTop:"10px",border:"none"}}
+  
   onChange={(e) =>setReceiverId(e.target.value)}
          />
 
@@ -158,16 +157,11 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
          
     <br></br> 
 
-     <p style={{textAlign:"left",paddingLeft:"37px"}}>From</p>
+     <p className='transferFrom'>From</p>
 
           <select
           
-  style={{float:"left",backgroundColor:"white", color:"black", marginTop:"0px",
-    borderRadius:"12px",
-    marginLeft:"20px",
-    fontFamily: "EB Garamond,serif",
-    border:"none",
-  paddingLeft:"7px", width:'40%',height:"45px"}}
+         className='transferSelectFrom'
           value={fromCurrency}
            onChange={(e) =>setFromCurrency(e.target.value)}>
       
@@ -186,9 +180,7 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
         
         
          <select
- style={{float:"right",height:"45px",width:"40%",backgroundColor:"white",
-   color:"black", marginTop:"0px" ,borderRadius:"12px",paddingLeft:"7px",
-  border:"none", marginRight:"20px",fontFamily: "EB Garamond,serif"}}
+         className='transferToSelect'
            value={toCurrency}
            onChange={(e) =>setToCurrency(e.target.value)}>
     
@@ -210,18 +202,14 @@ console.log(senderId,receiverId,amount,fromCurrency, toCurrency)
          
   <input type='Number'
  value={amount}
-   style={{height:"45px",width:"80%",backgroundColor:"white", color:"black", 
-    border:"none",
-    marginTop:"30px", borderRadius:"0px",paddingLeft:"7px"}}
+  className='transferAmount'
    onChange={(e) =>setAmount(e.target.value)}
   placeholder='Enter amount'
          />
          <br></br>
          <br></br>
-     <button type="submit" className='btn btn-outline-success btn-sm' 
-  style={{height:"45px",border:"1px solid black", 
-    backgroundColor:"white", color:"black", marginTop:"30px",
-    borderRadius:"0px", width:"190px",fontSize:"16px"}}
+     <button type="submit" className='transferBtn' 
+  
      onClick={handleTransfer}
      disabled = {loading}
      ><Nav.Link>{loading ? 'sending...' :'send'}</Nav.Link>

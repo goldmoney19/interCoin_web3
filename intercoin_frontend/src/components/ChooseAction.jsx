@@ -3,10 +3,10 @@ import {useState , useEffect} from 'react'
 import Balance from './Balance'
 import "../App.css"
 import {Container, Row, Col, Nav,Card} from 'react-bootstrap'
-import send from '../assets/sendMoney.png'
-import deposit from '../assets/depositMoney.png'
-import swap from '../assets/swapMoney.png'
-import withdraw from '../assets/withdrawMoney.png'
+import send from '../assets/transfer2.jpg'
+import deposit from '../assets/deposit3.png'
+import swap from '../assets/swap3.jpg'
+import withdraw from '../assets/trade2.png'
 
 
 
@@ -25,41 +25,61 @@ function ChooseAction(){
             {
                 id:"/swap",
                  image:swap,
-                text:"swap",
+                text:"Swap",
             },
 
             {
                 id:"/transfer_funds",
                 image:send,
-                text:"transfer",
+                text:"Transfer",
             },
 
               {
                 id:"#",
                 image:withdraw,
-                text:"withdraw",
+                text:"Trade",
+            },
+ {
+                id:"/transfer_funds",
+                image:send,
+                text:"Airtime",
             },
 
+              {
+                id:"#",
+                image:withdraw,
+                text:"Data",
+            },
+             {   id:"/deposit",
+                 image:deposit,
+             text:"Deposit",
+            },
 
+            {
+                id:"/swap",
+                 image:swap,
+                text:"Swap",
+            },
+
+           
+           
            
 
          ];
 
     return (
-                <div className='homeContainer'> 
+                <div className='chooseHomeContainer'> 
            
- <Row className='chooseActionRow ' >
+ <Row className='chooseActionRow' >
                         {           
   weOffer_info.map((item) => (  
-    <Col xs = {2}className='chooseActionCol '  style={{width:"59px",height:"70px",
-     
-    }}>
-               <Nav.Link href ={item.id} > <img src = {item.image} style={{width:"40px",height:"35px"}} /></Nav.Link>
+    <Col xs = {3}  className='chooseActionCol' style={{width:"25%"}} >
+               <Nav.Link href ={item.id} > <img src = {item.image} className='chooseImage' /></Nav.Link>
                    
                     
      
                                   
-     <Nav.Link href ={item.id} > <p style={{paddingTop:"20px",fontSize:"12px",paddingLeft:"0px"}}>{item.text}</p></Nav.Link>
+     <Nav.Link href ={item.id} > <p className='chooseText'>{item.text}</p></Nav.Link>
         
     </Col>
       )) } 

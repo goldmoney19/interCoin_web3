@@ -5,11 +5,15 @@ import {Container, Row, Col, Nav,Card} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 import CompleteProfile from './CompleteProfile';
 import ChooseAction from './ChooseAction';
+import ChooseAction2 from './ChooseAction2';
+
 import CurrentRates from './CurrentRates';
 import CurrencyBalance from './CurrencyBalance';
 import InterCoinAi from './InterCoinAi';
-import ExchangeRateCalculate from './ExchangeRateCalculate';
-import TransactionHistory from './TransactionHistory';
+import SaveMore from './SaveMore';
+
+import ReferalRewards from './ReferalRewards';
+
 
 
 
@@ -27,25 +31,37 @@ function Balance(){
  
      return  <div className='balance_cover'  >
 
-           <Container className='balance_con' >
-                    
-                  
- <p style={{paddingLeft:"15px",textAlign:"left",fontWeight:"lighter",color:"black",
-  fontSize:"18px", fontFamily:"EB Garamond,serif", paddingBottom:"0px",paddingTop:"49px"
-}}>Wallet Balance</p>
+           <Container fluid className='balance_con' >
+          <br></br>  
+           <br></br>       
+
                  <Row>
                <CurrencyBalance />
               </Row>
-                       
+       <br></br>                 
+
+     <Row>
+               <ReferalRewards />
+              </Row>
+
    <br></br>
     
                 <Row>
                <ChooseAction />
               </Row>
+  <br></br>
+
+                <Row>
+               <SaveMore />
+              </Row>
 
 
                <br></br>
 
+                  <Row>
+               <ChooseAction2 />
+              </Row>
+               <br></br>
                 <Row>
                <CompleteProfile />
               </Row> 
@@ -60,7 +76,7 @@ function Balance(){
             
              <Row>
               <Nav.Link href = "/interCoinAi">
-              <button style={{width:"90%",margin:"auto", backgroundColor:"rgba(5, 12, 12, 0.8)"}}>
+              <button className='aiButton'>
                   Chat with Ai</button></Nav.Link> 
               </Row> 
 
