@@ -14,6 +14,7 @@ const cookies = new Cookies();
 
 
 function TransactionHistory(){
+   
    const navigate = useNavigate();
    const [isLogged, setIsLogged] = useState(false)
 

@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
 import {Container, Nav, Navbar} from 'react-bootstrap'
 import {Link, useNavigate} from 'react-router-dom'
 import Cookies from "cookie-universal"
 import deposit from "../assets/depositMoney.png"
 import send from "../assets/sendMoney.png"
 import profile from "../assets/profilePic2.jpg"
+import profile_img from "../assets/profile_img.jpg"
 import notification from "../assets/notification.jpg"
 
 
@@ -19,6 +21,22 @@ function Navvbar() {
   const token = document.cookie
  const navigate = useNavigate();
 
+     const [isLogged, setIsLogged ] = useState(false)
+ 
+            useEffect(() => {
+ 
+                  const user = localStorage.getItem("user-id");
+                     if(user === null){
+ 
+                         
+                         navigate("/login")
+                     }else{
+                        setIsLogged(true)
+ 
+                     }
+ 
+ 
+            }, [navigate])
  
   // const LogoutUser = () => {
 
@@ -41,7 +59,16 @@ function Navvbar() {
         <Navbar href="/" className='naviBrand'>InterCoinx</Navbar>
          <Navbar href="/" className='imageProf'>
          <img src =  {notification} className='profImage' />
-         <img src =  {profile} className='profImage1' />
+       
+        {isLogged ? (
+                   <img src =  {profile} className='profImage1' />
+
+        ):(
+
+                    <img src =  {profile_img} className='profImage1' />
+
+        )}
+
          </Navbar>
 
       

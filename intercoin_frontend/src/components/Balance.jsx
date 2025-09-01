@@ -6,13 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import CompleteProfile from './CompleteProfile';
 import ChooseAction from './ChooseAction';
 import ChooseAction2 from './ChooseAction2';
-
 import CurrentRates from './CurrentRates';
-import CurrencyBalance from './CurrencyBalance';
-import InterCoinAi from './InterCoinAi';
-import SaveMore from './SaveMore';
-
+import CurrencyBalance from './CurrencyBalance'
+import InterCoinAi from './InterCoinAi'
+import SaveMore from './SaveMore'
 import ReferalRewards from './ReferalRewards';
+
 
 
 
@@ -67,10 +66,10 @@ function Balance(){
               </Row> 
 
               <br></br>
-
-              <Row>
-               <CurrentRates />
-              </Row> 
+{/* 
+            //   <Row>
+            //    <CurrentRates />
+            //   </Row>  */}
 
               <br></br>
             
