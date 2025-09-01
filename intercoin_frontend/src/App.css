@@ -1940,13 +1940,14 @@ margin-top:120px;
   padding-top: 0px;
   font-size:19px;
   padding-bottom: 30px;
+  font-weight: bold;
 }
 
 .loginCol2{
 /* box-shadow: 2px 2px black; */
 font-family:"EB Garamond,serif";
  border:none;
-  height: 520px;
+  height: 530px;
   margin-top: 40px;
     margin:16px;
   color: black;
@@ -1988,7 +1989,7 @@ box-shadow: 0.8px 0.8px black;
   width:90%;
   height:60px;
   border-radius: 13px;
-   background-color:black;
+   background-color:rgb(31, 0, 46);
 color:white;
    border:none;
 }

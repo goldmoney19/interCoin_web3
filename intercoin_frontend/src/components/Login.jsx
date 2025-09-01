@@ -142,23 +142,22 @@ function Login(){
             setPassword(e.target.value)
           }
            />
-           
+           <p style={{color:"blue", textAlign:"right",fontSize:"13px",paddingRight:"30px"}}>Forgot password</p>
         
         <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+       
+
 
         <button  type='submit' className='loginBtnn'
         disabled = {loading}
         >
-         {loading ? 'sending...' : 'Login'}
+         {loading ? 'signing...' : 'Login'}
         </button>
          <br></br>
          <br></br>
-         <p   >Or</p> 
-         {/* <button className = 'btn btn-sm bttn3'
-   > <Nav.Link href ="/register"  style = {{color:'white'}}>SignUp</Nav.Link></button>  */}
+         <span style = {{paddingRight:'10px'}}>0r</span> 
+          <button className = 'btn btn-sm bttn3'
+   > <Nav.Link href ="/register"  style = {{color:'white'}}>SignUp</Nav.Link></button>  
           
             <br></br>
               <br></br>

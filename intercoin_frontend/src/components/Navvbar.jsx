@@ -26,11 +26,9 @@ function Navvbar() {
             useEffect(() => {
  
                   const user = localStorage.getItem("user-id");
-                     if(user === null){
+                     if(!user === null){
  
-                         
-                         navigate("/login")
-                     }else{
+                        
                         setIsLogged(true)
  
                      }
