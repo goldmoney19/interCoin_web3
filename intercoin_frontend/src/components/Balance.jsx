@@ -76,7 +76,7 @@ function Balance(){
             
              <Row>
               <Nav.Link href = "/interCoinAi">
-              <button className='aiButton'>
+              <button className='aiButton' style={{ backgroundColor:"rgba(2, 8, 37,1)"}}>
                   Chat with Ai</button></Nav.Link> 
               </Row> 
 

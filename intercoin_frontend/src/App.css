@@ -1811,6 +1811,7 @@ padding-right: 90px;
 }
 
 .profileSetText2btnn{
+   background-color:rgba(2, 8, 37,1);
   float: right;
    font-family:"EB Garamond,serif";
  font-size: 13px;
@@ -1821,7 +1822,7 @@ padding-right: 90px;
 height: 50px;
   width:90%;
   margin:auto; 
-  background-color:rgba(5, 12, 12, 0.8);
+  background-color:rgb(2, 8, 37,);
   font-size: 15px;
 }
 
