@@ -19,18 +19,18 @@ function CompleteProfile(){
 
                     
 
-                        <Row className='profileSetRow' >
+<Row className='profileSetRow' >
 
-                            <Col sm = {12} className='profileSetCol'  >
+    <Col sm = {12} className='profileSetCol'  >
 
          
-         <p className='profileSetText2' >Transaction history</p>
-          <span><Nav.Link href='TransactionHistory'><button className='profileSetText2btnn'>view</button></Nav.Link></span>
-                    </Col>
-                        </Row>
+ <p className='profileSetText2' >Transaction history</p>
+    <span><Nav.Link href='TransactionHistory'><button className='profileSetText2btnn'>view</button></Nav.Link></span>
+             </Col>
+                 </Row>
                     
            
-          </div> )
+     </div> )
 
 
 
