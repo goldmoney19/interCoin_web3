@@ -16,14 +16,17 @@ function ReferalRewards(){
                <Container fluid>
              <Row>
 
-                <Col style={{border:"2px solid white",paddingTop:"0px", height:"23px",
+                <Col style={{border:"2px solid white",paddingTop:"0px", height:"31px",
                     textAlign:"left",boxShadow:"0.5px 0.5px black",borderRadius:"12px",
      fontFamily: "EB Garamond,serif",fontSize:"14px",fontWeight:"bold"
 
                 }}>
 
-                <p>Referral alerts, earn <span style={{color:"blue"}}>20%  p.a interest</span></p>
-                
+                <p style={{float:"left"}}>Referral alerts, earn <span style={{color:"blue",fontWeight:"lighter"}}>20%  p.a interest</span></p>
+                <span style={{float:"right"}}><button style={{ float:"right",
+                    backgroundColor:"rgba(2, 8, 37,1)",
+                    borderRadius:"16%",
+                    height:"25px",paddingTop:"1px",marginTop:"0px"}}>check</button></span>
                 </Col>
              </Row>
 

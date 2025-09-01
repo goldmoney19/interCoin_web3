@@ -8,7 +8,7 @@ import { Container , Row, Col} from 'react-bootstrap'
 
 
 
-function ReferalRewards(){
+function SaveMore(){
 
 
     return ( <div className='referalHomeDiv' > 
@@ -44,4 +44,4 @@ function ReferalRewards(){
 }
 
 
-export default ReferalRewards
+export default SaveMore
