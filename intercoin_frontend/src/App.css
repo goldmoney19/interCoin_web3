@@ -1230,11 +1230,11 @@ border: none;
 .chooseActionRow{
    width:100%;
  border: 2px solid white; 
-    border-radius: 20px;
+    /* border-radius: 20px; */
   height: 154px;
   align-content: space-between;
-    /* background-color:rgba(2, 8, 37,1); */
-         background-color:white;
+    background-color:rgba(2, 8, 37,0.05); 
+         /* background-color:white; */
 
      padding-top: 10px;
 }
@@ -1257,11 +1257,11 @@ border: none;
 .chooseActionRow2{
    width:100%;
  border: 2px solid wred; 
-    border-radius: 20px;
-  height: 77px;
+    border-radius: 0px;
+  height: 72px;
   align-content: space-between;
-    background-color:white;
-        /* background-color:rgba(2, 8, 37,1); */
+    /* background-color:white; */
+         background-color:rgba(2, 8, 37,0.05); 
 
      padding-top: 10px;
 }
