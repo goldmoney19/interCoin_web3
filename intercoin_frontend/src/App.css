@@ -1231,9 +1231,11 @@ border: none;
    width:100%;
  border: 2px solid white; 
     border-radius: 20px;
-  height: 157px;
+  height: 154px;
   align-content: space-between;
-    background-color:rgba(2, 8, 37,1);
+    /* background-color:rgba(2, 8, 37,1); */
+         background-color:white;
+
      padding-top: 10px;
 }
 
@@ -1254,11 +1256,13 @@ border: none;
 
 .chooseActionRow2{
    width:100%;
- border: 2px solid white; 
+ border: 2px solid wred; 
     border-radius: 20px;
   height: 77px;
   align-content: space-between;
-    background-color:rgba(2, 8, 37,1);
+    background-color:white;
+        /* background-color:rgba(2, 8, 37,1); */
+
      padding-top: 10px;
 }
 
@@ -1291,7 +1295,7 @@ border: none;
 padding-top:0px;
 font-size:12px;
 padding-left:0px;
-color:white;
+color:black;
 
 }
 
@@ -2019,7 +2023,7 @@ font-size: 12px;
 
 .naviBrand{
 
-  color: black;
+  color: rgb(2, 8, 37,);
   font-weight: bolder;
   font-size: 18px;
 }

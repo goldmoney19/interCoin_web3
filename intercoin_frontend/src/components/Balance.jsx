@@ -48,7 +48,7 @@ function Balance(){
                 <Row>
                <ChooseAction />
               </Row>
-  <br></br>
+  
 
                 <Row>
                <SaveMore />

@@ -61,7 +61,7 @@ function Navvbar() {
 
 <Navbar collapseOnSelect expand="lg" className="navbar navbar-light navCover" fixed="top" >
       <Container fluid style={{fontFamily: "EB Garamond,serif"  ,border:"none"}}>
-        <Navbar href="/" className='naviBrand'>InterCoinx</Navbar>
+        <Navbar href="/" className='naviBrand'  >InterCoinx</Navbar>
          <Navbar href="/" className='imageProf'>
          <img src =  {notification} className='profImage' />
        
