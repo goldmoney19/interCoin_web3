@@ -117,11 +117,19 @@ export const login = async(req, res) => {
 
            await client.incr(loginAttemptKey)
            await client.expire(loginAttemptKey, MAX_LOCKOUT_TIME )
-                    return  res.status(404).json({message:"invalid credentials"})
+
+             const currentAttemptsStr = await client.get(loginAttemptKey);
+            const currentAttempts = parseInt(currentAttemptsStr) || 0;
+
+                  if (currentAttempts >= MAX_LOGIN_ATTEMPT) {
+                return res.status(429).json({
+                    message: `Too many failed login attempts. Your account has been locked. Please try again in ${LOCKOUT_TIME_SECONDS / 60} minutes.`
+                });
+                    return res.status(404).json({ message: "Invalid credentials" });
 
          }
       
-        
+
 
 
           await client.del(loginAttemptKey);
