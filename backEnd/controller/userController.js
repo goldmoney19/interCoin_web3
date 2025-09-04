@@ -400,6 +400,10 @@ console.log("Amount to swap:", amount);
             return res.status(500).json({ message: "Failed to update the receiver's wallet." });
         }
 
+        const cachekey = `wallet_balance:${userId}`;
+        await client.del(cachekey);
+        console.log(`Cache for ${cachekey} has been invalidated.`);
+
          // 4. Record Transaction: Create a new transaction document
         const newTransaction = new Transaction({
             senderId: userId,
@@ -553,6 +557,10 @@ const receiverWallet = await UserWallet2.findOne({ UserId: receiverId, currency:
              return res.status(500).json({ message: "Failed to update receiver's wallet." });
         }
 
+
+        const cachekey = `wallet_balance:${senderId}`;
+        await client.del(cachekey);
+        console.log(`Cache for ${cachekey} has been invalidated.`);
 
          const newTransaction = new Transaction({
             senderId: senderId,
