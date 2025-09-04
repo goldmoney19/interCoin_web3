@@ -39,6 +39,7 @@ const allowedOrigins = [
 
  'https://inter-coin-web3.vercel.app',
  'http://localhost:5173',
+ 'http://localhost:5174,
  'https://inter-coin-web3-5as7.vercel.app',
   'https://inter-coin-web3-2kqe.vercel.app'
 ];
