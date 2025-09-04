@@ -94,8 +94,16 @@ export const login = async(req, res) => {
           
            const loginAttemptKey = `loginAttempts:${email}`
 
-           const attempts = parseInt(await client.get(loginAttemptKey) || 0)
 
+
+
+ console.log("Attempting to get login attempts from Redis...");
+            const attempts = parseInt(await client.get(loginAttemptKey) || 0)
+            console.log(`Found ${attempts} attempts for key: ${loginAttemptKey}`);
+
+
+
+      
            if (attempts >= MAX_LOGIN_ATTEMPT){
 
   return res.status(429).json({ 
