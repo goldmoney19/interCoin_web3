@@ -39,45 +39,45 @@ function Balance(){
               </Row>
        <br></br>                 
 
-     {/* <Row>
+     <Row>
                <ReferalRewards />
-              </Row> */}
+              </Row>
 
    <br></br>
     
-                {/* <Row>
+                <Row>
                <ChooseAction />
               </Row>
   
 
                 <Row>
                <SaveMore />
-              </Row> */}
+              </Row>
 
 
                <br></br>
 
-                  {/* <Row>
+                  <Row>
                <ChooseAction2 />
               </Row>
                <br></br>
                 <Row>
                <CompleteProfile />
-              </Row>  */}
+              </Row> 
+
+              {/* <br></br>
+
+             <Row>
+              <CurrentRates />
+             </Row>  */}
 
               <br></br>
-{/* 
-            //   <Row>
-            //    <CurrentRates />
-            //   </Row>  */}
-
-              <br></br>
-{/*             
+            
              <Row>
               <Nav.Link href = "/interCoinAi">
               <button className='aiButton' style={{ backgroundColor:"rgba(2, 8, 37,1)"}}>
                   Chat with Ai</button></Nav.Link> 
-              </Row>  */}
+              </Row> 
 
            
 
