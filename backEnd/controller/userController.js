@@ -255,6 +255,10 @@ if(!updatedWallet){
 }
 
 
+const cachekey = `wallet_balance:${userId}`;
+        await client.del(cachekey);
+        console.log(`Cache for ${cachekey} has been invalidated.`);
+
 const newTransaction = new Transaction({
 
     senderId: userId,
