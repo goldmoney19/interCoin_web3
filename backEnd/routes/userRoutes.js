@@ -1,7 +1,5 @@
 import express from "express"
 
-
-
 import {createUser, interAi,getBalanceByUserIdPage,getTransactionsDetailsById, login,getTransactionsByUserId, getBalanceByUserId, makeDeposit, getAllCurrencies, swapFunds, transferFunds} from "../controller/userController.js"
 
 

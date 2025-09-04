@@ -9,8 +9,9 @@ import wallet2route from "./routes/wallet2Routes.js"
 import cors from "cors"
 import cookieParser from "cookie-parser"
 import path from 'path';
+import redis from 'redis'
 
-
+import client from "./configuration/redisClient.js"
 
 
 
@@ -27,6 +28,7 @@ const __dirname = path.dirname(__filename);
 
 
 dotenv.config();
+console.log('Server is alive!');
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -56,20 +58,24 @@ app.use(cors({
 }));
 
 const PORT = process.env.PORT || 7000;
+
+
 const MONGOURL = process.env.MONGO_URL;
 
-mongoose
+
+const start_server = async() => {
+
+try{
+   await mongoose
      .connect(MONGOURL)
-     .then(()=> {
+        console.log("Database connected successfully");
 
-        console.log("db connected successfully")
-        app.listen(PORT, () => {
 
-            console.log(`server is running on port:${PORT}`)
-        });
-     })
-     .catch((error) => console.log(error));
-        app.use(auditt);
+
+     await client.connect()
+       console.log("Redis connected successfully");
+
+          app.use(auditt);
 
      
 app.use('/uploads', express.static(path.join(__dirname, 'Uploads')));
@@ -80,6 +86,27 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/api', route);
 
 app.use("/api", wallet2route)
+
+
+app.listen(PORT, () => {
+
+            console.log(`server is running on port:${PORT}`)
+        });
+
+}catch(error){
+
+console.log(error)
+
+
+}
+
+
+
+
+}
+start_server()
+    
+     
         
          
 

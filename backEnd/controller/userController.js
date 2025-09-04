@@ -5,7 +5,7 @@ import Transaction from "../model/Transaction.js";
 import express from "express"
 import mongoose from "mongoose"
 import path from "path"
-
+import client from "../configuration/redisClient.js";
 import dotenv from "dotenv";
 import Wallet2 from "../model/Wallet2.js";
 import UserWallet2 from "../model/UserWallet2.js";
@@ -166,8 +166,20 @@ export const getBalanceByUserId = async(req, res) => {
                    const { user_id } = req.body;
                      console.log("Incoming user_id:", user_id)
 
+                       const cachekey = `wallet_balance:${user_id}`
+
                      if (!user_id) {
       return res.status(400).json({ message: "user_id is required" });
+    }
+
+  const cachedData = await client.get(cachekey);
+    console.log("Checking Redis cache for key:", cachekey);
+console.log("Cache hit?", !!cachedData);
+    
+     
+    if (cachedData) {
+      console.log('Serving wallet balance from Redis cache');
+      return res.status(200).json(JSON.parse(cachedData));
     }
 
         const userWallets = await UserWallet2.find({ UserId: user_id });
@@ -195,6 +207,9 @@ export const getBalanceByUserId = async(req, res) => {
       balance: wallet.balance,
       imageUrl: currencyToImageMap[wallet.currency] || null,
     }));
+
+        await client.setEx(cachekey, 60, JSON.stringify(walletsWithImages));
+
 console.log(walletsWithImages)
     res.status(200).json(walletsWithImages);
 
