@@ -93,42 +93,26 @@ export const login = async(req, res) => {
           
            const loginAttemptKey = `loginAttempts:${email}`
 
-           const attempts = parseInt(await client.get(loginAttemptKey) )
+           const attempts = parseInt(await client.get(loginAttemptKey) || 0)
 
            if (attempts >= MAX_LOGIN_ATTEMPT){
 
-            res.status(404).json({
-                 
-              message:"too many attempts, try again in 5 minutes"
-
-            })
+  return res.status(429).json({ 
+  message: `Too many failed login attempts. 
+  Please try again in ${LOCKOUT_TIME_SECONDS / 60} minutes.`})
            }
 
   const existingUser = await User.findOne({email});
 
-         if(!existingUser){
+         if(!existingUser || !(await bcrypt.compare(password, existingUser.password))){
 
            await client.incr(loginAttemptKey)
            await client.expire(loginAttemptKey, MAX_LOCKOUT_TIME )
-                       res.status(404).json({message:"Email does not exist"})
+                    return  res.status(404).json({message:"invalid credentials"})
 
          }
       
-         const isPasswordValid = await bcrypt.compare(password, existingUser.password);
-
-         if(!isPasswordValid){
-          
-          await client.incr(loginAttemptKey)
-
-           // Set an expiration for the key if it's the first failed attempt,
-            // or if it's a new attempt and the key has no expiry.
-            if (attempts === 0 || await client.ttl(loginAttemptKey) === -1) {
-                 await client.expire(loginAttemptKey, LOCKOUT_TIME_SECONDS);
-            }
-
-
-
-         }
+        
 
 
           await client.del(loginAttemptKey);
@@ -141,7 +125,7 @@ console.log("existingUser._id:", existingUser._id);
       }
   catch(error){
      console.log(error.message)
-     res.status(500).json({message:"invalid credentials"})
+    return res.status(500).json({message:"invalid credentials"})
  }
 
 
