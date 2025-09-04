@@ -13,7 +13,9 @@ dotenv.config();
 
 const { LLM_API_KEY, LLM_API_URL } = process.env;
 
-
+const MAX_LOGIN_ATTEMPT = 5; // Example: Allow 5 failed attempts
+const LOCKOUT_TIME_SECONDS = 300; // Example: Lock out for 5 minutes (300 seconds)
+const MAX_LOCKOUT_TIME = LOCKOUT_TIME_SECONDS; // Can be the same as
 
 
 
@@ -80,8 +82,7 @@ export const createUser = async(req, res) =>{
     }
 }
 
-const MAX_LOGIN_ATTEMPT = 5;
-const MAX_LOCKOUT_TIME = 300;
+
 
 export const login = async(req, res) => {
 
