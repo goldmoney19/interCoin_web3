@@ -94,8 +94,16 @@ export const login = async(req, res) => {
           
            const loginAttemptKey = `loginAttempts:${email}`
 
-           const attempts = parseInt(await client.get(loginAttemptKey) || 0)
 
+
+
+ console.log("Attempting to get login attempts from Redis...");
+            const attempts = parseInt(await client.get(loginAttemptKey) || 0)
+            console.log(`Found ${attempts} attempts for key: ${loginAttemptKey}`);
+
+
+
+      
            if (attempts >= MAX_LOGIN_ATTEMPT){
 
   return res.status(429).json({ 
@@ -109,11 +117,19 @@ export const login = async(req, res) => {
 
            await client.incr(loginAttemptKey)
            await client.expire(loginAttemptKey, MAX_LOCKOUT_TIME )
-                    return  res.status(404).json({message:"invalid credentials"})
+
+             const currentAttemptsStr = await client.get(loginAttemptKey);
+            const currentAttempts = parseInt(currentAttemptsStr) || 0;
+
+                  if (currentAttempts >= MAX_LOGIN_ATTEMPT) {
+                return res.status(429).json({
+                    message: `Too many failed login attempts. Your account has been locked. Please try again in ${LOCKOUT_TIME_SECONDS / 60} minutes.`
+                });
+                    return res.status(404).json({ message: "Invalid credentials" });
 
          }
       
-        
+
 
 
           await client.del(loginAttemptKey);
