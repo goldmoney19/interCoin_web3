@@ -94,42 +94,32 @@ export const login = async(req, res) => {
           
            const loginAttemptKey = `loginAttempts:${email}`
 
+           const attempts = parseInt(await client.get(loginAttemptKey) || 0)
 
-
-
- console.log("Attempting to get login attempts from Redis...");
-            const attempts = parseInt(await client.get(loginAttemptKey) || 0)
-            console.log(`Found ${attempts} attempts for key: ${loginAttemptKey}`);
-
-
-
-      
            if (attempts >= MAX_LOGIN_ATTEMPT){
 
   return res.status(429).json({ 
   message: `Too many failed login attempts. 
-  Please do try again in ${LOCKOUT_TIME_SECONDS / 60} minutes.`})
+  Please try again in ${LOCKOUT_TIME_SECONDS / 60} minutes.`})
            }
 
   const existingUser = await User.findOne({email});
 
-         if(!existingUser || !(await bcrypt.compare(password, existingUser.password))){
+         if(!existingUser || !existingUser.password){
 
            await client.incr(loginAttemptKey)
            await client.expire(loginAttemptKey, MAX_LOCKOUT_TIME )
-
-             const currentAttemptsStr = await client.get(loginAttemptKey);
-            const currentAttempts = parseInt(currentAttemptsStr) || 0;
-
-                  if (currentAttempts >= MAX_LOGIN_ATTEMPT) {
-                return res.status(429).json({
-                    message: `Too many failed login attempts. Your account has been locked. Please try again in ${LOCKOUT_TIME_SECONDS / 60} minutes.`
-                });
-                    return res.status(404).json({ message: "Invalid credentials" });
+                    return  res.status(404).json({message:"invalid credentials"})
 
          }
       
+         const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
 
+    if (!isPasswordCorrect) {
+      await client.incr(loginAttemptKey);
+      await client.expire(loginAttemptKey, MAX_LOCKOUT_TIME);
+      return res.status(404).json({ message: "Invalid credentials" });
+    }
 
 
           await client.del(loginAttemptKey);
@@ -140,8 +130,6 @@ console.log("existingUser._id:", existingUser._id);
            res.status(200).json({user:existingUser, userId:existingUser._id, useRole:existingUser.role, useEmail:existingUser.email});
           
       }
-
-    }
   catch(error){
      console.log(error.message)
     return res.status(500).json({message:"invalid credentials"})
