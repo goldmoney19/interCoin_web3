@@ -140,6 +140,8 @@ console.log("existingUser._id:", existingUser._id);
            res.status(200).json({user:existingUser, userId:existingUser._id, useRole:existingUser.role, useEmail:existingUser.email});
           
       }
+
+    }
   catch(error){
      console.log(error.message)
     return res.status(500).json({message:"invalid credentials"})
