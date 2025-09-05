@@ -93,8 +93,12 @@ export const login = async(req, res) => {
           //  res.status(200).json({token:existingUser._id});
           
            const loginAttemptKey = `loginAttempts:${email}`
+                   console.log("Attempting to get login attempts from Redis...");
 
-           const attempts = parseInt(await client.get(loginAttemptKey) || 0)
+
+ const attemptsStr = await client.get(loginAttemptKey);
+        const attempts = parseInt(attemptsStr) || 0;
+        console.log(`Found ${attempts} attempts for key: ${loginAttemptKey}`);
 
            if (attempts >= MAX_LOGIN_ATTEMPT){
 
@@ -103,21 +107,19 @@ export const login = async(req, res) => {
   Please try again in ${LOCKOUT_TIME_SECONDS / 60} minutes.`})
            }
 
-  const existingUser = await User.findOne({email});
+   const existingUser = await User.findOne({ email });
+    let isPasswordCorrect = false;
 
-         if(!existingUser || !existingUser.password){
+    // Check if a user was found and if the password matches the stored hash
+    if (existingUser && existingUser.password) {
+      isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
+    }
 
-           await client.incr(loginAttemptKey)
-           await client.expire(loginAttemptKey, MAX_LOCKOUT_TIME )
-                    return  res.status(404).json({message:"invalid credentials"})
-
-         }
-      
-         const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
-
-    if (!isPasswordCorrect) {
+    // If either the user doesn't exist or the password is wrong,
+    // increment the failed login attempts counter.
+    if (!existingUser || !isPasswordCorrect) {
       await client.incr(loginAttemptKey);
-      await client.expire(loginAttemptKey, MAX_LOCKOUT_TIME);
+      await client.expire(loginAttemptKey, LOCKOUT_TIME_SECONDS);
       return res.status(404).json({ message: "Invalid credentials" });
     }
 
