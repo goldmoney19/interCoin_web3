@@ -20,6 +20,8 @@ function Login(){
     const [email, setEmail] = useState("");
       const [password, setPassword] = useState("");
    const [loading, setLoading] = useState(false)
+     const [isLockedOut, setIsLockedOut] = useState(false);
+
    
     
 
@@ -73,7 +75,18 @@ function Login(){
                     
                     catch(error){
                       console.log(error)
-                    toast.error('wrong credentials', {position:"top-right"});
+
+                       if (error.response) {
+        // Handle a 429 (Too Many Requests) status specifically
+        if (error.response.status === 429) {
+          setIsLockedOut(true);
+          toast.error(error.response.data.message, { position: "top-right" });
+        } else {
+          // Handle other errors, like 404 (Not Found)
+          toast.error('Invalid credentials.', { position: "top-right" });
+        }
+      }
+                   
                        
                     }finally{
 
@@ -148,15 +161,21 @@ function Login(){
        
 
 
-        <button  type='submit' className='loginBtnn'
-        disabled = {loading}
+        <button  type='submit' 
+        className={`w-full py-2 px-4 rounded-lg text-white font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+              loading || isLockedOut ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700'
+            }`}
+            disabled={loading || isLockedOut}
+      
         >
-         {loading ? 'signing...' : 'Sign in'}
+         {loading ? 'signing in...' : 'Sign in'}
         </button>
          <br></br>
          <br></br>
          <span style = {{paddingRight:'10px'}}>or</span> 
-          <button className = 'btn btn-sm bttn3'
+          <button 
+          
+          
    > <Nav.Link href ="/register"  style = {{color:'white'}}>Sign up</Nav.Link></button>  
           
             <br></br>
