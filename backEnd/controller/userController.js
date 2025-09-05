@@ -100,7 +100,7 @@ export const login = async(req, res) => {
 
   return res.status(429).json({ 
   message: `Too many failed login attempts. 
-  Please try again in ${LOCKOUT_TIME_SECONDS / 60} minutes.`})
+  Please do try again in ${LOCKOUT_TIME_SECONDS / 60} minutes.`})
            }
 
   const existingUser = await User.findOne({email});
