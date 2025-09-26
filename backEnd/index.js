@@ -41,7 +41,8 @@ const allowedOrigins = [
  'http://localhost:5173',
  'http://localhost:5174',
  'https://inter-coin-web3-5as7.vercel.app',
-  'https://inter-coin-web3-2kqe.vercel.app'
+  'https://inter-coin-web3-2kqe.vercel.app',
+ 'http://localhost:3000',
 ];
 app.use(cors({
  origin: function (origin, callback) {
