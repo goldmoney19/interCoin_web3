@@ -92,20 +92,20 @@ export const login = async(req, res) => {
           // console.log(token) 
           //  res.status(200).json({token:existingUser._id});
           
-           const loginAttemptKey = `loginAttempts:${email}`
-                   console.log("Attempting to get login attempts from Redis...");
+           // const loginAttemptKey = `loginAttempts:${email}`
+           //         console.log("Attempting to get login attempts from Redis...");
 
 
- const attemptsStr = await client.get(loginAttemptKey);
-        const attempts = parseInt(attemptsStr) || 0;
-        console.log(`Found ${attempts} attempts for key: ${loginAttemptKey}`);
+ // const attemptsStr = await client.get(loginAttemptKey);
+ //        const attempts = parseInt(attemptsStr) || 0;
+ //        console.log(`Found ${attempts} attempts for key: ${loginAttemptKey}`);
 
-           if (attempts >= MAX_LOGIN_ATTEMPT){
+  //          if (attempts >= MAX_LOGIN_ATTEMPT){
 
-  return res.status(429).json({ 
-  message: `Too many failed login attempts. 
-  Please try again in ${LOCKOUT_TIME_SECONDS / 60} minutes.`})
-           }
+  // return res.status(429).json({ 
+  // message: `Too many failed login attempts. 
+  // Please try again in ${LOCKOUT_TIME_SECONDS / 60} minutes.`})
+  //          }
 
    const existingUser = await User.findOne({ email });
     let isPasswordCorrect = false;
@@ -118,13 +118,13 @@ export const login = async(req, res) => {
     // If either the user doesn't exist or the password is wrong,
     // increment the failed login attempts counter.
     if (!existingUser || !isPasswordCorrect) {
-      await client.incr(loginAttemptKey);
-      await client.expire(loginAttemptKey, LOCKOUT_TIME_SECONDS);
+      // await client.incr(loginAttemptKey);
+      // await client.expire(loginAttemptKey, LOCKOUT_TIME_SECONDS);
       return res.status(404).json({ message: "Invalid credentials" });
     }
 
 
-          await client.del(loginAttemptKey);
+          // await client.del(loginAttemptKey);
        console.log("existingUser:", existingUser);
 console.log("existingUser._id:", existingUser._id);
 
